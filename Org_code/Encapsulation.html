@@ -1,0 +1,396 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Encapsulation</h2>
+	<a href="#classandobject">Class and Object </a>|
+	<a href="#constructor">Constructor</a>|	
+	<a href="#overloadingconstructor">Overloading Constructor</a>|
+	<a href="#currentobject">The current Object</a>|
+	<a href="#memberfunction">Member funtions</a>|
+  <a href="#package">Package</a>|  
+	<a href="#accessmodifier">Access Modifier</a>|
+	<a href="#workshop">Workshop</a>|
+</nav><br/><br/>
+
+<section>
+	<a name="classandobject"></a>
+	<h2>Class and Object</h2>
+	<span>Class</span><br/><br/>
+	<p>In the previous topic, we saw the term “class” but did not give enough consideration to its meaning. Now we can establish a useful definition:</p>
+	<div class="classDIV">A <b>class</b> is an organisational unit of an Object Oriented design and program</div>    
+	<br/>[see <a href="https://www.w3schools.com/java/java_oop.asp" target="_blank">class definitions on the w3schools page</a> ]<br/><br/>
+	[see <a href="https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving?fbclid=IwAR2_jsAY7ldx2i-178wHimdAkCz0k65ZBVUR7G7OJSNpN3cikA3sPlGQBcQ" target="_blank">class definitions from other authors</a>]<br/><br/>
+    <p>A <b>key</b> task in producing an OO design and program is therefore the identification
+and selection of the most appropriate organisational units. There is no single OO
+solution for any specific problem, there are just “good” ones and everything else. So
+we need to establish a set of principles that will help us understand what makes for
+a “good” choice of an organisational unit or class. We will find that if we choose
+wisely, our programming task is relatively straightforward. Choose poorly, and our
+software may be difficult to deliver, hard to maintain and ultimately not a useful
+solution to our problem - just like an office with poor internal organisation. We can
+draw on our analysis from the previous section. A good class would exhibit the
+following characteristics:</p><br/><br/>
+  <div class="classDIV2"><b>Highly cohesive:</b> the class represents a single useful entity or organisational
+unit and does that job well.</div>
+  <div class="classDIV2"><b>Minimally coupled:</b> the class limits its interactions with other classes to only
+those that are really necessary for it to do what it is designed to do.</div>
+  <div class="classDIV2"><b>Encapsulation:</b> the class keeps information necessary to its internal operation private and does not expose it to other classes, and only makes public the
+information</div>     
+<p>So whenever we want to create an OO program, we should give thought to the
+notion of OO design and think about what classes or entities we need to create,
+using the principles of high cohesion, low coupling and encapsulation as our guide.</p>
+<br/>
+<p>A formal definition of a <b>class</b> includes two key components: <b>Fields(Attributes)</b> and <b>Methods(Behaviors)</b></p><br/>
+
+<p>This is a good time to start.</p><br/>
+
+<div class="problem"><b>Problem</b>:A sports car can be one of a variety of colours, with an engine power between
+100 HP and 200 HP. It can be a convertible or a regular model. The car has a
+button that starts the engine and a parking brake. When the parking brake is
+released and you press the accelerator, it drives in the direction determined by
+the transmission setting.</div><br/>
+
+<p>Design guideline:<br/>
+    <ul>
+       <li>Step 1: <b>Looking for main nouns</b>, classes are ofter described by main nouns in the problem.</li>    	
+       <li>Step 2: <b>Looking for auxiliary nouns</b> that describe details of the main noun, Fields or Attributes  are often described by auxiliary nouns.</li>
+       <li>Step 3: <b>Looking for verbs</b>, methods or behaviors are often described by verbs.</li>
+       <li>Step 4: <b>Find the relationship</b> among classes. <b>TIPS</b>: <em>If your problem has two main nouns. They have often the relationship.</em></li>
+    </ul></p><br/>
+
+ <p>Apply the guideline above for the problem</p>
+ <img src="images/encapsulation1.png"/><br/>	 
+ <p/>We use Unified Modeling Language(UML) to describe the class structure. UML provides mechanisms to represent class members, such as attributes and methods, and additional information</p>	
+ <p>Read <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank"><b>this article to get more about UML</b></a> </p><BR/>
+ <p>A UML class diagram is used to represent the Car class </p>
+ <img src="images/encapsulation2.png"><br/>
+ 
+ <p>How to draw the class structure?<br/>
+ 	  <ul>
+ 	  	 <li>put main noun(Car) to make the class name</li>
+         <li>put auxiliary nouns(nouns describe the detail of Car) to make fields</li>
+         <li>put verbs to make methods</li>
+         <li>To specify the visibility of a class member from other classes (i.e. any attribute or method), these notations(-,+,#,~) must be placed before the member's name. (In Java, '~' is replace to ' '). <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank">get more notations</a></li>
+ 	  </ul><br/>
+  Now, You will implement this class in Java. In your editor, create a new file named Car.java(<b>Note</b>: the file named the same as the class name). The code of Car class: 
+ <img src="images/demoCarClass.png"/>
+ <img src="images/outputCarClass.png"/>
+ <p>Let's analyze the file Car.java</p><br/>     
+ <p>At line 1, Using <b>public</b> keyword to the class Car is visible anywhere in the app. 
+  Using the <b>private</b> keyword to fields are restricted accessibly from the other classes. When the program compiles and runs, the Java system will perform some steps: </p>
+    <ul>
+    	<li>Step 1: The compiler will generate automatically the method :<img src="images/encapsulation4.png"/><br/> and insert into the Car.java. Don't worry about this, later we will discuss it.</li>
+    	<li>Step 2: Load the Car class definition to static heap. In the figure below, the address <b>500</b> is used to store this. The compiler creates also a table that contains all function prototypes and the addressed of the implemented code.</li>
+    	<li>Step 3: Allocate the space memory for the method main in the stack memory. The reference variable <b>c</b> stays in here.</li>
+    	<li>Step 4: the instruction <b>new Car()</b> will be called to allocate the block memory in the dynamic heap( the address <b>2000</b> is an example). The block size is based on the Car class definition. Inside, it contains all fields/instance variables that are declared in the Car class and the address of the Car definition. And then, <b>the Java used the variable c to invoke the method Car()</b> for assigning <b>default values</b> to these fields/instance variables of c. Now, <b>this block is called to be Object</b>. The address of the block will is assigned to the vaiable c. c is used to handle the object</li>
+    	<li>To run <b>c.pressStartButton();</b>, the Java system begins from c, gets the address 2000, jumps to 2000, gets the address 500, jump to the table of prototypes, finds the method "pressStartButton", jump to 120 and runs the code. The instruction c.pressAcceleratorButton() is the same. (<b><em>Note: all variables in the method pressAcceleratorButton() are fields in the block 2000. Using c to call the method, therefore all fields belong to c.</em></b>)</li>
+    </ul>
+    <br/>        <img src="images/encapsulation5.png"/>          
+ <p>Now, you add more the code to the method main.
+ 	<img src="images/encapsulation6.png"/><br/>
+ 	<img src="images/encapsulation7.png"/><br/>
+ 	The code "Car c2=new Car()" creates the second object from the Car class. The second object also contains all fields as the first object. This time, <b>Java use c2 to inkove the method Car() to assign default values to fields of c2.</b><br/><br/> 
+    The line <b>"c2.pressAcceleratorButton();"</b> calls the method. Now, all fields in this method belong to c2<br/>
+
+    <div class="problem"> 
+      <b>TIPS</b>: If the reference variable x calls the method then fields in this will belong to x.  
+    </div>
+
+ </p>	
+
+ <span>Object</span><br/><br/>
+ <p>In the example above, we used the keyword <b>new</b> to allocate the block memory in the dynamic heap. This block memory ia called the<em> object</em> or the <em>instance</em> of class. This object is create from the Car class and it contains all fields of this class. </p>
+   <div class="classDIV3">An Object is the block memory in the dynamic heap. An object is create from a class. Using the keyword <b>new</b> and follow by the class name. You can create multiple objects from one class</div><br/>
+
+ <p><b>Why do we have to create objects?  </b></p><br/>
+ <p>Any program contains also data and tasks. Data in the OO program is showed as objects.
+ Therefore, to the OO program operate, we have to create objects. Through these objects we can invoke or perform tasks</p><br/>
+
+ <p>Come back the example above. The first object (at the address 2000) and second object( at the address 3000) are storing the same default values because both c and c2 invoke the template method Car() {...} </p>
+ <a name="constructor"></a>
+ <h2>Constructor</h2>
+
+ <p>Complete encapsulation requires a mechanism for initializing data members at creation-time.  Without initialization at creation-time, an object's data members contain undefined values until client code calls a modifier that sets that data.</p> <br/>
+
+ <div class="classDIV2">The special member function that any object invokes at creation-time is called its class' constructor</div>
+
+ <p>The example above, the special method <b>Car(){...}</b> is inserted to the file Car.java. It is called the <b>default constructor</b>. Therefore, all fields of c or c2 are assigned to empty values. Values are called the <b>state of object</b>. Initializing an object's instance variables in a constructor ensures that the object has a well-defined state from the time of its creation. </b></p><br/>
+
+<p>The default constructor takes its name from the class itself.  The prototype for this no-argument constructor takes the form <b>ClassName()</b></p>
+<a name="overloadingconstructor"></a>
+<h2>Overloading Constructors</h2>
+<p>Overloading a class' constructor adds communication options for client code.  Client code can select the most appropriate set of arguments at creation time. </p><br/>
+<p>Add more the code to the Car.java</p>
+<img src="images/Encapsulation8.png"/><br/>
+<p>This method is called the <b>constructor with parameters</b></p><br/> 
+<p>Add the code to the method main</p>
+<img src="images/encapsulation9.png"/>
+<p>In the above code, the third object c3 is created and c3 invokes the constructor with parameters. All fields of c3 are assigned as {"red", 100, true, true}<br/>
+	<img src="images/encapsulation10.png"/><br/> Because c3 inkoves  pressAcceleratorButton(), The state of c3 is printed out.<br/>
+	<img src="images/encapsulation11.png"/><br/>
+
+<div class="problem"><b>Note</b>:If the class definition includes the prototype for a constructor with some parameters but does not include the prototype for a no-argument default constructor, the compiler DOES NOT insert an empty-body, no-argument default constructor.  The compiler only inserts an empty-body, no-argument default constructor if the class definition does not declare ANY constructor.</div><br/>
+
+<p>All methods that are implemented in the Car class at the time are called member methods/functions</p>
+<a name="currentobject"></a>
+<h2>The current Object</h2>
+
+ <p> When run <b>"c1.pressAcceleratorButton();"</b>, c1 invokes the method => the object (is handled by c1) is the current object at the time</p><br/>
+ <p> When run <b>"c2.pressAcceleratorButton();"</b>, c2 invokes the method => the object (is handled by c2) is the current object at the time.</p><br/>
+
+ <span>This</span><br/><br/>
+ <p>The keyword <b>this</b> returns the address of the current object.  That is, this holds the address of the region of memory that contains all of the data stored in the instance variables of current object.</p><br/>
+ <p><b>Scope of this: This</b> is created and used just when the member method is called. After the member method terminates <b>this</b> will be discarded <br/><br/>
+   [see <a href="https://www.javatpoint.com/this-keyword" target="_blank">more</a>]<br/><br/>
+  	 for example, <b>c3=new Car("red",100, true, true);</b>  <br/>
+  	 <img src="images/Encapsulation12.png"/><br/>
+  	 Upon entering the constructor with parameters, the pointer <b>this</b> is created by Java and it is storing the address of the object (4000). <b>c3 and this</b> are pointing to the current object . Using <b> this</b> in here to distinguish local variable and instance variable/field. After assigning values of input parameters to instance variables of c3, <b>this</b> will be discarded</p><br/><br/>
+  <div class="problem"><b>TIPS</b>:If parameters (formal arguments) of a member method and instance variables/fields are same. So, we are using this keyword to distinguish local variable and instance variable.</div>	 <br/>
+  
+  <a name="memberfunction"></a>
+  <h2>Member functions</h2>
+  <p>Member functions are the functions, which have their declaration inside the class definition and work on the data members of the class.</p><br/>
+  <p>At the time, the Car class contains member funtions as:</p>
+   <img src="images/encapsulation13.png"/><br/>
+  <p>After an object is created and assigned default values. Now, if you want to set one instance variable to other value. for example, change only one instance variable colour of c3 to 'black'. What solution for this case? </p>
+  <p>It's OK, we will add more a method <b>setColour()</b> to the Car class design. The code as:</p> 
+  <img src="images/encapsulation14.png"/><br/>
+  <p>The main code:</p>
+  <img src="images/encapsulation15.png"><br/>
+  <p>the pointer <b>c3 invokes setColour("black")</b>. Therefore, at the time <b>this.Colour=...</b> is used to access to instance variable of c3</p><br/>
+  <p>The same above idea, if you want to get the value of one instance variable you should add more a method <b>getColour()</b></p>
+  <img src="images/encapsulation16.png"/><br/><br/>
+  <p>You can also add more other getters/setters. The completed code: </p>
+  <p>
+  	<pre style="background-color: #F2F2F2; border: 1px solid black;">
+ public class Car {
+    //fields
+    private String Colour;
+    private int EnginePower;
+    private boolean Convertible;
+    private boolean parkingBrake;
+    //methods
+    public Car(){
+        Colour="";
+        EnginePower=0;
+        Convertible=false;
+        parkingBrake=false;
+    }
+
+    public Car(String Colour, int EnginePower, boolean Convertible, boolean parkingBrake) {
+        this.Colour = Colour;
+        this.EnginePower = EnginePower;
+        this.Convertible = Convertible;
+        this.parkingBrake = parkingBrake;
+    }
+    
+    public void pressStartButton(){
+        System.out.println("You can press the star button");
+    }
+    public void pressAcceleratorButton(){
+        System.out.println("You can press the accelerator button");
+        System.out.println("Colour:"+ Colour);
+        System.out.println("Engine power:"+ EnginePower);
+        System.out.println("Convertible:"+ Convertible);
+        System.out.println("parking brake:"+ parkingBrake);
+    }
+
+    public void setColour(String Colour) {
+        this.Colour = Colour;
+    }
+
+    public String getColour() {
+        return Colour;
+    }
+
+    public int getEnginePower() {
+        return EnginePower;
+    }
+
+    public void setEnginePower(int EnginePower) {
+        this.EnginePower = EnginePower;
+    }
+
+    public boolean isConvertible() {
+        return Convertible;
+    }
+
+    public void setConvertible(boolean Convertible) {
+        this.Convertible = Convertible;
+    }
+
+    public boolean isParkingBrake() {
+        return parkingBrake;
+    }
+
+    public void setParkingBrake(boolean parkingBrake) {
+        this.parkingBrake = parkingBrake;
+    }
+    
+    public static void main(String[] args) {
+          Car c=new Car();
+          c.pressStartButton();
+          c.pressAcceleratorButton();
+          
+          Car c2=new Car();
+          c2.pressAcceleratorButton();
+          
+          Car c3=new Car("red", 100, true, true);
+          c3.pressAcceleratorButton();
+          c3.setColour("black");
+          System.out.println("Colour of c3:" + c3.getColour());
+    }
+    
+}
+  	</pre>
+  	<h4>Output:</h4>
+  	<pre style="background-color: #F2F2F2; border: 1px solid black;">
+  		
+You can press the star button
+You can press the accelerator button
+Colour:
+Engine power:0
+Convertible:false
+parking brake:false
+You can press the accelerator button
+Colour:
+Engine power:0
+Convertible:false
+parking brake:false
+You can press the accelerator button
+Colour:red
+Engine power:100
+Convertible:true
+parking brake:true
+Colour of c3:black
+  	</pre>
+  </p>
+
+ <div class="problem"><b>TIPS</b>:A class often has method four groups. Constructors, getters, setters and other logic methods. Any method that is put in the class will operate on fields in its class.</div><br/><br/>
+ <a name="package"></a>
+  <h2>Package</h2>
+ <p>A <em>package</em> is a namespace that organizes a set of related classes and interfaces. Conceptually you can think of packages as being similar to different folders on your computer.</p>
+ <br/>
+ <p>Because software written in the Java programming language can be composed of hundreds or thousands of individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.</p>
+ <p>[see more at <a href="https://docs.oracle.com/javase/tutorial/java/concepts/package.html" target="_blank">Oracle]</a></p>
+  <p>[see more at <a href="https://www.geeksforgeeks.org/packages-in-java/" target="_blank">other page]</a></p>
+  <br/>
+  <p><h3>Creating a package</h3></p><br/>
+  <p>To create a package, you choose a name for the package and put a package statement with that name at the top of every source file that contains the types (classes, interfaces, enumerations, and annotation types) that you want to include in the package.</p><br/>
+  <p>The package statement (for example, <em>package mypkg;</em>) must be the first line in the source file. There can be only one package statement in each source file, and it applies to all types in the file.</p><br/>
+  <img src="images/package.png"><br/>
+  <a href="https://docs.oracle.com/javase/tutorial/java/package/createpkgs.html" target="_blank">[read more]</a><br/><br/>
+ <a name="accessmodifier"></a>
+ <h2>Access modifier</h2>
+ <p>To specify the visibility of a class member (i.e. any attribute or method), we use:<br/>
+   <ul>
+   	   <li>private: -</li>
+   	   <li>public: +</li>
+   	   <li>protected: #</li>
+   	   <li>default: if don't any notation, it is treated as default </li>
+   </ul> 
+   <p>these keywords are called <b>access modifier</b></p><br/>
+   <img src="images/encapsulation20.png"><br/>
+   <p>Let's understand the access modifiers in Java by a simple table.</p>
+   <img src="images/encapsulation21.png"><br/><br/>
+  <span>private:</span><br><br/>
+  <p>The private access modifier is accessible only within the class.</p><br/>
+  <p>We cut the method main in the file Car.java. Paste it to the other file named Tester.java.</p>
+
+  	<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Tester {
+        public static void main(String[] args) {
+          Car c=new Car();
+          c.pressStartButton();
+          c.pressAcceleratorButton();
+          
+          Car c2=new Car();
+          c2.pressAcceleratorButton();
+          
+          Car c3=new Car("red", 100, true, true);
+          c3.pressAcceleratorButton();
+          c3.setColour("black");
+          System.out.println("Colour of c3:" + c3.getColour());
+          //access the instance variable Colour of c
+          c.Colour="Gray"; // error
+    }
+}
+</pre>
+<p>In the method main, Using <b>c.Colour="Gray"</b> will cause an error because it is private data. Also , all private members can not access from other classes</p><br/>
+<span>public</span><br/><br/>
+<p>The <b>public</b> access modifier is accessible everywhere.</p>
+<p>In the above example, the Car class is public to can use it everywhere. In the Tester.java, we can also access to public methods. </p><br/><br/>
+<span>default</span><br/><br/>
+<p>If you don't use any modifier, it is treated as default by default. The default modifier is accessible only within package. It cannot be accessed from outside the package. It provides more accessibility than private. But, it is more restrictive than protected, and public.</p><br/>
+<p>Edit the file Car.java</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+package A;
+public class Car {
+    //fields
+    private String Colour;
+    private int EnginePower;
+    private boolean Convertible;
+    private boolean parkingBrake;
+    ...
+    void pressStartButton(){
+        System.out.println("You can press the star button");
+    }
+}
+</pre>
+<p>Edit the file Tester.java</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+package B;
+import A.Car;
+public class Tester {
+        public static void main(String[] args) {
+          Car c=new Car();
+          c.pressStartButton();        // error
+          c.pressAcceleratorButton();
+          
+          Car c2=new Car();
+          c2.pressAcceleratorButton();
+          
+          Car c3=new Car("red", 100, true, true);
+          c3.pressAcceleratorButton();
+          c3.setColour("black");
+          System.out.println("Colour of c3:" + c3.getColour());
+    }
+}
+</pre>
+<p>Because the method <b>pressStartButton()</b> is default, in the method main we can not invoke this.</p><br/>
+
+<span>protected</span><br/><br/>
+<p>The protected access modifier is accessible within package and outside the package but through inheritance only. </p><br>
+<p><em>[the <a href="#">link</a> to get demo ]</em></p><br/><br/>
+<span>Summary</span><br/><br/>
+	 <ul>
+	    <li>Encapsulation is a way of packaging data and methods together into one unit. [read <a href="https://www.w3schools.in/java-tutorial/encapsulation" target="_blank">more</a>]</li>
+	    <li>To achieve encapsulation, declare fields as private</li>
+        <li>Provide public get and set methods to access and update the value of a private variable</li>
+        <li>The constructor is a special member function that an object invokes at creation time, the name of the constructor is the name of the class, not have return types</li>
+        <li>The compiler inserts an empty body constructor into any class definition that does not declare a constructor</li>
+        <li>The current values are storing in instance variables of a object is called the state </li>
+	 </ul>
+</section>
+<section>
+  <h2>Course Slide</h2>
+   <ul>
+      <li><a href="resource/Encapsulation.pdf" download>Encapsulation.pdf</a> </li>
+   </ul><br/>
+  
+</section>
+<section>
+	<a name="workshop"></a>
+  <h2>Workshop</h2>
+   <ul>
+      <li>Complete the <a href="workshop/workshop3.pdf" download> workshop3</a> </li>
+   </ul><br/>
+  
+</section>
+</body>
+</html>

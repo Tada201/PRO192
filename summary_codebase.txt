@@ -1,0 +1,55 @@
+PRO192 Course Website - Codebase Summary
+
+1. Project Overview and Purpose
+This project is a single-page application (SPA) built with React and TypeScript, designed as a comprehensive course website for PRO192: Object Oriented Programming using Java. The website provides interactive lessons, examples, and resources to help students learn object-oriented programming concepts effectively.
+
+2. Technology Stack and Dependencies
+- React 18 with TypeScript for building the user interface.
+- Vite as the build tool and development server.
+- Tailwind CSS for styling and responsive design.
+- React Router DOM for client-side routing.
+- Lucide React for iconography.
+- React Syntax Highlighter for displaying code snippets.
+- ESLint and TypeScript ESLint for code linting and quality.
+- PostCSS and Autoprefixer for CSS processing.
+
+3. Project Structure and Key Directories
+- src/: Contains the main source code including components, pages, contexts, hooks, and data.
+  - components/: Reusable UI components including navigation (Navbar, Sidebar) and section content components.
+  - pages/: Main page components such as Home and SectionPage.
+  - data/: Contains course data such as the sections array defining course topics.
+  - contexts/: React context providers like SettingsContext.
+  - hooks/: Custom React hooks including keyboard navigation and translation.
+- public/: Static assets like favicon, media files.
+- Org_code/: Extensive collection of course materials in HTML, Markdown, and images supporting the educational content.
+- Configuration files for ESLint, Tailwind CSS, TypeScript, Vite, and package management at the root.
+
+4. Main App Architecture and Routing
+- The app entry point is src/main.tsx which mounts the App component.
+- App.tsx sets up React Router with two main routes:
+  - "/" renders the Home page listing all course sections.
+  - "/section/:sectionId" renders detailed content for each course section.
+- Navigation is handled via Navbar and Sidebar components with support for toggling and keyboard navigation.
+- The app uses a SettingsProvider context for managing global settings.
+
+5. Course Content Structure and Data
+- Course sections are defined in src/data/sections.ts as an array of objects with id, icon, and translation keys.
+- Each section corresponds to a dedicated React component in src/components/sections/ that renders detailed educational content.
+- Sections cover topics such as Introduction, Foundations, Encapsulation, Inheritance, Polymorphism, Arrays, Collections, Dynamic Memory, Exception Handling, and File I/O.
+- The SectionPage component dynamically loads the appropriate section component based on the route parameter.
+
+6. Key UI Components and Features
+- Navbar: Top navigation bar with menu toggle.
+- Sidebar: Collapsible sidebar showing course sections with icons.
+- Home Page: Displays a hero section and a grid of course section cards.
+- Section Pages: Detailed lesson content with navigation to previous and next sections.
+- Scroll restoration on route changes.
+- Keyboard navigation support for accessibility.
+
+7. Educational Content and Resources
+- The Org_code directory contains extensive course materials including HTML pages, Markdown documents, images, and slides.
+- Section components include rich textual explanations, diagrams, and downloadable resources.
+- The content emphasizes core object-oriented programming principles such as encapsulation, inheritance, and polymorphism.
+- Academic policies and learning outcomes are also presented within the course content.
+
+This summary provides an overview of the codebase structure, technologies, and educational content organization for the PRO192 course website.

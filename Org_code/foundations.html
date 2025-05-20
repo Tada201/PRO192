@@ -1,0 +1,169 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Foundations</h2>
+	<a href="#JVM">Java Virtual Machine</a>|
+	<a href="#platform">Java Platform</a>|
+	<a href="#getStart">The first Java program</a>|
+	<a href="#datatype">Data types & Variables</a>|
+    <a href="#array">Arrays</a>|
+    <a href="#operator">Operators</a>|
+    <a href="#logicConstruct">Logic constructs</a>
+	<br/>
+</nav>
+<section>
+   	 <a name="JVM"></a>
+   	 <h3>Java Virtual Machine</h3>
+   	 <p>The Java Virtual Machine is an abstract computing machine. Like a real computing machine, it has an instruction set and manipulates various memory areas at run time. It is reasonably common to implement a programming language using a virtual machine; the best-known virtual machine may be the P-Code machine of UCSD Pascal [see <a href="http://en.wikipedia.org/wiki/Java_virtual_machine
+" target="_blank">Wiki</a> for a detailed exposition].
+   	
+     </p>
+     <img src="images/JVM.png" alt="JVM image"/>	
+     <a name="platform"></a>
+     <h3>Java Platform</h3>
+     <p>A platform is the hardware or software environment in which a program runs.
+        <br/>The Java platform has two components:
+		<ul><li>The Java Virtual Machine</li>
+		    <li>The Java Application Programming Interface (API)</li></ul></p>
+	 <img src="images/JavaPlatform.png"/>
+     <a name="getStart"></a>
+     <h3>The first Java program in the NetBeans</h3>
+     <p>This program will show the string “Hello World” to the screen.
+		<br/>Steps
+		<ol><li>Create a new Java NetBeans project</li>
+			<li>Add a Java class</li>
+			<li>Write code</li>
+			<li>Compile/Run the program</li></ol></p>
+		<img src="images/firstProgram.png"/>	
+        <img src="images/step2.png"/>
+        <img src="images/step22.png"/>
+        <img src="images/step3.png"/>
+        <img src="images/step4.png"/><br/>
+     <span>Keywords and Identifiers</span><br/>
+     <p>Keywords: Almost of them are similar to those in C language<br/>
+        Naming Convention:
+        <img src="images/keyword.png"/>
+        <br/>Java is a case-sensitive language
+        <br/>Identifiers must be different to keywords 
+
+     </p>
+     <a name="datatype"></a>
+     <h3>Data Type</h3>
+     <p>The types of the Java programming language are divided into two categories: primitive types and reference types</p><br/>
+     <span>Primitive Type </span><br/>
+     <p>A primitive is a simple non-object data type that represents a single value. Java’s primitive data types are:
+     <img src="images/datatype.png"/><br/>
+     <span>Declaration</span>	
+    <table id="tbl1"><tr><td valign="top">
+     	 <br/><i style="background-color: cyan;">Type    var [=Initial value] ;</i> 
+         <br/><br/>
+         <I>for example:</I><br/> 
+         int   RollID; <br/>
+         char  type='A'; </td>
+         <td  valign="top"><img src="images/PrimaryDataType.png" style="transform: scale(0.8);"></td></tr>
+     </table>   
+    
+     <span>Reference Type</span><br/>
+     <p>Following are the reference types in Java.
+        <br/><br/><b><em>Class</em></b> types − This reference type points to an object of a class.
+        <br/><br/><b><em>Array</em></b> types − This reference type points to an array.
+        <br/><br/><b><em>Interface</em></b> types − This reference type points to an object of a class which implements an interface.
+     </p>
+     <p><br/>
+		Once we create a variable of these types (i.e. when we create an array or object, class or interface).<br/>These variables only store the address of these values.<Br/>Default value of any reference variable is null. A reference variable can be used to refer any object of the declared type or any compatible type.<br/><br/>
+		<table id="tbl"><tr><td valign="top">
+			       <i>for example:</i>  <br/>
+		              String s=new String("Hello");</td>
+		           <td><img src="images/referenceDatatype.png" style="transform: scale(0.8)"></td>      
+		        </tr><a name="flag"></a> 
+		        <tr><td>int[] ar;<br/>ar= new int[3];<br/>ar[0]=1; ar[1]=2; ar[2]=3;</td>
+		            <td valign="top">
+		            	<img src="images/array.png" style="transform: scale(0.8)"></td>      	
+		       </tr>
+        </table> 
+     </p>    
+
+     <br/>
+     <span>Scope</span><br/>
+     <p>The scope of a declaration is the portion of a program over which that declaration is visible.  Scopes include
+     <ul>
+        <li>function scope - visible to the source code within the function</li>
+        <li>class scope - visible to the member functions of the class</li>
+		<li>block scope - visible to the code block</li>
+        <li>global sope -visible to the entire program</li>
+        <li>file scope - visible to the source code within the file</li>
+    </ul>
+	  </p>
+      <p>The scope of a non-global declaration begins at the declaration and ends at the closing brace for that declaration. A non-global declaration is called a local declaration.</p>  
+</p>
+	 <img src="images/scope.png"/><br/>
+	 <a name="array"></a>
+     <span>One Dimensional Arrays</span><br/>
+     <p>An array is a container object that holds a fixed number of values of a single type.
+The length of an array is established when the array is created.
+Each item in an array is called an element, and each element is accessed by its numerical index.<br/>
+      <img src="images/array2.png"/></p>
+      <br/><span> Declaration</span><br/><br/>
+          	int[] ar;  <em>[for detail <a href="foundations.html#flag">click</a> here]</em>	<br/> <br/>float anArrayOfFloats[]; <br/><br/>
+
+            <span>Creating, Initializing, and Accessing an Array</span><br/>
+	        int[] anArray = new int[10];<br/>You can use the arraycopy method from System class to copy an array to a other array.<br/></p>
+	  <img src="images/copyarray.png" /><br/>
+	  output:  <em>caffein</em><br/>
+	  In the above example, we copy the array <em>copyFrom</em>, beginning at the specified position <em>2</em>, to the specified position <em>0</em> of the array <em>copyTo</em>. The number of components copied is <em>7</em>.<br/><br/>
+	 <span>Multiple Dimensional Arrays</span> <br/>
+	    Consider the example:<img src="images/2DarrayCode.png"><br/>
+	    <p>This is a sample memory map of the above code <br/>
+	    <img src="images/2Darray.png"><br/> 
+     <p>
+	 	we have created a multidimensional array named <em>m</em>,it holds 8 elements. The variable m is storing the value:<em>8000</em> that is the address of an array. m can be seen as an array of one – dimensional array. <br/>
+        In the above example, the statement: m[1]=replacement to assign 1000 to m at index 1.
+        Now, the m can hold 12 elements.<br/>
+        output: <em>1,2,3,4,5,6,7,8,9,10,2001,2002</em><br/>
+
+	 </p><br/>
+	 <a name="operator"></a>
+     <span>Operators</span><br/>
+     <img src="images/Operator.png"/>
+     <img src="images/operator2.png"> 
+     <img src="images/operator3.png"> 
+
+     <em>[for detail <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html" target="_blank">click</a> here]</em><br/><br/>
+     <a name="logicConstruct"></a>
+     <span>Logic constructs</span><br/><br/>
+     <p>The statements inside your source files are generally executed from top to bottom, in the order that they appear. Control flow statements, however, break up the flow of execution by employing decision making, looping, and branching, enabling your program to conditionally execute particular blocks of code. This section describes the decision-making statements (if-then, if-then-else, switch), the looping statements (for, while, do-while), and the branching statements (break, continue, return) supported by the Java programming language.</p><br/>
+     <p>if statement <em>[for <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank">detail</a>]</em></p>
+     <p>switch statement <em>[for <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank">detail</a>]</em></p>
+	 <p>while,do,for statements <em>[for <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">detail</a>]</em></p><br/>
+	 <span>Summary</span><br/><br/>
+	 <ul>
+	    <li>a declaration associates an identifier with a type</li>
+        <li>a definition attaches meaning to an identifier and is an executable statement</li>
+        <li>the scope of a declaration is that part of the program throughout which the declaration is visible</li>
+        <li>The types of the Java are primitive types and reference types</li>
+	 </ul>
+</section>
+<section>
+  <h2>Course Slide</h2>
+   <ul>
+     
+       <li><a href="resource/Learning the Java Language.pdf" >Learning the Java Language.pdf</a></li>
+    
+   </ul>
+   
+</section>
+<section>
+    <h2>Reading</h2>
+    <ul>
+       <li><a href="resource/Download & Install JDK & NetBeans 8.pdf" download>Download & Install JDK & NetBeans 8.pdf</a> </li>
+       <li><a href="resource/Get start.pdf" >How to compile and run a Java program.pdf</a> </li>
+       <li><a href="resource/Numbers and Strings.pdf" >Number and String in Java.pdf</a></li>
+    </ul>
+</section>
+</body>
+</html>

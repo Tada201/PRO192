@@ -1,0 +1,492 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Polymorphism</h2>
+	<a href="#overriding">Overloading & Overriding</a>|
+	<a href="#abstractclass">Abstract Class </a>|
+	<a href="#interface">Interface</a>|	
+	<a href="#workshop">Workshop</a>|
+</nav><br/><br/>
+<section>
+<a name="overriding"></a>
+<h2>Overloading & Overriding</h2>
+<p>In previous topic, we have explored the idea that classes can appear in many forms. But the concept of polymorphism does not end there. This topic will explore the term "Polymorphism".  </p>
+<div class="classDIV2"><b>Definition</b>: Methods can also appear in many different forms.</div><br/>
+
+<p>The ability allows many versions of a method based on overloading and overriding methods techniques.
+</p>
+<div class="classDIV2">
+<b>Overloading</b>: A class can have some methods which have the same name but their parameter types are different.</div><br/>
+<div class="classDIV2">
+<b>Overriding</b>: A method in father class can be overridden in it’s derived classes (body of a method can be replaced in derived classes</div>
+</p><br/><br/>
+<span>Overloading</span><br/><br/>
+<p><em<Overloading</em> addresses variations in a function's signature.  Overloading allows binding of function calls with the same identifier but different argument types to function definitions with correspondingly different parameter types.  It is a syntactic abbreviation that associates the same function identifier with a variety of function definitions by distinguishing the bindings based on function signature.  The same function name can be used with a variety of unrelated argument types.  Each set of argument types has its own function definition.  The compiler binds the function call to the matching function definition. </p><br/>
+
+<p>Back our AntiqueShop example, a good example here would be a constructor method. The job of a constructor method is to initialise an object. Depending on what data is available at the
+time the object is created, it may need to be initialised in different ways. More than
+one constructor can be created to deal with the different scenarios. They must all
+carry the same method name as their class, or they would not be categorised as
+constructor methods But they will need to differ in the pattern and/or number of
+formal parameters so that the compiler can work out which of the constructors is the
+correct one to call.</p><br/>
+<p>Consider constructors in the Vase class.</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Vase extends Item
+{ 
+    private int height;
+    private String material;
+
+	public Vase(){    
+	     super();
+         height=0;
+         material="";
+    }
+    public Vase(int height, String material){
+        super();
+        this.height=height;
+        this.material=material;
+    }
+    public Vase(int value, String creator, int height, String material){
+         super(value, creator);
+         this.height=height;
+         this.material=material;
+    }
+    ...
+  } 
+</pre><br/>
+<p>We say that the Vase constructor method is polymorphic as it appears in three forms. We can describe the form using the method signatures: </p>
+<div class="problem" style="width: 40%; height: 70px;">
+	Vase();<br/>
+	Vase(int , String );<br/>	
+    Vase(int , String , int , String );
+
+</div>
+<p>When we instantiate instances of the Vase object, the compiler will look for a
+matching constructor signature. Each signature must be unique or the compiler will
+report an error. If the compiler cannot locate a matching signature, it will report an
+error. So in our AntiqueShop class, we now have two options to creates Vase
+objects:</p>
+<div class="problem" style="width: 40%; height: 70px;">
+	...<br/>
+	Vase v1 = new Vase(0,"Dave", 50, "bronze");<br/>
+    Vase v2 = new Vase(100,"plaster");<br/>
+	...
+
+</div><br/>
+<p>Method polymorphism also extends to general methods. We can have as many
+alternative implementations of a method as we like as long as they are all unique in
+their signature of formal parameters. Note that uniqueness by returned value type
+alone is not sufficient. </p><br/>
+<p>we could create two trimPainting() methods in our Painting class</p>
+
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Painting extends Item
+{ 
+    
+	private int height;
+	private int width;
+	public boolean isWatercolour;
+	public boolean isFramed;
+
+	...
+	public void trimPainting()
+	{
+		width -= 1;
+	}
+	public void trimPainting(int amount)
+	{
+		width -= amount;
+	}
+} 
+</pre><br/>
+<p>The first version is for when we have not been given a value for the amount to
+reduce the width, and thus use a default value of 1. The second can be used where
+we have been given an amount to reduce the width by</p><br/><br/>
+
+<span>Overriding</span><br/><br/>
+<p>Overriding addresses the multiplicity of definitions available for a function call.  Overriding allows the multiplicity of member function definitions by selecting the definition from the set of definitions based on the object's type.  The type is a type that belongs to an inheritance hierarchy. All member function definitions share the same name throughout the hierarchy.</p><br/><br/>
+<p> In the workshop4, we have implemented as follows:</p>
+<img src="images/polymorphism1.png"/><br/>
+<p>For now, we know that the Item superclass and the Vase subclass have the same task that is to get values from the user to assign to them fields. It is not good OO design, when we put the <em>input</em> method in the Item class and  the <em>inputVase</em> method in the Vase class.</p><br/>
+<p>There are some reasons as follows: </p>
+<ul>
+	<li>Methods have the same purpose they should be named the same. </li>
+	<li>To reduce explicit casting when we need to call methods of subclasses in the <a href="inheritance.html#casting">dynamic type</a>.</li>
+</ul><br/><br/>
+<span>How to get a good OO design?</span><br/><br/>
+<p>We edit the class diagram as follows:</p>
+<img src="images/polymorphism2.png"><br/>
+<p>In the above diagram, the <em>input/output methods</em> in the father class can be <b>overridden</b> in its derived classes (body of a method can be replaced in derived classes). </p><br/>
+
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Item
+{
+	protected int value;
+	protected String creator;
+    ...
+    public int getValue(){
+         return value;
+    }
+    public void input()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a value:");
+        value=sc.nextInt();
+        System.out.println("enter a creator:");
+        creator=sc.nextLine();
+    }
+    public void output()
+    {
+        System.out.println("enter a value:" +value);
+        System.out.println("enter a creator:" + creator);
+    }
+      
+} 
+</pre><br/><br/>
+
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Vase extends Item
+{ 
+	private int height;
+	private String material;
+
+	...
+	@override
+	public void input()
+	{
+		super.input();      //call the input method version of the father class
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a height:");
+		height=sc.nextInt();
+		Sytem.out.println("enter a material:");
+		material=sc.nextLine();
+    }
+    @override
+    public void output()
+    {
+    	super.output();   //call the output method version of the father class
+    	System.out.println("enter a value:" +value);
+    	System.out.println("enter a creator:" + creator);
+    }
+      
+} 
+</pre><br/>
+<p>Use the <b>@Override annotation</b> that instructs the compiler that you intend to override a method in the superclass (you may not use it because overriding is the default in Java).</p>
+<p>The main method, we use the input/output methods</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class AntiqueShop
+{ 
+	public static void main(String[] args){
+	
+		Vase v1 = new Vase();
+		v1.input();
+		v1.output();
+		System.out.println("value of v1:" + v1.getValue());
+
+		Item tmp=v1;
+		System.out.println("value of tmp:" + tmp.getValue());
+		tmp.input();
+		tmp.output();	
+    } 
+} 
+</pre><br/>
+<h4>How can overridden methods be determined?</h4>
+The below figure describes the memory map when the code runs. 
+<img src="images/polymorphism3.png">
+<p>Observe the above figure, the Vase class inherites the getValue() method of the Item class.  Therefore, the function prototype <em>"getValue() 3000"</em> is copied to the table of contents of the Vase class. The input/output method in the Item class is overridden in the subclass, so other version is put in the table of contents of the Vase class.</p><br/>
+<p>The <em>v1</em> object is pointing to the <em>9000</em> address that contains all fields and the address of Vase class definition<em>800</em>. At the time <em>v1.input()</em> is run, Java finds v1 in the stack, jumps to address 9000, reads address 800, jumps to Vase class definition, finds the input method in the table of contents, get address 5000, jump to code at 5000( the method of the Vase class)</p><br/>
+<p>When <em>v1.getValue()</em> is run, Java finds the getValue() in the table of contents at the address 800, jump to the address 300 where implements getValue of the superclass.</p><br/>
+<p>Because tmp is pointing to the v1 object, so <em> tmp.input()</em> is a version of the Vase class</p><br/><br/>
+
+<div class="problem"><b>Rule</b>:If you are overriding any method, overridden method (i.e. declared in subclass) must not be more restrictive.  <em>[ read <a href="https://www.javatpoint.com/access-modifiers#accessoverriding" target="_blank">more</a> ]</em>  </div><br/>
+<span>FUNCTION BINDINGS</span><br/><br/>
+<p>The compiler binds a function call to a function definition using an object's type.  The object's type determines the member function to call in the inheritance hierarchy. </p>
+<p>The binding of a member function can take either of two forms:
+    <ul>
+  	 <li>static binding - based on the object's static type. It occurs at compile time.</li>
+  	 <li>dynamic binding - based on the object's dynamic type. The method call is bonded to the method body at runtime.</li>     
+  </ul>
+</p>
+<p>In above code, the <em>getValue</em> method implemention is determined/known at compile time. The input method implementation only is determined at runtime.</p><br/><br/>
+<span>Class Object</span><br/><br/>
+
+<p>Class <b>Object</b> is the root of the class hierarchy. Every class has Object as a superclass. All objects, including arrays, implement the methods of this class. The Object’s toString() method  returns a string consisting of the name of the class of which the object is an instance, the at-sign character `@', and the unsigned hexadecimal representation of the hash code of the object.</p><br/>
+<p>We edit the main method in the AntiqueShop to call the toString method</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class AntiqueShop
+{ 
+	public static void main(String[] args){
+	
+		Item tmp = new Item();
+		<font style="background-color: cyan;">System.out.print(tmp.toString());</font>
+		<font style="background-color: cyan;">System.out.print(tmp);</font>
+    } 
+} 
+</pre><br/>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+	<b>The output</b>: Item@12543  Item@12543
+</pre>
+<p><em>[read <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#toString()" target="_blank">more</a>]</em></p>
+<div class="problem"><b>TIPS</b>:It is recommended that all subclasses override this method. The result should be a concise but informative representation that is easy for a person to read</div>
+
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Item{
+	
+	@override
+	public String toString(){
+         return  value + "-" + creator;
+    }
+}	
+public class AntiqueShop
+{ 
+	public static void main(String[] args){
+	
+		Item tmp = new Item(1000,"Paris");
+		<font style="background-color: cyan;">System.out.print(tmp.toString());</font>
+		<font style="background-color: cyan;">System.out.print(tmp);</font>
+    } 
+} 
+</pre><br/>
+<p>Because the Item class overrides the toString method from the Object superclass. So, the output will be</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+       1000-Paris  1000-Paris
+</pre><br/><br/>
+<a name="abstractclass"></a>
+<h2>Abstract Class</h2>
+<p>We have previously discussed that super classes tend to be more abstract in their
+nature than the more concrete sub classes. The abstract nature is a reflection of the
+fact that they are OO design constructs intended as a means of avoiding code
+duplication, and of modelling some real-world problem domain in a more reflective
+manner.</p><br/>
+<p>In the Antique shop example, now we want to add more a new method named <em>displayPrice</em>,  by design we want it is the common method to all classes. We will put it into the Item class, so all subclasses can inherit. The task of this method to print out the price of Item based on width, height, or weight fields. But, when you implement it in the Item class, <em>this class is not able to support any fields as: width, height, or weight </em>. <em>This is where we meet the notion of an abstract method.</em></p><br/>
+<div class="classDIV3"><b>An abstract method</b>: is a signature definition of a method but with no
+implementation. The implementation of the method falls to any class that
+extends the class that defined the abstract method.</div>
+<p>First, let’s add the definition of the abstract method to Item:</p>
+
+<pre style="background-color: #F2F2F2; border: 1px solid black;width:100%;">
+public abstract class Item
+{ 
+	protected int value;
+	ptotected String creator;
+	....
+	public abstract void displayPrice(); 
+	//it is abstract because we lack information to implement.  
+	...         
+} 
+</pre><br/>
+<p>Note also the addition of the <b>abstract</b> keyword in the class definition itself.
+The Item class has become an abstract class.</p>
+<div class="classDIV2"><b>An abstract class</b> is a class that contains one or more abstract method
+definitions.</div>
+<p>We turn to the sub classes. they extend Item, they inherit the <em>abstract</em> definition of the <em>displayDetails()</em> method. They are now required to provide a concrete implementation of that method. The compiler will not regard the sub class definitions as complete until they provide such a concrete implementation. So, using the Vase class as an example:</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Vase extends Item
+{ 
+	private int height;
+	private String material;
+
+	...
+	public void displayPrice()
+	{
+		if(height<100)
+		   System.out.println("The price is " +  1000 +"$");
+		else
+		   System.out.println("The price is " +  2000 +"$");   
+	}
+}
+</pre><br/>
+<p>We are obliged to similarly equip the Statue and Painting sub classes:</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Statue extends Item
+{ 
+	private int weight;
+	private String colour;
+
+	...
+	public void displayPrice()
+	{
+		if(weight<100)
+		   System.out.println("The price is " +  2000 +"$");
+		else
+		   System.out.println("The price is " +  3000 +"$");   
+	}
+}
+</pre><br/>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Painting extends Item
+{ 
+	private int width;
+	private int height;
+	private boolean isWaterColour;
+	private boolean isFramed;
+
+	...
+	public void displayPrice()
+	{
+		if(width<100 && height<100)
+		   System.out.println("The price is " +  5000 +"$");
+		else
+		   System.out.println("The price is " +  5000 +"$");   
+	}
+}
+</pre><br/>
+<div class="problem"><b>Rule</b>:A sub class is only complete once it has provided concrete implementations of all abstract methods inherited from its parent super class/classes.</div>
+<div class="problem"><b>Rule</b>:Abstract classes cannot be instantiated</div>
+<br/><br/>
+<p>[For other abstract class explanation, see the <a href="https://www.techopedia.com/definition/17408/abstract-class#:~:text=Definition%20-%20What%20does%20Abstract%20Class%20mean?%20In,Abstract%20classes%20are%20useful%20when%20creating%20hierarchies" target="_blank">link</a>]</p><br/>
+<a name="interface"></a>
+<h2>Interfaces</h2>
+<p>Objects define their interaction with the outside world through the methods that they expose. Methods form the object's interface with the outside world</p><br/>
+<p><em>for example</em>: The buttons on the front of your television set, the buttons are the interface between you and the electrical wiring on the other side of its plastic casing. You press the "power" button to turn the television on and off.  [<a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html" target="_blank">see more</a>]</p><br/>
+
+<p>Some OO languages, notably C++, support the notion of multiple inheritance
+whereby a class can inherit attributes and methods from more than one parent class.
+This can lead to some challenges where attributes and methods of the same name
+are to be inherited from different places. <em>Java only permits inheritance from one
+direct parent class</em>. However, there are situations where it is desirable to able to take
+on responsibilities from other classes. This is achieved through the concept of an
+<em>interface</em>.</p><br/>
+<p>As the name suggests, an interface provides a single consistent specification of
+some functionality that a class is intended to provide. A Java interface can <em>only
+contain method signatures and fields</em>. It cannot, in general, contain an implementation of the methods. This makes an interface look like an abstract class where all of the methods are abstract. A class can then opt to implement the interface. The implementing class is then obliged to provide a concrete implementation of the interface methods.</p>  <br/>
+<p>An interface is a reference type that can contain <b>only constants, initialized fields,  static methods, prototypes (abstract methods), default method, and nested types</b>.</p><br/>
+[ read more: <a href="https://www.tutorialspoint.com/Java-static-method" target="_blank">static methods</a>, <a href="https://www.tutorialspoint.com/java8/java8_default_methods.htm" target="_blank">default method</a>]
+<br/><br/>
+
+<p>In real world, Interfaces look like: </p>
+<img src="images/interface1.png"/>
+<ul>
+	 <li>A customer/calling code will interact with the menu/interface to accomplish something.</li>
+	 <li>A chef/called code/implementation code will perform this requirement.</li>
+</ul><br/><br/>
+<p>In Java, we will create an interface as follows:</p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public interface Menu
+{ 
+	public int unitPrice=10;
+	public void getSalad();
+	public void getBeefsteak();
+}
+</pre><br/>
+<p>Consider the above code, the menu contains two methods that user can call, without any information about how it does what it does. The methods have no body to them. That's because we're leaving the body's definition to the implementing class.</p><br/>
+
+<p>The Chef class will implement these methods </p>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Chef implements Menu
+{ 
+	private String name;
+	....
+	public void getSalad(){
+	   System.out.println("This is a salad");
+    }
+	public void getBeefsteak(){
+		System.out.println("This is a beefsteak");
+    }
+}
+</pre><br/>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Tester
+{ 
+	public static void main(String[] args){
+        Menu m=new Chef();
+        m.getSalad();
+        m.getBeefsteak();
+   } 
+}
+</pre><br/>
+<p>Now, it's polymorphism feature. When you instantiate the Chef class, you can assign it to a variable declared as an Menu (an Interface type) rather than Chef (a class type)</p><br/><br/>
+
+<span>Why And When To Use Interfaces?</span><br/><br/>
+<ul>
+	<li>It will be the core of some classes</li>
+	<li>Java does not support "multiple inheritance" (a class can only inherit from one superclass). However, it can be achieved with interfaces, because the class can implement multiple interfaces. Note: To implement multiple interfaces, separate them with a comma (see example below). [ refer to <a href="https://www.w3schools.com/java/java_interface.asp" target="_blank">w3school</a>]</li>  
+</ul><br/><br/>
+<span>Multiple Interfaces</span>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public interface VIPMenu
+{ 
+	public int unitPrice2=100;
+	public void getSalmon();
+	public void getFishEggs();
+}
+</pre><br/>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Chef implements Menu, VIPMenu
+{ 
+	private String name;
+	....
+	public void getSalad(){
+	   System.out.println("This is a salad");
+    }
+	public void getBeefsteak(){
+		System.out.println("This is a beefsteak");
+    }
+    public void getSalmon(){
+      System.out.println("This is a salmon meal");
+    }
+	public void getFishEggs(){
+      System.out.println("This is a fish eggs");
+    }
+}
+</pre><br/>
+<pre style="background-color: #F2F2F2; border: 1px solid black;">
+public class Tester
+{ 
+	public static void main(String[] args){
+        Menu m=new Chef();
+        m.getSalad();
+        m.getBeefsteak();
+
+        VIPMenu m2=new Chef();
+        m2.getSalmon();
+   } 
+}
+</pre><br/>
+<div class="problem">Notes on Interfaces:
+<ul>	
+<li>Like abstract classes, interfaces cannot be used to create objects</li>
+<li>Interface methods do not have a body - the body is provided by the "implement" class
+On implementation of an interface, you must override all of its methods</li>
+<li>Interface methods are by default abstract and public</li>
+<li>Interface attributes are by default public, static and final  [read <a href="https://www.tutorialspoint.com/can-interfaces-have-static-methods-in-java" target="_blank">more</a>]</li>
+<li>An interface cannot contain a constructor (as it cannot be used to create objects)</li>
+<li>An interface can extend other interface [read <a href="https://www.tutorialspoint.com/how-to-extend-interfaces-in-java" target="_blank">more</a>] </li>
+<li></li>
+</ul>
+</div>
+<p>Links to get more  <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html" target="_blank"> [Nested classes] </a>  <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html" target="_blank">[Local Classes]</a>  <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html" target="_blank">[Anonymous classes] </a> </p><br/>
+ <span>Summary</span><br/><br/>
+	 <ul>
+	    <li>Polymorphism is a concept of object-oriented programming</li>
+        <li>Polymorphism is the ability of an object to take on many forms</li>
+        <li>Overloading and overriding are a technology to implement polymorphism feature.</li>
+        <li>In OOP occurs when a parent class/ interface reference is used to refer to a child class object</li>
+   	 </ul>
+
+
+</section>
+
+<section>
+  <h2>Course Slide</h2>
+   <ul>
+      <li><a href="resource/Polymorphism.pdf" download>Polymorphism.pdf</a> </li>
+   </ul><br/>
+  
+</section>
+<section>
+	<a name="workshop"></a>
+  <h2>Workshop</h2>
+   <ul>
+      <li>Complete the <a href="workshop/workshop5.pdf" download> workshop5</a> </li>
+   </ul><br/>
+  
+</section>
+</body>
+</html>

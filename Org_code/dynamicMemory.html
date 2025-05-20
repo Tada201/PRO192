@@ -1,0 +1,104 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Memory Management in Java</h2>
+	<a href="#memory">Static and dynamic Heap and Stack</a>|
+	<a href="#allocation">Dynamic Allocation</a>|	
+	<a href="#deallocation">Dynamic Deallocation</a>|
+	<a href="#gc">Garbage Collection</a>|
+</nav>
+<section>
+	<br/><br/>
+	<p>In Java, memory management is the process of allocation and de-allocation of objects, called Memory management. Java does memory management automatically. Java uses an automatic memory management system called a garbage collector. Thus, we are not required to implement memory management logic in our application.</p><br/>
+  <p> <em>read more</em> <a href="https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html" target="_blank"> memory management at docs.oracle.com </a></p>
+  <p><em> read more</em> <a href="https://www.javatpoint.com/memory-management-in-java" target="_blank"> memory management at javatpoint.com</a></p>
+  
+  <br/>
+	<p>In Java, the process of allocation is done directly when you create an object with the new operation and indirectly when you call a method that has local variables or arguments.</p><br/>
+	<p>Local data of a method includes return data, parameters, variables are declared in the body of the method.</p><br/>
+	<p>Local data of a method is allocated space on the <b>stack</b> and are discarded when the method exits, but objects are allocated space on the <a>heap</a> and have a longer lifetime.</p><br/>
+	<a name="memory"></a>
+	<h2>Static and dynamic Heap and Stack</h2>
+	<p><b>Static heap</b> contains class declarations when these classes are loaded. we can have a static method, static class, static block, static variable. How? We can use <b>static</b> keyword with methods, variables, class, and blocks. </p><br/>
+    <p><b>Dynamic heap</b> is the run time data area from which the memory for all java  objects and arrays is allocated. The heap is created when the Java Virtual Machine starts up and may increase or decrease in size while the application runs. When an object is not used (garbage), it’s memory can be de-allocated.  [see <a href="https://www.betsol.com/blog/java-memory-management-for-java-virtual-machine-jvm/#Heap_Memory" target="_blank">more</a>]</p> <br/>
+    <p>A Java <b> stack</b> is part of your computer’s memory where temporary variables, When a method is invoked, it creates a new block in the stack for that particular method. The new block will have all the local values, as well as references to other objects that are being used by the method. When the method ends, the new block will be erased and will be available for use by the next method. for <a href="https://dzone.com/articles/stack-vs-heap-understanding-java-memory-allocation" target="_blank">detail</a></p><br/>
+    <p>Consider the code</p>      
+    <img src="images/memory.png"/><br/>
+
+    Let's analyze this step-by-step:
+    <ol>
+    <li> When the program runs, the class definition <b>Tester</b> is loaded to static heap. </li>
+    <li>Upon running the method main, a space in stack memory is create to store variables: age and sc.
+          <ul>
+          	 <li>The value of the variable age is stored directly in stack memory </li>
+          	 <li>The reference sc is used to point to the object Scanner in the heap memory   
+          </ul> </li>    
+     <li>When the method main finishes, the space on the stack of the method main is discarded. So, the variable age and sc are out of its code, they will are killed.</li>  
+     <li>But the object Scanner is allocated on the heap still exists. This object is treated as <em>garbage</em>.</li>
+    </ol>      
+    <img src="images/memory2.png">
+    <a name="allocation"></a>
+  <h2>Dynamic Allocation</h2> 
+      <p>Consider the code:<br/><br/>
+      	    public static void main(String[] args){<br/>
+      	         &nbsp;&nbsp;&nbsp;int a[]=new int[5];   [1] <br/>
+      	         &nbsp;&nbsp;&nbsp;String s=new String("hello");  [2] <br/>}<br/>
+      	<br/>
+      	When the method main runs, the variable a, s are allocated in the stack memory. The variable a, s are reference ( see again <a href="foundations.html#datatype" >variable in Java</a>). <br/><br/>
+      	At [1], the keyword <b>new</b> is used to allocate contiguous memory dynamically in the <b>heap memory</b> for an array of 5 elements and returns the address of the array's first element.	The reference <b>a</b> is storing this address.<br/><br/>
+      	At [2], the keyword <b>new</b> is used to allocate a block memory in the heap to contain the text "hello" and returns the address of this block.  <br/>
+        <img src="images/allocation.png"/><br/><br/>
+        If you do not want the variable a,s point to anything address, you can use the keyword <b>null</b>.<br/><br/>
+
+         int a[]=null; <br/>
+         String s=null; <br/>
+   <a name="deallocation"></a>      
+   <h2>Dynamic Deallocation</h2>      
+
+   <p>In Java, you never explicitly free the memory that are allocated. instead, Java provides <b> automatic garbage collection</b>.</p>
+
+   <p>In the example above, local variables in the method main will be allocated when the method main runs and <b>deallocated automatically</b> when the method terminates. </p><br/>
+   	<p>Also, unused objects on the heap memory will be deallocated by the Java system</p>
+   	<p>Consider a complete example,<br/><br/>
+   	<img src="images/memory3.png"/><br/>	
+    <p>Scope of a variable begins at the line where it is declared  and ends at the closing bracket of the block containing it </p><br/>
+    <p>When the program runs to line 19, the variables s2, y are out of scope( they are no longer used) and the String object which was created at line 16 became garbage. This object will is <b>deallocated automatically garbage collection</b></p><br/>
+
+    <p>At line 21, the statement <b>s1=null</b> will make the String object which was created at line 13 became garbage.</p>
+
+    <a name="gc"></a>
+    <h2>Garbage Collection</h2>
+    <p>JVM supports the garbage collector in order to free Java programmers from explicitly managing heap </p>	<br/>
+    <p>It is called by JVM only. We can not activate it.</p><br/>
+    <p>Java heap is managed by 2 lists: Free block list, Allocated block list [read  <a href="https://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf" target="_blank">a paper to get more</a>]</p><br/>
+    <p>After very much times for allocating and de-allocating memory, fragmented and free blocks are not contiguous</p><br/>
+    <p>The runtime system keeps track of the memory that is allocated and is able to determine whether that memory is still useable.</p><br/>
+    <p>Garbage collector has the lowest priority. It runs only when the system heap becomes exhausted.</p><br/>
+    <p>If objects are garbage they are deallocated automatically by garbage collector.</p><br/><br/>
+    [ see <a href="https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html" target="_blank"> Garbage Collection in Java</a>]
+</p><br/>
+   <span>Summary</span>
+   <ul>
+   	  <li>The memory available to an application at run-time consists of static and dynamic heap and stack</li>
+   	  <li>Static memory contains class definitions and shared data of the application</li>
+   	  <li>Java supports the dynamic memory to an application at run-time upon request</li>
+   	  <li>The keyword <b>new</b> allocates a region of dynamic memory and returns its starting address</li>
+   	  <li>We store the address of dynamically allocated memory in the reference variable.</li>
+      <li>Deallocation is made by Garbage Collector  </li>
+     
+   </ul>
+</section>
+<section>
+  <h2>Course Slide</h2>
+   <ul>
+      <li><a href="resource/Memory Management in Java.pdf" download>Memory Management in Java.pdf</a> </li>
+   </ul><br/>
+  
+</section>
+</body>
+</html>

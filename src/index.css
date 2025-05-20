@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color blindness mode styles */
+
+.color-blindness-protanopia {
+  filter: url('#protanopia');
+}
+
+.color-blindness-deuteranopia {
+  filter: url('#deuteranopia');
+}
+
+.color-blindness-tritanopia {
+  filter: url('#tritanopia');
+}
+
+/* SVG filters for color blindness simulation */
+svg#color-blindness-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Add transition for all color/background changes */
+*, *::before, *::after {
+  @apply transition-colors duration-200;
+}
+
+/* High contrast mode styles */
+html.high-contrast {
+  @apply text-black dark:text-white;
+}
+
+html.high-contrast .dark\:text-gray-200,
+html.high-contrast .dark\:text-gray-300,
+html.high-contrast .dark\:text-gray-400 {
+  @apply dark:text-white;
+}
+
+html.high-contrast .text-gray-500,
+html.high-contrast .text-gray-600,
+html.high-contrast .text-gray-700 {
+  @apply text-black;
+}
+
+html.high-contrast .bg-gray-50 {
+  @apply bg-white;
+}
+
+html.high-contrast .dark\:bg-gray-800 {
+  @apply dark:bg-black;
+}
+
+/* Transition styles for text sizes */
+html.text-sm {
+  font-size: 0.875rem;
+}
+
+html.text-base {
+  font-size: 1rem;
+}
+
+html.text-lg {
+  font-size: 1.125rem;
+}
+
+/* Add transition for main content area */
+main {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Styles for route transitions */
+.route-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.route-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.route-transition-exit {
+  opacity: 1;
+}
+
+.route-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Font style classes */
+html.font-sans {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html.font-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic-Regular';
+  src: url('/media/fonts/opendyslexic-0.91.12/compiled/OpenDyslexic-Regular.woff2') format('woff2'),
+       url('/media/fonts/opendyslexic-0.91.12/compiled/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic-Bold';
+  src: url('/media/fonts/opendyslexic-0.91.12/compiled/OpenDyslexic-Bold.woff2') format('woff2'),
+       url('/media/fonts/opendyslexic-0.91.12/compiled/OpenDyslexic-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+html.font-opendyslexic-regular {
+  font-family: 'OpenDyslexic-Regular', serif;
+}
+
+html.font-opendyslexic-bold {
+  font-family: 'OpenDyslexic-Bold', serif;
+}
+
+/* New font classes for Open Sans and PT Serif */
+html.font-open-sans {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+html.font-pt-serif {
+  font-family: 'PT Serif', Georgia, serif;
+}
+
+.dark .info-section {
+  background-color: #121212; /* black background for dark mode */
+  color: #D3D3D3;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  border: 1px solid #000000; /* black border */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.5em;
+}
+
+.info-section {
+  background-color: #BEE3F8; /* light blue background for light mode */
+  color: #1E3A8A; /* dark blue text */
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  border: 1px solid #3B82F6; /* blue border */
+  border-radius: 8px;
+  box-shadow: none;
+  line-height: 1.5em;
+}
+
+@media (prefers-color-scheme: light) {
+  .info-section {
+    background-color: #3B82F6; /* blue background */
+    color: #FFFFFF; /* white text for contrast */
+    border: 1px solid #2563EB; /* darker blue border */
+    box-shadow: none;
+  }
+}
+
+/* Hide scrollbar for sidebar nav */
+aside nav::-webkit-scrollbar {
+  display: none;
+}
+
+aside nav {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.info-section {
+  background-color: #BEE3F8; /* light blue background for light mode */
+  color: #1E3A8A; /* dark blue text */
+  border: 1px solid #3B82F6; /* blue border */
+  box-shadow: none;
+}
+
+.info-section h2 {
+  color: #1E40AF; /* darker blue for headings */
+}
+
+.info-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.info-section ul {
+  padding-left: 20px;
+}
+
+.info-section ul li {
+  margin-bottom: 10px;
+}

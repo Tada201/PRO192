@@ -1,0 +1,100 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Exception</h2>
+	<a href="#exception">What Is an Exception</a>|
+	<a href="#kind">Kinds of Exception</a>|	
+	<a href="#fix">How to fix</a>|
+	<a href="#example">Examples</a>|
+	<a href="#workshop">Workshop</a>   
+</nav>
+<br/><br/>
+<section>
+	<a name="exception"></a>
+	<h2>Exception</h2>
+	<p> An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.</p>
+	<p>When an error occurs within a method, the method creates an object and hands it off to the runtime system. The object, called an exception object, contains information about the error, including its type and the state of the program when the error occurred. Creating an exception object and handing it to the runtime system is called throwing an exception.<br/>  <em>[for <a href="http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html" target="_blank">detail</a>]</em></p>  
+    <br/>
+	<p>For example:
+	<br/>a user might type an invalid filename; 
+	<br/>An accessed file does not exist of might contain corrupted data; 
+	<br/>a network link could fail; 
+    <br/>…
+    <br/><br/>Circumstances of this type are called exception conditions in Java and are represented using objects (All exceptions descend from the java.lang.Throwable).<br/>
+    <br/>Consider the code that cause an exception:
+    <img src="images/exception.png">  
+    At the row 4, the method main causes one error and this method creates an exception object, its type is ArithmaticException. And then JVM will throw it to the method main. Because the method main we do nothing to control this error, the output looks like this.<br/><br/>
+    when the error occurs at the row 4, the statement at the row 5 is dismissed.    </p>
+    <br/><br/>
+    <a name="kind"></a>
+    <h2>Kinds of Exception</h2>
+    <span>Checked exception</span><br/><br/>
+    Checked excepions are the exceptions that are checked at compile time. You must be handled by either the try-catch mechanism or the throws-declaration mechanism.<br/><br/>
+
+    <em>for example:</em>
+    <img src="images/exception2.png"/>
+    In the above example, the method FileReader() is throwing an exception to here. So, you must use ty-catch mechanism or throws mechanism to handle.<br/><br/>
+	<span>Unchecked exception</span><br/><br/>
+    An unchecked exception is an exception that occurs at the time of execution. These are also called as Runtime Exceptions. The program won’t give a compilation error. Most of the times these exception occurs due to the bad data provided by user during the user-program interaction
+    <em>for example:</em>
+    <img src="images/exception1.png"/><br/>
+    If you have declared an array of size 5 in your program, and trying to call the 6th element of the array then an error occurs.<br/><br/>
+    <em>[for <a href="https://stackify.com/types-of-exceptions-java/" target="_blank">detail</a>]</em><br/><br/>
+    <a name="fix"></a>
+    <h2>How to fix</h2>
+    We can use try-catch mechanism or throws mechanism to handle to avoid this error.<br/><br/>
+    <span>try-catch mechanism</span>
+    <br/><br/>Consider the flow and syntax:
+    <img src="images/exception3.png"/>
+    <br/> The <em>try</em> statement allows you to define a block of code to be tested for errors while it is being executed.<br/><br/>
+    The <em>catch</em> statement allows you to define a block of code to be executed, if an error occurs in the try block.<br/><br/>
+    The <em>finally</em> statement lets you execute code, after try...catch, regardless of the result<br/><br/>
+    <div class="problem">Note: You cannot use finally without a try block. the Finally block is optional</div>
+    In the example  <b>DemoException2</b>, we will edit
+    <img src="images/exception5.png"/><br/>
+    <p>
+    When the program runs to the row 14, if the file name "computer.txt" does not exist then an exception object is created(its type is FileNotFoundException) by the method main and JVM will throw the object to catch block, the variable e is used to store the address of the object. In the catch block, you can use the variable a to get error information.
+    <br/>
+    <b>The Output will be :</b><br/>
+         something are wrong<br/>
+         try-catch is finished<br/><br/></p>
+    <p>     
+    In the example <b>ExceptionDemo_1</b>, we will edit
+    <img src="images/exception4.png"/><br/>
+    When you try to get 6th elements, an exception object is created(its type is ArrayIndexOutOfBoundsException). JVM will throws the object to catch block.
+    <br/>
+    <b>The output will be:</b><br/>
+    1,2,3,4,5,something are wrong<br/>
+    try-catch is finished<br/><br/></p>
+    <span>throws mechanism</span><br/><br/>
+    In the example <b>DemoException2</b>, the error occurs in the main, to fix a checked exception we use <b>throws</b> keyword</b>. We will edit :<br>
+    <img src="images/exception6.png"/>
+    <b>The output will be:</b> something are wrong if the file name "computer.txt" does not exist.
+    <a name="example"></a>
+    <h2>Examples</h2>
+    The code below to print out "age is 20 or older" if age is below 20 or input a text.
+    <br>
+    <img src="images/exception7.png"/><br/>
+    When the code runs to the row 20, if you input a text "hello" then this method will create an exception object and JVM will throw it to the catch block to handle. The output will be : <img src="images/exception8.png"/><br/>
+    If you input 18 then the statement <b>throw new Exception()</b> will create an exception object. This object will be thrown to the catch block. The output will be:<br/><img src="images/exception9.png"/><br/> 
+    <br/>
+    <span>Summary</span><br/><br/>
+	 <ul>
+	    <li>A try block is always followed by a catch block, which handles the exception that occurs in associated try block.</li>
+        <li>A single try block can have multiple catch blocks associated with it. see <em><b> <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/language/catch-multiple.html" target="_blank">catching multiple exceptions in java.</a> </b></em></li>
+        <li>A try statement may be nested inside either the try or catch block of another try statement. see <em><b> <a href="https://beginnersbook.com/2013/04/nested-try-catch/#:~:text=When%20a%20try%20catch%20block,that%20that%20catch%20block%20executes." target="_blank">Nesting of try/catch Blocks</a></b></em></li>
+        <li>When you write a method that causes an exception. If you do not want to handle this error you can throw it to another method to handle the error by using throws keyword</li>
+        <li>You can create your own exception Classes, see<a href="https://www.javatpoint.com/custom-exception" target="_blank">Custom Exception Classes</a></li>
+
+	 </ul>
+    <h2>Course slide</h2>
+    <ul><li><a href="resource/Exception Handling.pdf" download>Exceptions.pdf</a></li></ul>
+    <a name="workshop"></a>
+    <h2>Workshop</h2>
+    <ul><li>Complete the <a href="workshop/workshop2.pdf" download>workshop2</a> </li></ul>
+</section>
