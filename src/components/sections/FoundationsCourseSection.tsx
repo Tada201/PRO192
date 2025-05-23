@@ -1,42 +1,4 @@
-import { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
-
-const CodeBlock = ({ code, language }: { code: string; language: string }) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="relative">
-      <button
-        onClick={handleCopy}
-        className="absolute top-2 right-2 p-2 rounded bg-gray-700 hover:bg-gray-600 transition-colors flex items-center gap-2"
-        title={copied ? "Copied!" : "Copy code"}
-      >
-        <img src="/copy.ico" alt="Copy" className="w-4 h-4" />
-        <span className="text-white text-sm">{copied ? "Copied!" : "Copy code"}</span>
-      </button>
-      <SyntaxHighlighter 
-        language={language} 
-        style={vscDarkPlus} 
-        customStyle={{ 
-          borderRadius: '0.375rem', 
-          padding: '1rem', 
-          margin: '1rem 0',
-          paddingRight: '3rem' // Make space for the copy button
-        }} 
-        className="text-sm shadow-md max-w-full overflow-x-auto"
-      >
-        {code}
-      </SyntaxHighlighter>
-    </div>
-  );
-};
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const FoundationsCourseSection = () => {
   return (
@@ -50,22 +12,11 @@ const FoundationsCourseSection = () => {
       </p>
       <img src="/Org_code/images/JVM.png" alt="Java Virtual Machine" className="mb-4 rounded shadow" />
 
-      <h3 className="text-xl font-semibold mb-2">Java Platform</h3>
-      <p className="mb-4">
-        A platform is the hardware or software environment in which a program runs.  
-        The Java platform has two components:
-      </p>
-      <ul className="list-disc list-inside mb-4">
-        <li>The Java Virtual Machine</li>
-        <li>The Java Application Programming Interface (API)</li>
-      </ul>
-      <img src="/Org_code/images/JavaPlatform.png" alt="Java Platform" className="mb-4 rounded shadow" />
+      <h3 className="text-xl font-semibold mb-2">Platform Independence</h3>
+      <p className="mb-4">The key that allowed Java to solve both the security and the portability problems is that the output of a Java compiler is not executable code. Rather, it is ByteCode - a highly optimized set of instructions designed to be executed by the Java run-time system, which is called the Java Virtual Machine (JVM).</p>
 
-      <h3 className="text-xl font-semibold mb-2">The first Java program in the NetBeans</h3>
-      <p className="mb-4">
-        This program will show the string “Hello World” to the screen.  
-        Steps:
-      </p>
+      <h3 className="text-xl font-semibold mb-2">Demo: First Program</h3>
+      <p className="mb-4">Steps:</p>
       <ol className="list-decimal list-inside mb-4">
         <li>Create a new Java NetBeans project</li>
         <li>Add a Java class</li>
@@ -81,33 +32,22 @@ const FoundationsCourseSection = () => {
       <h3 className="text-xl font-semibold mb-2">Keywords and Identifiers</h3>
       <p className="mb-4">
         Keywords: Almost all of them are similar to those in C language.  
-        Naming Convention:  
       </p>
-      <img src="/Org_code/images/keyword.png" alt="Keywords and Identifiers" className="mb-4 rounded shadow" />
-      <p className="mb-4">
-        Java is a case-sensitive language.  
-        Identifiers must be different from keywords.
-      </p>
+      <img src="/Org_code/images/keyword.png" alt="Keywords" className="mb-4 rounded shadow" />
 
-      <h3 className="text-xl font-semibold mb-2">Data Type</h3>
+      <h3 className="text-xl font-semibold mb-2">Data Types</h3>
       <p className="mb-4">
-        The types of the Java programming language are divided into two categories: primitive types and reference types.
+        Java is a strongly typed language. Following are the data types and their declarations.
       </p>
+      <p className="mb-4">Declaration:</p>
+      <CopyableCodeBlock language="java">
+{`Type var [=Initial value];`}
+      </CopyableCodeBlock>
 
-      <h4 className="text-lg font-semibold mb-2">Primitive Type</h4>
-      <p className="mb-4">
-        A primitive is a simple non-object data type that represents a single value. Java’s primitive data types are:
-      </p>
-      <img src="/Org_code/images/datatype.png" alt="Primitive Data Types" className="mb-4 rounded shadow" />
-      <CodeBlock 
-        language="java" 
-        code={`Type var [=Initial value];`}
-      />
-      <CodeBlock 
-        language="java" 
-        code={`int RollID;
+      <CopyableCodeBlock language="java">
+{`int RollID;
 char type='A';`}
-      />
+      </CopyableCodeBlock>
       <img src="/Org_code/images/PrimaryDataType.png" alt="Primary Data Types" className="mb-4 rounded shadow" />
 
       <h4 className="text-lg font-semibold mb-2">Reference Type</h4>
@@ -115,22 +55,16 @@ char type='A';`}
         Following are the reference types in Java.
       </p>
       <ul className="list-disc list-inside mb-4">
-        <li><strong>Class</strong> types − This reference type points to an object of a class.</li>
-        <li><strong>Array</strong> types − This reference type points to an array.</li>
-        <li><strong>Interface</strong> types − This reference type points to an object of a class which implements an interface.</li>
+        <li>array</li>
+        <li>class object</li>
+        <li>interface</li>
       </ul>
-      <p className="mb-4">
-        Once we create a variable of these types (i.e. when we create an array or object, class or interface). These variables only store the address of these values. Default value of any reference variable is null. A reference variable can be used to refer any object of the declared type or any compatible type.
-      </p>
-      <p className="mb-4 font-mono bg-gray-100 dark:bg-gray-700 p-2 rounded">
-        String s=new String("Hello");
-      </p>
-      <CodeBlock 
-        language="java" 
-        code={`int[] ar;
+
+      <CopyableCodeBlock language="java">
+{`int[] ar;
 ar= new int[3];
 ar[0]=1; ar[1]=2; ar[2]=3;`}
-      />
+      </CopyableCodeBlock>
       <img src="/Org_code/images/referenceDatatype.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
       <img src="/Org_code/images/array.png" alt="Array" className="mb-4 rounded shadow" />
 
@@ -156,11 +90,10 @@ ar[0]=1; ar[1]=2; ar[2]=3;`}
         Each item in an array is called an element, and each element is accessed by its numerical index.
       </p>
       <img src="/Org_code/images/array2.png" alt="One Dimensional Array" className="mb-4 rounded shadow" />
-      <CodeBlock 
-        language="java" 
-        code={`int[] ar;  // for detail click here
+      <CopyableCodeBlock language="java">
+{`int[] ar;  // for detail click here
 float anArrayOfFloats[];`}
-      />
+      </CopyableCodeBlock>
 
       <h3 className="text-xl font-semibold mb-2">Multiple Dimensional Arrays</h3>
       <p className="mb-4">
@@ -210,8 +143,8 @@ float anArrayOfFloats[];`}
       <h3 className="text-xl font-semibold mb-2">Reading</h3>
       <ul className="list-disc list-inside mb-4">
         <li><a href="/Org_code/resource/Download & Install JDK & NetBeans 8.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Download & Install JDK & NetBeans 8.pdf</a></li>
-        <li><a href="/Org_code/resource/Get start.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">How to compile and run a Java program.pdf</a></li>
-        <li><a href="/Org_code/resource/Numbers and Strings.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Number and String in Java.pdf</a></li>
+        <li><a href="/Org_code/resource/Get start.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Get Start.pdf</a></li>
+        <li><a href="/Org_code/resource/Numbers and Strings.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Numbers and Strings.pdf</a></li>
       </ul>
     </div>
   );

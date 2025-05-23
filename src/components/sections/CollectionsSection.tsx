@@ -1,5 +1,3 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
 import CopyableCodeBlock from './CopyableCodeBlock';
 
 const CollectionsSection = () => {
@@ -84,7 +82,7 @@ Rectangle r = list.get(0); // No cast needed`}
         </div>
         <div className="mb-4">
           <b>Test cases:</b>
-          <SyntaxHighlighter language="text" style={vscDarkPlus} showLineNumbers={false} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+          <CopyableCodeBlock language="text">
 {`Student managing Program
 1-Add new student
 2-Search a student
@@ -93,7 +91,7 @@ Rectangle r = list.get(0); // No cast needed`}
 5-List all
 6-Quit
 Choose 1..6:`}
-          </SyntaxHighlighter>
+          </CopyableCodeBlock>
           <img src="/Org_code/images/7.0.6l.gif" alt="Student managing menu" className="my-4" />
         </div>
       </section>

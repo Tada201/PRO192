@@ -17,9 +17,22 @@ export default {
           800: '#1e40af',
           900: '#1e3a8a',
         }
+      },
+      animation: {
+        'fade-in-out': 'fadeInOut 2s ease-in-out',
+      },
+      keyframes: {
+        fadeInOut: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '10%': { opacity: '1', transform: 'translateY(0)' },
+          '90%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(-10px)' },
+        }
+      },
+      animation: {
+        'fade-in-out': 'fadeInOut 2s ease-in-out'
       }
     },
   },
   plugins: [],
 };
- 

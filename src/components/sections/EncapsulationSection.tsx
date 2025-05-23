@@ -1,84 +1,4 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
-
-const javaCode = `public class Car {
-    //fields
-    private String Colour;
-    private int EnginePower;
-    private boolean Convertible;
-    private boolean parkingBrake;
-    //methods
-    public Car(){
-        Colour="";
-        EnginePower=0;
-        Convertible=false;
-        parkingBrake=false;
-    }
-
-    public Car(String Colour, int EnginePower, boolean Convertible, boolean parkingBrake) {
-        this.Colour = Colour;
-        this.EnginePower = EnginePower;
-        this.Convertible = Convertible;
-        this.parkingBrake = parkingBrake;
-    }
-    
-    public void pressStartButton(){
-        System.out.println("You can press the star button");
-    }
-    public void pressAcceleratorButton(){
-        System.out.println("You can press the accelerator button");
-        System.out.println("Colour:"+ Colour);
-        System.out.println("Engine power:"+ EnginePower);
-        System.out.println("Convertible:"+ Convertible);
-        System.out.println("parking brake:"+ parkingBrake);
-    }
-
-    public void setColour(String Colour) {
-        this.Colour = Colour;
-    }
-
-    public String getColour() {
-        return Colour;
-    }
-
-    public int getEnginePower() {
-        return EnginePower;
-    }
-
-    public void setEnginePower(int EnginePower) {
-        this.EnginePower = EnginePower;
-    }
-
-    public boolean isConvertible() {
-        return Convertible;
-    }
-
-    public void setConvertible(boolean Convertible) {
-        this.Convertible = Convertible;
-    }
-
-    public boolean isParkingBrake() {
-        return parkingBrake;
-    }
-
-    public void setParkingBrake(boolean parkingBrake) {
-        this.parkingBrake = parkingBrake;
-    }
-    
-    public static void main(String[] args) {
-          Car c=new Car();
-          c.pressStartButton();
-          c.pressAcceleratorButton();
-          
-          Car c2=new Car();
-          c2.pressAcceleratorButton();
-          
-          Car c3=new Car("red", 100, true, true);
-          c3.pressAcceleratorButton();
-          c3.setColour("black");
-          System.out.println("Colour of c3:" + c3.getColour());
-    }
-}`;
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const EncapsulationSection = () => {
   return (
@@ -122,19 +42,58 @@ const EncapsulationSection = () => {
           <li>To specify the visibility of a class member from other classes (i.e. any attribute or method), these notations(-,+,#,~) must be placed before the member's name. (In Java, '~' is replaced by ' '). <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">get more notations{'>'}</a></li>
         </ul>
         <p>Now, You will implement this class in Java. In your editor, create a new file named Car.java (<b>Note</b>: the file named the same as the class name). The code of Car class:</p>
-        <SyntaxHighlighter
-          language="java"
-          style={vscDarkPlus}
-          showLineNumbers={true}
-          customStyle={{
-            borderRadius: '0.375rem',
-            padding: '1rem',
-            margin: '1rem 0',
-          }}
-          className="text-sm shadow-md max-w-full overflow-x-auto"
-        >
-          {javaCode}
-        </SyntaxHighlighter>
+        <CopyableCodeBlock language="java">
+{`public class Car {
+    //fields
+    private String Colour;
+    private int EnginePower;
+    private boolean Convertible;
+    private boolean parkingBrake;
+    
+    //methods
+    public Car(){
+        Colour="";
+        EnginePower=0;
+        Convertible=false;
+        parkingBrake=false;
+    }
+
+    public Car(String Colour, int EnginePower, boolean Convertible, boolean parkingBrake) {
+        this.Colour = Colour;
+        this.EnginePower = EnginePower;
+        this.Convertible = Convertible;
+        this.parkingBrake = parkingBrake;
+    }
+    
+    public void pressStartButton(){
+        System.out.println("You can press the star button");
+    }
+    
+    public void pressAcceleratorButton(){
+        System.out.println("You can press the accelerator button");
+        System.out.println("Colour:"+ Colour);
+        System.out.println("Engine power:"+ EnginePower);
+        System.out.println("Convertible:"+ Convertible);
+        System.out.println("parking brake:"+ parkingBrake);
+    }
+
+    public void setColour(String Colour) {
+        this.Colour = Colour;
+    }
+
+    public String getColour() {
+        return Colour;
+    }
+
+    public int getEnginePower() {
+        return EnginePower;
+    }
+
+    public void setEnginePower(int EnginePower) {
+        this.EnginePower = EnginePower;
+    }
+}`}
+        </CopyableCodeBlock>
         <img src="/Org_code/images/demoCarClass.png" alt="Demo Car Class" className="my-4" />
         <img src="/Org_code/images/outputCarClass.png" alt="Output Car Class" className="my-4" />
       </section>
@@ -184,19 +143,58 @@ const EncapsulationSection = () => {
         <p>The same above idea, if you want to get the value of one instance variable you should add more a method <b>getColour()</b></p>
         <img src="/Org_code/images/encapsulation16.png" alt="Encapsulation16" className="my-4" />
         <p>You can also add more other getters/setters. The completed code:</p>
-        <SyntaxHighlighter
-          language="java"
-          style={vscDarkPlus}
-          showLineNumbers={true}
-          customStyle={{
-            borderRadius: '0.375rem',
-            padding: '1rem',
-            margin: '1rem 0',
-          }}
-          className="text-sm shadow-md max-w-full overflow-x-auto"
-        >
-          {javaCode}
-        </SyntaxHighlighter>
+        <CopyableCodeBlock language="java">
+{`public class Car {
+    //fields
+    private String Colour;
+    private int EnginePower;
+    private boolean Convertible;
+    private boolean parkingBrake;
+    
+    //methods
+    public Car(){
+        Colour="";
+        EnginePower=0;
+        Convertible=false;
+        parkingBrake=false;
+    }
+
+    public Car(String Colour, int EnginePower, boolean Convertible, boolean parkingBrake) {
+        this.Colour = Colour;
+        this.EnginePower = EnginePower;
+        this.Convertible = Convertible;
+        this.parkingBrake = parkingBrake;
+    }
+    
+    public void pressStartButton(){
+        System.out.println("You can press the star button");
+    }
+    
+    public void pressAcceleratorButton(){
+        System.out.println("You can press the accelerator button");
+        System.out.println("Colour:"+ Colour);
+        System.out.println("Engine power:"+ EnginePower);
+        System.out.println("Convertible:"+ Convertible);
+        System.out.println("parking brake:"+ parkingBrake);
+    }
+
+    public void setColour(String Colour) {
+        this.Colour = Colour;
+    }
+
+    public String getColour() {
+        return Colour;
+    }
+
+    public int getEnginePower() {
+        return EnginePower;
+    }
+
+    public void setEnginePower(int EnginePower) {
+        this.EnginePower = EnginePower;
+    }
+}`}
+        </CopyableCodeBlock>
         <div className="bg-gray-50 border-l-4 border-gray-400 p-4 my-2 dark:bg-gray-700 dark:border-gray-300 dark:text-white">
           <b>Output:</b>
           <pre className="whitespace-pre-wrap">You can press the star button
@@ -247,17 +245,7 @@ Colour of c3:black</pre>
         <h3 className="font-semibold mt-4">private</h3>
         <p>The private access modifier is accessible only within the class.</p>
         <p>We cut the method main in the file Car.java. Paste it to the other file named Tester.java.</p>
-        <SyntaxHighlighter
-          language="java"
-          style={vscDarkPlus}
-          showLineNumbers={true}
-          customStyle={{
-            borderRadius: '0.375rem',
-            padding: '1rem',
-            margin: '1rem 0',
-          }}
-          className="text-sm shadow-md max-w-full overflow-x-auto"
-        >
+        <CopyableCodeBlock language="java">
 {`public class Tester {
         public static void main(String[] args) {
           Car c=new Car();
@@ -275,7 +263,7 @@ Colour of c3:black</pre>
           c.Colour="Gray"; // error
     }
 }`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>In the method main, Using <b>c.Colour="Gray"</b> will cause an error because it is private data. Also , all private members can not access from other classes</p>
         <h3 className="font-semibold mt-4">public</h3>
         <p>The <b>public</b> access modifier is accessible everywhere.</p>
@@ -283,17 +271,7 @@ Colour of c3:black</pre>
         <h3 className="font-semibold mt-4">default</h3>
         <p>If you don't use any modifier, it is treated as default by default. The default modifier is accessible only within package. It cannot be accessed from outside the package. It provides more accessibility than private. But, it is more restrictive than protected, and public.</p>
         <p>Edit the file Car.java</p>
-        <SyntaxHighlighter
-          language="java"
-          style={vscDarkPlus}
-          showLineNumbers={true}
-          customStyle={{
-            borderRadius: '0.375rem',
-            padding: '1rem',
-            margin: '1rem 0',
-          }}
-          className="text-sm shadow-md max-w-full overflow-x-auto"
-        >
+        <CopyableCodeBlock language="java">
 {`package A;
 public class Car {
     //fields
@@ -320,19 +298,9 @@ public class Car {
         System.out.println("You can press the star button");
     }
 }`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>Edit the file Tester.java</p>
-        <SyntaxHighlighter
-          language="java"
-          style={vscDarkPlus}
-          showLineNumbers={true}
-          customStyle={{
-            borderRadius: '0.375rem',
-            padding: '1rem',
-            margin: '1rem 0',
-          }}
-          className="text-sm shadow-md max-w-full overflow-x-auto"
-        >
+        <CopyableCodeBlock language="java">
 {`package B;
 import A.Car;
 public class Tester {
@@ -350,7 +318,7 @@ public class Tester {
           System.out.println("Colour of c3:" + c3.getColour());
     }
 }`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>Because the method <b>pressStartButton()</b> is default, in the method main we can not invoke this.</p>
         <h3 className="font-semibold mt-4">protected</h3>
         <p>The protected access modifier is accessible within package and outside the package but through inheritance only.</p>

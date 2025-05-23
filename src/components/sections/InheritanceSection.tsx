@@ -254,9 +254,9 @@ This item is created by Test3</pre>
 `}
         </CopyableCodeBlock>
         <p>The <b>super</b> keyword refers to the super class</p>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>Note</b>: Where a sub class is to call a constructor in its parent class using the super() method call, it must be so as the first line of its own constructor. This is to ensure that objects are constructed from their most distant super class first.</div>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>Note</b>: A derived class does <b>not inherit a superclass constructor by default</b></div>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>Note</b>: If a constructor <i>does not explicitly invoke a superclass constructor</i>, the Java compiler <i>automatically inserts a call to the no-argument constructor of the superclass</i>. If the super class does not have a no-argument constructor, you will get a compile-time error. Object does have such a constructor, so if Object is the only superclass, there is no problem.</div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 text-yellow-900 dark:bg-yellow-800 dark:border-yellow-500 dark:text-yellow-100"><b>Note</b>: Where a sub class is to call a constructor in its parent class using the super() method call, it must be so as the first line of its own constructor. This is to ensure that objects are constructed from their most distant super class first.</div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 text-yellow-900 dark:bg-yellow-800 dark:border-yellow-500 dark:text-yellow-100"><b>Note</b>: A derived class does <b>not inherit a superclass constructor by default</b></div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 text-yellow-900 dark:bg-yellow-800 dark:border-yellow-500 dark:text-yellow-100"><b>Note</b>: If a constructor <i>does not explicitly invoke a superclass constructor</i>, the Java compiler <i>automatically inserts a call to the no-argument constructor of the superclass</i>. If the super class does not have a no-argument constructor, you will get a compile-time error. Object does have such a constructor, so if Object is the only superclass, there is no problem.</div>
         <p>Similarly, we add constructors to other sub classes</p>
         <p>We use the Java keyword <b>super</b> as the qualifier for calling a superclass method:  <br/><b>super.methodName(arguments);</b></p>
         <p>for example:</p>
@@ -281,7 +281,7 @@ public class Vase extends Item{
         </CopyableCodeBlock>
         <p>In a Vase subclass, The "displayDiscount" method has the same signature (name, plus the number and the type of its parameters) and return type as in the superclass. It is called the override the superclass's method. We will learn the override method in the next topic</p>
         <p>Whenever we wish to invoke the version of super's methods (for example "displayDiscount") that was defined by our superclass. We use the <b>"super"</b> keyword</p>
-        <div className="bg-gray-50 border-l-4 border-gray-400 p-4 my-2 dark:bg-gray-700 dark:border-gray-300 dark:text-white">
+        <div className="bg-gray-200 border-l-4 border-gray-600 p-4 my-2 text-gray-900 dark:bg-gray-700 dark:border-gray-300 dark:text-white rounded">
           <b>Output:</b>
           <pre className="whitespace-pre-wrap">discounting ...
 and taking ...</pre>
@@ -333,7 +333,7 @@ and taking ...</pre>
 } 
 `}
         </CopyableCodeBlock>
-        <div className="bg-gray-50 border-l-4 border-gray-400 p-4 my-2">
+        <div className="bg-gray-200 border-l-4 border-gray-600 p-4 my-2 text-gray-900 dark:bg-gray-700 dark:border-gray-300 dark:text-white rounded">
           <b>Output:</b>
           <pre className="whitespace-pre-wrap">tmp is pointing to the Vase object</pre>
         </div>
@@ -395,7 +395,7 @@ System.out.println("tmp is pointing to the Vase object");
 ((Statue)tmp).setColour("Gray"); // causes an error
 ...`}
         </CopyableCodeBlock>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2"><b>Note</b>: In Java, The Object class is the parent class of all the classes by default.</div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 text-yellow-900 dark:bg-yellow-800 dark:border-yellow-500 dark:text-yellow-100"><b>Note</b>: In Java, The Object class is the parent class of all the classes by default.</div>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Summary</h2>
