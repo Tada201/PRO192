@@ -17,10 +17,6 @@ export default defineConfig({
           dest: 'resource',
         },
         {
-          src: 'Org_code/*.html',
-          dest: '',
-        },
-        {
           src: 'Org_code/*.xlsx',
           dest: '',
         },
