@@ -14,7 +14,7 @@ const ExceptionSection = () => {
           <li>File not found or corrupted</li>
           <li>Network link failure</li>
         </ul>
-        <img src="/Org_code/images/exception.png" alt="Exception example" className="my-4" />
+        <img src="/images/exception.png" alt="Exception example" className="my-4" />
         <p className="mb-4">
           When an error occurs, the statement after the error is dismissed. The exception object contains information about the error, including its type and the state of the program when the error occurred.
         </p>
@@ -23,31 +23,31 @@ const ExceptionSection = () => {
         <h2 className="text-2xl font-semibold mb-2">Kinds of Exception</h2>
         <h3 className="text-xl font-semibold mb-2">Checked Exception</h3>
         <p className="mb-4">Checked exceptions are checked at compile time. You must handle them using try-catch or throws.</p>
-        <img src="/Org_code/images/exception2.png" alt="Checked Exception" className="my-4" />
+        <img src="/images/exception2.png" alt="Checked Exception" className="my-4" />
         <h3 className="text-xl font-semibold mb-2">Unchecked Exception</h3>
         <p className="mb-4">Unchecked exceptions occur at runtime (also called Runtime Exceptions). The program compiles, but may fail at runtime due to bad data or logic.</p>
-        <img src="/Org_code/images/exception1.png" alt="Unchecked Exception" className="my-4" />
+        <img src="/images/exception1.png" alt="Unchecked Exception" className="my-4" />
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">How to Fix</h2>
         <h3 className="text-xl font-semibold mb-2">try-catch Mechanism</h3>
-        <img src="/Org_code/images/exception3.png" alt="try-catch flow" className="my-4" />
+        <img src="/images/exception3.png" alt="try-catch flow" className="my-4" />
         <p className="mb-4">The <b>try</b> block contains code to test for errors. The <b>catch</b> block handles the error. The <b>finally</b> block (optional) runs after try/catch, regardless of the result.</p>
-        <img src="/Org_code/images/exception5.png" alt="try-catch example" className="my-4" />
+        <img src="/images/exception5.png" alt="try-catch example" className="my-4" />
         <p className="mb-4">If the file does not exist, an exception is thrown and caught. The output will be: <br /><b>something are wrong<br />try-catch is finished</b></p>
-        <img src="/Org_code/images/exception4.png" alt="ArrayIndexOutOfBounds example" className="my-4" />
+        <img src="/images/exception4.png" alt="ArrayIndexOutOfBounds example" className="my-4" />
         <p className="mb-4">If you try to access an invalid array index, an exception is thrown and caught. The output will be: <br /><b>1,2,3,4,5,something are wrong<br />try-catch is finished</b></p>
         <h3 className="text-xl font-semibold mb-2">throws Mechanism</h3>
-        <img src="/Org_code/images/exception6.png" alt="throws example" className="my-4" />
+        <img src="/images/exception6.png" alt="throws example" className="my-4" />
         <p className="mb-4">The <b>throws</b> keyword can be used to declare that a method may throw a checked exception.</p>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Examples</h2>
-        <img src="/Org_code/images/exception7.png" alt="Exception example code" className="my-4" />
+        <img src="/images/exception7.png" alt="Exception example code" className="my-4" />
         <p className="mb-4">If you input a text instead of a number, an exception is thrown and caught. The output will be:</p>
-        <img src="/Org_code/images/exception8.png" alt="Exception output 1" className="my-4" />
+        <img src="/images/exception8.png" alt="Exception output 1" className="my-4" />
         <p className="mb-4">If you input 18, the code throws a new Exception. The output will be:</p>
-        <img src="/Org_code/images/exception9.png" alt="Exception output 2" className="my-4" />
+        <img src="/images/exception9.png" alt="Exception output 2" className="my-4" />
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Summary</h2>

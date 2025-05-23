@@ -39,7 +39,7 @@ const FileIOSection: React.FC = () => (
         </table>
       </div>
       <span id="example" className="block text-xl font-semibold mb-2 mt-6">Example</span>
-      <img src="/Org_code/images/ioexample.png" alt="ioexample.png" className="my-4 max-w-full rounded border" />
+      <img src="/images/ioexample.png" alt="ioexample.png" className="my-4 max-w-full rounded border" />
       <p className="mb-2">In the above example, we need to import the library class <em>Scanner</em> from the package <em>java.util.Scanner</em>. To use this class at the row 10, we declare the variable sc and create an object from this class. Why do we need this? Do not worry, when you go to the topic <em>class and object</em>, you will be explained that why you do this.</p>
       <p className="mb-2">At the row 11, a message <em>Enter number of elements</em> is printed out.</p>
       <p className="mb-2">At the row 12, the statement <em>sc.nextLine()</em> to get a string from the user and then, we use <em>Integer.parseInt()</em> to convert the inputted string to the integer value.</p>

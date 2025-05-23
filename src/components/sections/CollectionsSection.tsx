@@ -36,15 +36,15 @@ const CollectionsSection = () => {
           <li>Reduces the effort required to design and implement APIs by not requiring you to produce ad hoc collections APIs.</li>
           <li>Fosters software reuse by providing a standard interface for collections and algorithms with which to manipulate them.</li>
         </ul>
-        <img src="/Org_code/images/7.01.gif" alt="Collections framework interface structure" className="my-4" />
-        <img src="/Org_code/images/7.0.1.1.gif" alt="Collection Implementations" className="my-4" />
+        <img src="/images/7.01.gif" alt="Collections framework interface structure" className="my-4" />
+        <img src="/images/7.0.1.1.gif" alt="Collection Implementations" className="my-4" />
         <p>For more details, see the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/package-tree.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Javadoc</a>.</p>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">List and ArrayList</h2>
         <p className="mb-4">All references to elements are stored in a one-dimensional array, called an array list. This organization can be used to store arbitrary elements and they can be duplicated.</p>
-        <img src="/Org_code/images/7.02.gif" alt="ArrayList demonstration" className="my-4" />
-        <img src="/Org_code/images/7.0.2.2.gif" alt="ArrayList characteristics" className="my-4" />
+        <img src="/images/7.02.gif" alt="ArrayList demonstration" className="my-4" />
+        <img src="/images/7.0.2.2.gif" alt="ArrayList characteristics" className="my-4" />
         <p className="mb-4">If objects in a collection do not belong to the same class, references in a collection will behave as references to objects of the Object class. Based on OOP inheritance, the following assignment is valid: <code>Father_reference = Son_reference;</code></p>
         <p className="mb-4">When using generics, you can specify the element type for type safety and to avoid casting.</p>
         <CopyableCodeBlock language="java">
@@ -55,30 +55,30 @@ Rectangle r = list.get(0); // No cast needed`}
         <h3 className="text-xl font-semibold mb-2 mt-6">Demonstrations</h3>
         <div className="mb-4">
           <b>Demonstration 1:</b> Using an ArrayList of arbitrary elements.
-          <img src="/Org_code/images/7.03a.gif" alt="ArrayList arbitrary elements" className="my-4" />
-          <img src="/Org_code/images/7.03b.gif" alt="Objects of Rectangle in ArrayList" className="my-4" />
+          <img src="/images/7.03a.gif" alt="ArrayList arbitrary elements" className="my-4" />
+          <img src="/images/7.03b.gif" alt="Objects of Rectangle in ArrayList" className="my-4" />
         </div>
         <div className="mb-4">
           <b>Experiment:</b> If you want to call a method specific to a subclass, you must cast.
         </div>
         <div className="mb-4">
           <b>Demonstration 2:</b> Using an ArrayList for storing the same-type elements.
-          <img src="/Org_code/images/7.04.gif" alt="ArrayList same-type elements" className="my-4" />
+          <img src="/images/7.04.gif" alt="ArrayList same-type elements" className="my-4" />
         </div>
         <div className="mb-4">
           <b>Demonstration 3:</b> Managing a list of students with ArrayList.
-          <img src="/Org_code/images/7.05.gif" alt="Class Design" className="my-4" />
-          <img src="/Org_code/images/7.06a.gif" alt="Algorithm 1" className="my-4" />
-          <img src="/Org_code/images/7.06b.gif" alt="Algorithm 2" className="my-4" />
-          <img src="/Org_code/images/7.06c.gif" alt="Algorithm 3" className="my-4" />
-          <img src="/Org_code/images/7.06d.gif" alt="Algorithm 4" className="my-4" />
-          <img src="/Org_code/images/7.06e.gif" alt="Algorithm 5" className="my-4" />
-          <img src="/Org_code/images/7.06f.gif" alt="Algorithm 6" className="my-4" />
-          <img src="/Org_code/images/7.06g.gif" alt="Algorithm 7" className="my-4" />
-          <img src="/Org_code/images/7.06h.gif" alt="Algorithm 8" className="my-4" />
-          <img src="/Org_code/images/7.06i.gif" alt="Algorithm 9" className="my-4" />
-          <img src="/Org_code/images/7.06j.gif" alt="Algorithm 10" className="my-4" />
-          <img src="/Org_code/images/7.06k.gif" alt="Algorithm 11" className="my-4" />
+          <img src="/images/7.05.gif" alt="Class Design" className="my-4" />
+          <img src="/images/7.06a.gif" alt="Algorithm 1" className="my-4" />
+          <img src="/images/7.06b.gif" alt="Algorithm 2" className="my-4" />
+          <img src="/images/7.06c.gif" alt="Algorithm 3" className="my-4" />
+          <img src="/images/7.06d.gif" alt="Algorithm 4" className="my-4" />
+          <img src="/images/7.06e.gif" alt="Algorithm 5" className="my-4" />
+          <img src="/images/7.06f.gif" alt="Algorithm 6" className="my-4" />
+          <img src="/images/7.06g.gif" alt="Algorithm 7" className="my-4" />
+          <img src="/images/7.06h.gif" alt="Algorithm 8" className="my-4" />
+          <img src="/images/7.06i.gif" alt="Algorithm 9" className="my-4" />
+          <img src="/images/7.06j.gif" alt="Algorithm 10" className="my-4" />
+          <img src="/images/7.06k.gif" alt="Algorithm 11" className="my-4" />
         </div>
         <div className="mb-4">
           <b>Test cases:</b>
@@ -92,13 +92,13 @@ Rectangle r = list.get(0); // No cast needed`}
 6-Quit
 Choose 1..6:`}
           </CopyableCodeBlock>
-          <img src="/Org_code/images/7.0.6l.gif" alt="Student managing menu" className="my-4" />
+          <img src="/images/7.0.6l.gif" alt="Student managing menu" className="my-4" />
         </div>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Set and TreeSet</h2>
         <p className="mb-4">A <b>Set</b> is a group of distinct objects. The <b>TreeSet</b> class stores elements in a sorted, self-balancing tree structure. Duplicates are not allowed.</p>
-        <img src="/Org_code/images/7.07.gif" alt="TreeSet structure" className="my-4" />
+        <img src="/images/7.07.gif" alt="TreeSet structure" className="my-4" />
         <p className="mb-4">TreeSet is implemented as a <a href="https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">self-balanced ordered tree</a>. It guarantees log(n) time cost for the basic operations (add, remove, and contains).</p>
         <ul className="list-disc ml-6 mb-2">
           <li>A sorted group must be maintained.</li>
@@ -108,41 +108,41 @@ Choose 1..6:`}
         <h3 className="text-xl font-semibold mb-2 mt-6">Demonstrations</h3>
         <div className="mb-4">
           <b>Demonstration 1:</b> The Student class does not implement any comparison method, so a compile-time error occurs.
-          <img src="/Org_code/images/7.13.gif" alt="TreeSet error" className="my-4" />
+          <img src="/images/7.13.gif" alt="TreeSet error" className="my-4" />
         </div>
         <div className="mb-4">
           <b>Demonstration 2:</b> TreeSet of integers (Integer implements Comparable, no duplicates allowed).
-          <img src="/Org_code/images/7.14.gif" alt="TreeSet of integers" className="my-4" />
+          <img src="/images/7.14.gif" alt="TreeSet of integers" className="my-4" />
         </div>
         <div className="mb-4">
           <b>Demonstration 3:</b> TreeSet of user-defined objects (Student), with add, search, remove, ascending and descending traversal.
-          <img src="/Org_code/images/7.15a.gif" alt="TreeSet students a" className="my-4" />
-          <img src="/Org_code/images/7.15b.gif" alt="TreeSet students b" className="my-4" />
-          <img src="/Org_code/images/7.15c.gif" alt="TreeSet students c" className="my-4" />
-          <img src="/Org_code/images/7.15d.gif" alt="TreeSet students d" className="my-4" />
-          <img src="/Org_code/images/7.15e.gif" alt="TreeSet students e" className="my-4" />
-          <img src="/Org_code/images/7.15f.gif" alt="TreeSet students output" className="my-4" />
+          <img src="/images/7.15a.gif" alt="TreeSet students a" className="my-4" />
+          <img src="/images/7.15b.gif" alt="TreeSet students b" className="my-4" />
+          <img src="/images/7.15c.gif" alt="TreeSet students c" className="my-4" />
+          <img src="/images/7.15d.gif" alt="TreeSet students d" className="my-4" />
+          <img src="/images/7.15e.gif" alt="TreeSet students e" className="my-4" />
+          <img src="/images/7.15f.gif" alt="TreeSet students output" className="my-4" />
         </div>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Map and HashMap</h2>
         <p className="mb-4">A <b>Map</b> associates unique keys with values. The <b>HashMap</b> class provides a hash-table-based implementation of the Map interface, allowing fast access to values by key.</p>
-        <img src="/Org_code/images/7.16.gif" alt="Map structure" className="my-4" />
+        <img src="/images/7.16.gif" alt="Map structure" className="my-4" />
         <p className="mb-4">A Map is like a dictionary. Maps check for key uniqueness based on the <code>equals()</code> method, not the <code>==</code> operator. The key can be a number or a string (such as Student ID, product ID).</p>
-        <img src="/Org_code/images/7.17.gif" alt="Hash function and hash-table" className="my-4" />
+        <img src="/images/7.17.gif" alt="Hash function and hash-table" className="my-4" />
         <p className="mb-4">A hash-table is a set of subsets but the position index is determined by a function, called a <b>hash function (h)</b>. The mathematical operation, <b>modulo</b> (or mod/ % in programming languages), is commonly used in hash functions.</p>
         <p className="mb-4">This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets.</p>
         <p>For more details, see the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Javadoc</a>.</p>
         <h3 className="text-xl font-semibold mb-2 mt-6">Demonstration</h3>
         <div className="mb-4">
           <b>Demonstration 1:</b> An empty hashmap is initiated, then some persons (nickName, person) are put and some basic operations on hashmap are performed.
-          <img src="/Org_code/images/7.18a.gif" alt="HashMap demo 1" className="my-4" />
-          <img src="/Org_code/images/7.18b.gif" alt="HashMap demo 2" className="my-4" />
-          <img src="/Org_code/images/7.18c.gif" alt="HashMap demo 3" className="my-4" />
-          <img src="/Org_code/images/7.18d.gif" alt="HashMap demo 4" className="my-4" />
-          <img src="/Org_code/images/7.18e.gif" alt="HashMap demo 5" className="my-4" />
-          <img src="/Org_code/images/7.18f.gif" alt="HashMap demo 6" className="my-4" />
-          <img src="/Org_code/images/7.18g.gif" alt="HashMap output" className="my-4" />
+          <img src="/images/7.18a.gif" alt="HashMap demo 1" className="my-4" />
+          <img src="/images/7.18b.gif" alt="HashMap demo 2" className="my-4" />
+          <img src="/images/7.18c.gif" alt="HashMap demo 3" className="my-4" />
+          <img src="/images/7.18d.gif" alt="HashMap demo 4" className="my-4" />
+          <img src="/images/7.18e.gif" alt="HashMap demo 5" className="my-4" />
+          <img src="/images/7.18f.gif" alt="HashMap demo 6" className="my-4" />
+          <img src="/images/7.18g.gif" alt="HashMap output" className="my-4" />
         </div>
       </section>
       <section className="mb-8">
@@ -172,10 +172,10 @@ Choose 1..6:`}
         </p>
         <div className="mb-4">
           <b>Demonstration:</b> An ArrayList of employees will be sorted with two mechanisms: (1) sorting by ascending ID; (2) Sorting by descending order by salary.
-          <img src="/Org_code/images/7.19a.gif" alt="Sorting ArrayList of employees" className="my-4" />
-          <img src="/Org_code/images/7.19b.gif" alt="Sorting by salary" className="my-4" />
-          <img src="/Org_code/images/7.19c.gif" alt="Sorting output" className="my-4" />
-          <img src="/Org_code/images/7.19d.gif" alt="Sorting output 2" className="my-4" />
+          <img src="/images/7.19a.gif" alt="Sorting ArrayList of employees" className="my-4" />
+          <img src="/images/7.19b.gif" alt="Sorting by salary" className="my-4" />
+          <img src="/images/7.19c.gif" alt="Sorting output" className="my-4" />
+          <img src="/images/7.19d.gif" alt="Sorting output 2" className="my-4" />
         </div>
       </section>
       <section className="mb-8">
