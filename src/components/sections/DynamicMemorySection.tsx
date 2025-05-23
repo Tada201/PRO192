@@ -1,6 +1,17 @@
 import CopyableCodeBlock from './CopyableCodeBlock';
+import React from 'react';
 
 const DynamicMemorySection = () => {
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '/disable-devtool.min.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="info-section p-4 mb-4 bg-white dark:bg-gray-800 rounded shadow">
       <h1 className="text-3xl font-bold mb-4">Memory Management in Java</h1>
