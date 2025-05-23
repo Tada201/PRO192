@@ -7,9 +7,7 @@
       "dev": "vite",
       "build": "tsc && vite build",
       "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-      "preview": "vite preview",
-      "optimize-images": "node optimize-images.js",
-      "prebuild": "npm run optimize-images"
+      "preview": "vite preview"
    },
    "dependencies": {
       "@types/react-syntax-highlighter": "^15.5.13",
