@@ -1,5 +1,5 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
 
 const javaCode = `public class Car {
     //fields
@@ -111,7 +111,7 @@ const EncapsulationSection = () => {
         </ol>
         <img src="/Org_code/images/encapsulation1.png" alt="Encapsulation example 1" className="my-4" />
         <p>We use Unified Modeling Language(UML) to describe the class structure. UML provides mechanisms to represent class members, such as attributes and methods, and additional information.</p>
-        <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Read this article to get more about UML</a>
+          <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Read this article to get more about UML{'>'}</a>
         <p className="mt-2">A UML class diagram is used to represent the Car class</p>
         <img src="/Org_code/images/encapsulation2.png" alt="Encapsulation example 2" className="my-4" />
         <h3 className="font-semibold mt-4">How to draw the class structure?</h3>
@@ -119,12 +119,12 @@ const EncapsulationSection = () => {
           <li>put main noun(Car) to make the class name</li>
           <li>put auxiliary nouns(nouns describe the detail of Car) to make fields</li>
           <li>put verbs to make methods</li>
-          <li>To specify the visibility of a class member from other classes (i.e. any attribute or method), these notations(-,+,#,~) must be placed before the member's name. (In Java, '~' is replaced by ' '). <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">get more notations</a></li>
+          <li>To specify the visibility of a class member from other classes (i.e. any attribute or method), these notations(-,+,#,~) must be placed before the member's name. (In Java, '~' is replaced by ' '). <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">get more notations{'>'}</a></li>
         </ul>
         <p>Now, You will implement this class in Java. In your editor, create a new file named Car.java (<b>Note</b>: the file named the same as the class name). The code of Car class:</p>
         <SyntaxHighlighter
           language="java"
-          style={atomDark}
+          style={vscDarkPlus}
           showLineNumbers={true}
           customStyle={{
             borderRadius: '0.375rem',
@@ -186,7 +186,7 @@ const EncapsulationSection = () => {
         <p>You can also add more other getters/setters. The completed code:</p>
         <SyntaxHighlighter
           language="java"
-          style={atomDark}
+          style={vscDarkPlus}
           showLineNumbers={true}
           customStyle={{
             borderRadius: '0.375rem',
@@ -229,7 +229,7 @@ Colour of c3:black</pre>
         <p>To create a package, you choose a name for the package and put a package statement with that name at the top of every source file that contains the types (classes, interfaces, enumerations, and annotation types) that you want to include in the package.</p>
         <p>The package statement (for example, <i>package mypkg;</i>) must be the first line in the source file. There can be only one package statement in each source file, and it applies to all types in the file.</p>
         <img src="/Org_code/images/package.png" alt="Package Example" className="my-4" />
-        <a href="https://docs.oracle.com/javase/tutorial/java/package/createpkgs.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">read more</a>
+          <a href="https://docs.oracle.com/javase/tutorial/java/package/createpkgs.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">read more{'>'}</a>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Access Modifier</h2>
@@ -249,7 +249,7 @@ Colour of c3:black</pre>
         <p>We cut the method main in the file Car.java. Paste it to the other file named Tester.java.</p>
         <SyntaxHighlighter
           language="java"
-          style={atomDark}
+          style={vscDarkPlus}
           showLineNumbers={true}
           customStyle={{
             borderRadius: '0.375rem',
@@ -285,7 +285,7 @@ Colour of c3:black</pre>
         <p>Edit the file Car.java</p>
         <SyntaxHighlighter
           language="java"
-          style={atomDark}
+          style={vscDarkPlus}
           showLineNumbers={true}
           customStyle={{
             borderRadius: '0.375rem',
@@ -301,7 +301,21 @@ public class Car {
     private int EnginePower;
     private boolean Convertible;
     private boolean parkingBrake;
-    ...
+    //methods
+    public Car(){
+        Colour="";
+        EnginePower=0;
+        Convertible=false;
+        parkingBrake=false;
+    }
+
+    public Car(String Colour, int EnginePower, boolean Convertible, boolean parkingBrake) {
+        this.Colour = Colour;
+        this.EnginePower = EnginePower;
+        this.Convertible = Convertible;
+        this.parkingBrake = parkingBrake;
+    }
+    
     void pressStartButton(){
         System.out.println("You can press the star button");
     }
@@ -310,7 +324,7 @@ public class Car {
         <p>Edit the file Tester.java</p>
         <SyntaxHighlighter
           language="java"
-          style={atomDark}
+          style={vscDarkPlus}
           showLineNumbers={true}
           customStyle={{
             borderRadius: '0.375rem',
@@ -340,7 +354,6 @@ public class Tester {
         <p>Because the method <b>pressStartButton()</b> is default, in the method main we can not invoke this.</p>
         <h3 className="font-semibold mt-4">protected</h3>
         <p>The protected access modifier is accessible within package and outside the package but through inheritance only.</p>
-        <a href="#" className="text-blue-600 underline">the link to get demo</a>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Summary</h2>
@@ -357,12 +370,6 @@ public class Tester {
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
           <li><a href="/Org_code/resource/Encapsulation.pdf" download className="text-blue-600 underline">Encapsulation.pdf</a></li>
-        </ul>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Workshop</h2>
-        <ul>
-          <li>Complete the <a href="/Org_code/workshop/workshop3.pdf" download className="text-blue-600 underline">workshop3</a></li>
         </ul>
       </section>
     </div>

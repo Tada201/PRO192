@@ -1,4 +1,5 @@
 import React from 'react';
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const FileIOSection: React.FC = () => (
   <div className="info-section p-4 mb-4 bg-white dark:bg-gray-800 rounded shadow">
@@ -7,8 +8,7 @@ const FileIOSection: React.FC = () => (
       <div className="space-x-2 text-blue-600">
         <a href="#stream" className="hover:underline">I/O Streams</a>|
         <a href="#commandline" className="hover:underline">I/O from the Command Line</a>|
-        <a href="#example" className="hover:underline">Example</a>|
-        <a href="#workshop" className="hover:underline">Workshop</a>
+        <a href="#example" className="hover:underline">Example</a>
       </div>
     </nav>
     <section className="mb-8">
@@ -51,12 +51,18 @@ const FileIOSection: React.FC = () => (
         <li>We can convert a string to the number by using some classes Integer, Float,....</li>
       </ul>
     </section>
-    <section className="resource mt-8">
-      <h2 className="text-2xl font-semibold mb-2">Workshop</h2>
-      <ul className="list-disc ml-6">
-        <li>Complete the <a href="/Org_code/workshop/workshop1.pdf" download className="text-blue-600 underline">workshop1</a></li>
-      </ul>
-      <span id="workshop"></span>
+    <section className="mb-8">
+      <h2 className="text-2xl font-semibold mb-2">Reading from a File</h2>
+      <CopyableCodeBlock language="java">
+{`try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}`}
+      </CopyableCodeBlock>
     </section>
   </div>
 );

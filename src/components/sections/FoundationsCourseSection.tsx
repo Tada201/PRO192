@@ -1,5 +1,42 @@
+import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
+
+const CodeBlock = ({ code, language }: { code: string; language: string }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative">
+      <button
+        onClick={handleCopy}
+        className="absolute top-2 right-2 p-2 rounded bg-gray-700 hover:bg-gray-600 transition-colors flex items-center gap-2"
+        title={copied ? "Copied!" : "Copy code"}
+      >
+        <img src="/copy.ico" alt="Copy" className="w-4 h-4" />
+        <span className="text-white text-sm">{copied ? "Copied!" : "Copy code"}</span>
+      </button>
+      <SyntaxHighlighter 
+        language={language} 
+        style={vscDarkPlus} 
+        customStyle={{ 
+          borderRadius: '0.375rem', 
+          padding: '1rem', 
+          margin: '1rem 0',
+          paddingRight: '3rem' // Make space for the copy button
+        }} 
+        className="text-sm shadow-md max-w-full overflow-x-auto"
+      >
+        {code}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
 
 const FoundationsCourseSection = () => {
   return (
@@ -62,13 +99,15 @@ const FoundationsCourseSection = () => {
         A primitive is a simple non-object data type that represents a single value. Java’s primitive data types are:
       </p>
       <img src="/Org_code/images/datatype.png" alt="Primitive Data Types" className="mb-4 rounded shadow" />
-      <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
-        {`Type var [=Initial value];`}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
-        {`int RollID;
+      <CodeBlock 
+        language="java" 
+        code={`Type var [=Initial value];`}
+      />
+      <CodeBlock 
+        language="java" 
+        code={`int RollID;
 char type='A';`}
-      </SyntaxHighlighter>
+      />
       <img src="/Org_code/images/PrimaryDataType.png" alt="Primary Data Types" className="mb-4 rounded shadow" />
 
       <h4 className="text-lg font-semibold mb-2">Reference Type</h4>
@@ -86,11 +125,12 @@ char type='A';`}
       <p className="mb-4 font-mono bg-gray-100 dark:bg-gray-700 p-2 rounded">
         String s=new String("Hello");
       </p>
-      <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
-        {`int[] ar;
+      <CodeBlock 
+        language="java" 
+        code={`int[] ar;
 ar= new int[3];
 ar[0]=1; ar[1]=2; ar[2]=3;`}
-      </SyntaxHighlighter>
+      />
       <img src="/Org_code/images/referenceDatatype.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
       <img src="/Org_code/images/array.png" alt="Array" className="mb-4 rounded shadow" />
 
@@ -116,10 +156,11 @@ ar[0]=1; ar[1]=2; ar[2]=3;`}
         Each item in an array is called an element, and each element is accessed by its numerical index.
       </p>
       <img src="/Org_code/images/array2.png" alt="One Dimensional Array" className="mb-4 rounded shadow" />
-      <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
-        {`int[] ar;  // for detail click here
+      <CodeBlock 
+        language="java" 
+        code={`int[] ar;  // for detail click here
 float anArrayOfFloats[];`}
-      </SyntaxHighlighter>
+      />
 
       <h3 className="text-xl font-semibold mb-2">Multiple Dimensional Arrays</h3>
       <p className="mb-4">

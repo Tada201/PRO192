@@ -84,8 +84,9 @@ model of a real-world problem).The super and sub class relationship is represent
 <p>To implement the "is-a" relationship of the above class diagram, we use the keyword <b>"extends"</b></p><br/>
 <p>Assume that, these classes are stored in the same package</p><br/>
 <p>In the file Item.java, you type:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Item
 { 
 	 int value;
 	 String creator;
@@ -105,10 +106,12 @@ public class Item
 	//setter
 	//other logic methods
 } 
+</code>
 </pre>
 <p>In the file Vase.java, you type:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Vase extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Vase extends Item
 { 
      int height;
      String material;
@@ -119,9 +122,11 @@ public class Vase extends Item
 	//setter
 	//other logic methods
 } 
+</code>
 </pre>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Statue extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Statue extends Item
 { 
     
 	 int weight;
@@ -133,9 +138,11 @@ public class Statue extends Item
 	//setter
 	//other logic methods
 } 
+</code>
 </pre>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Painting extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Painting extends Item
 { 
     
 	 int height;
@@ -149,6 +156,7 @@ public class Painting extends Item
 	//setter
 	//other logic methods
 } 
+</code>
 </pre>
 <p>The <em>Vase</em> class has a total of <em>four</em> attributes. Two of these are unique to it, and two are “inherited” from its superclass. Similarly, the <e>Painting</e> class has <em>six</em> attributes, four unique to it, and two inherited from its superclass
 So a super, base or parent class contains a basic set of attributes that are intended
@@ -157,8 +165,9 @@ classes have their own attributes that make them unique, and they inherit attrib
 from their superclass.</p><br/>
 
 Now, you create the file named "AntiqueShop.java", the method main is in here
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class AntiqueShop
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class AntiqueShop
 { 
 	public static void main(String[] args){
 	
@@ -192,6 +201,7 @@ public class AntiqueShop
 
     } 
 } 
+</code>
 </pre>
 <a name="function"></a>
 <h2>Functions in Inheritance</h2>
@@ -199,8 +209,9 @@ public class AntiqueShop
 
 <p>Similarly, we add a method to the super class Item, it is also inherited in three sub classes. we are able to call those inherited methods as if they had been defined in their own class definitions. For example, we add the method "output()" to the Item class.</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Item
 { 
 	public int value;
 	public String creator;
@@ -214,10 +225,12 @@ public class Item
 		System.out.println("This item is created by " + creator );
     }
 } 
+</code>
 </pre><br/>
 <p>Edit the method main:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class AntiqueShop
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class AntiqueShop
 { 
 	public static void main(String[] args){
 	
@@ -238,6 +251,7 @@ public class AntiqueShop
     } 
 } 
 
+</code>
 </pre>
 <p>Objects v1, s1, p1 call the inherited method output.<br/>
 The output: </p><br/>
@@ -268,8 +282,9 @@ that instances of our sub classes are created in the most efficient manner.</p>
 
 <p>Consider the constructors is added to the Vase class.</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Vase extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Vase extends Item
 { 
     private int height;
     private String material;
@@ -288,13 +303,15 @@ public class Vase extends Item
          this.material=material;
     }
   } 
+</code>
 </pre>
 <p>Because the Vase class has four fields, you can implement constructors that look like the above. But, that is not efficient coding. It would involve code duplication</p>
 <p>To reduce code duplication, common fields are initialized by using constructors of the superclass. </p>
 <p>We edit the code of the Vase class as follows:</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Vase extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Vase extends Item
 { 
     private int height;
     private String material;
@@ -311,6 +328,7 @@ public class Vase extends Item
          this.material=material;
     }
   } 
+</code>
 </pre>
 <p>The <b>super</b> keyword refers to the super class</p><br/>
 <div class="problem">
@@ -326,8 +344,9 @@ ensure that objects are constructed from their most distant super class first.
                <b><em>super.methodName(arguments);</em></b></p><br/>
 <em> for example:</em><br/>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public	class Item{
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public	class Item{
          ...
          void displayDiscount(){  System.out.println("discounting ...");}  
 }  
@@ -345,6 +364,7 @@ public class Vase extends Item{
         }  
 }
 
+</code>
 </pre><br/>
 
 <p>In a Vase subclass, The "displayDiscount" method has the same signature (name, plus the number and the type of its parameters) and return type as in the superclass. It is called the override the superclass's method. We will learn the override method in the next topic</p><br/>
@@ -361,8 +381,9 @@ public class Vase extends Item{
 <a name="instanceof"></a>
 <h2>Using instanceof oprerator</h2>
 <p>Consider the code in the file AntiqueShop.java:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class AntiqueShop
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class AntiqueShop
 { 
 	public static void main(String[] args){
 	
@@ -374,6 +395,7 @@ public class AntiqueShop
         		
     } 
 } 
+</code>
 </pre><br/>
 <p>In the above code, we create three objects v1, s1, p1 and initialize values by the constructor with parameters. And then, a reference variable tmp that has the type to be the Item superclass. It is storing the address of object v1. See the figure below:</p>
 <img src="images/inheritance6.png"/><br/>
@@ -385,8 +407,9 @@ public class AntiqueShop
 <span>How to check the tmp variable is pointing to the address of a specified object?</span><br/><br/>
 <p>Using the <b><em>instanceof</em></b> keyword. <em>[read <a href="https://www.javatpoint.com/downcasting-with-instanceof-operator" target="_blank">more</a>]</em></p>
 <p>Consider the code: </p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class AntiqueShop
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class AntiqueShop
 { 
 	public static void main(String[] args){
 	
@@ -402,6 +425,7 @@ public class AntiqueShop
 		    System.out.println("tmp is pointing to the Painting object");	
     } 
 } 
+</code>
 </pre><br/>
 The output:
 <pre style="background-color: #F2F2F2; border: 1px solid black;">
@@ -413,8 +437,9 @@ The output:
 
 <p>Now, we add a method "putFlowers()" to the Vase class</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class Vase extends Item
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class Vase extends Item
 { 
     private int height;
     private String material;
@@ -434,10 +459,12 @@ public class Vase extends Item
           System.out.println("flowers are put in the vase");
     }
   } 
+</code>
 </pre><br/>
 <p>In the method main, we edit</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
-public class AntiqueShop
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>public class AntiqueShop
 { 
 	public static void main(String[] args){
 	
@@ -455,7 +482,8 @@ public class AntiqueShop
 		    System.out.println("tmp is pointing to the Painting object");
 
     } 
-} </pre>
+} </code>
+</pre>
 <p>The <em>tmp</em> variable that has the type of the superclass only calls methods of the superclass. To call methods of the subclass we must <em>cast explicitly</em>. If the code has attempted to cast an object to a subclass of which it is not an instance then a <em>ClassCastException</em> error will be thrown. For example, <br/>
   <pre>
   	    ...

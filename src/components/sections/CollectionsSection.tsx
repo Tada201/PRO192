@@ -1,5 +1,6 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const CollectionsSection = () => {
   return (
@@ -48,11 +49,11 @@ const CollectionsSection = () => {
         <img src="/Org_code/images/7.0.2.2.gif" alt="ArrayList characteristics" className="my-4" />
         <p className="mb-4">If objects in a collection do not belong to the same class, references in a collection will behave as references to objects of the Object class. Based on OOP inheritance, the following assignment is valid: <code>Father_reference = Son_reference;</code></p>
         <p className="mb-4">When using generics, you can specify the element type for type safety and to avoid casting.</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`ArrayList<Rectangle> list = new ArrayList<>();
 list.add(new Rectangle(2, 3));
 Rectangle r = list.get(0); // No cast needed`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <h3 className="text-xl font-semibold mb-2 mt-6">Demonstrations</h3>
         <div className="mb-4">
           <b>Demonstration 1:</b> Using an ArrayList of arbitrary elements.
@@ -83,7 +84,7 @@ Rectangle r = list.get(0); // No cast needed`}
         </div>
         <div className="mb-4">
           <b>Test cases:</b>
-          <SyntaxHighlighter language="text" style={atomDark} showLineNumbers={false} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+          <SyntaxHighlighter language="text" style={vscDarkPlus} showLineNumbers={false} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
 {`Student managing Program
 1-Add new student
 2-Search a student
@@ -220,13 +221,7 @@ Choose 1..6:`}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Reading</h2>
         <ul>
-          <li><a href="/Org_code/resource/Support classes.pdf" download className="text-blue-600 underline">Support Classes.pdf</a></li>
-        </ul>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Workshop</h2>
-        <ul>
-          <li>Complete the <a href="/Org_code/workshop/workshop6.pdf" download className="text-blue-600 underline">workshop6</a></li>
+          <li><a href="/Org_code/resource/Support Classes.pdf" download className="text-blue-600 underline">Support Classes.pdf</a></li>
         </ul>
       </section>
     </div>

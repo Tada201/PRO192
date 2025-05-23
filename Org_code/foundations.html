@@ -16,6 +16,24 @@
     <a href="#logicConstruct">Logic constructs</a>
 	<br/>
 </nav>
+<!-- Copy button for Foundations section -->
+<button id="copyFoundationsBtn" style="margin: 16px 0 8px 0; background: none; border: none; cursor: pointer; vertical-align: middle;">
+  <img src="/public/copy.ico" alt="Copy" style="width:24px;height:24px;vertical-align:middle;"> Copy Section
+</button>
+<script>
+  document.getElementById('copyFoundationsBtn').onclick = function() {
+    // Copy all text content from the first <section>
+    var section = document.querySelector('section');
+    if (section) {
+      var text = section.innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Section copied to clipboard!');
+      }, function() {
+        alert('Failed to copy section.');
+      });
+    }
+  };
+</script>
 <section>
    	 <a name="JVM"></a>
    	 <h3>Java Virtual Machine</h3>
@@ -165,5 +183,37 @@ Each item in an array is called an element, and each element is accessed by its
        <li><a href="resource/Numbers and Strings.pdf" >Number and String in Java.pdf</a></li>
     </ul>
 </section>
+<script>
+  // Add copy buttons to all <pre><code>...</code></pre> blocks
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('pre > code').forEach(function(codeBlock) {
+      var pre = codeBlock.parentElement;
+      // Prevent duplicate buttons
+      if (pre.querySelector('.copy-code-btn')) return;
+      var btn = document.createElement('button');
+      btn.className = 'copy-code-btn';
+      btn.title = 'Copy code';
+      btn.style.position = 'absolute';
+      btn.style.top = '4px';
+      btn.style.right = '4px';
+      btn.style.background = 'none';
+      btn.style.border = 'none';
+      btn.style.cursor = 'pointer';
+      btn.innerHTML = '<img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;">';
+      btn.onclick = function(e) {
+        e.preventDefault();
+        var text = codeBlock.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+          btn.title = 'Copied!';
+          setTimeout(function() { btn.title = 'Copy code'; }, 1000);
+        }, function() {
+          btn.title = 'Failed to copy';
+        });
+      };
+      pre.style.position = 'relative';
+      pre.insertBefore(btn, codeBlock);
+    });
+  });
+</script>
 </body>
 </html>

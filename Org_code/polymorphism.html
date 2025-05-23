@@ -36,7 +36,9 @@ constructor methods But they will need to differ in the pattern and/or number of
 formal parameters so that the compiler can work out which of the constructors is the
 correct one to call.</p><br/>
 <p>Consider constructors in the Vase class.</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Vase extends Item
 { 
     private int height;
@@ -59,6 +61,7 @@ public class Vase extends Item
     }
     ...
   } 
+  </code>
 </pre><br/>
 <p>We say that the Vase constructor method is polymorphic as it appears in three forms. We can describe the form using the method signatures: </p>
 <div class="problem" style="width: 40%; height: 70px;">
@@ -82,10 +85,11 @@ objects:</p>
 <p>Method polymorphism also extends to general methods. We can have as many
 alternative implementations of a method as we like as long as they are all unique in
 their signature of formal parameters. Note that uniqueness by returned value type
-alone is not sufficient. </p><br/>
-<p>we could create two trimPainting() methods in our Painting class</p>
+alone is not sufficient. </p><br/><p>we could create two trimPainting() methods in our Painting class</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Painting extends Item
 { 
     
@@ -104,6 +108,7 @@ public class Painting extends Item
 		width -= amount;
 	}
 } 
+  </code>
 </pre><br/>
 <p>The first version is for when we have not been given a value for the amount to
 reduce the width, and thus use a default value of 1. The second can be used where
@@ -124,7 +129,9 @@ we have been given an amount to reduce the width by</p><br/><br/>
 <img src="images/polymorphism2.png"><br/>
 <p>In the above diagram, the <em>input/output methods</em> in the father class can be <b>overridden</b> in its derived classes (body of a method can be replaced in derived classes). </p><br/>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Item
 {
 	protected int value;
@@ -148,9 +155,12 @@ public class Item
     }
       
 } 
+  </code>
 </pre><br/><br/>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Vase extends Item
 { 
 	private int height;
@@ -176,10 +186,13 @@ public class Vase extends Item
     }
       
 } 
+  </code>
 </pre><br/>
 <p>Use the <b>@Override annotation</b> that instructs the compiler that you intend to override a method in the superclass (you may not use it because overriding is the default in Java).</p>
 <p>The main method, we use the input/output methods</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class AntiqueShop
 { 
 	public static void main(String[] args){
@@ -195,6 +208,7 @@ public class AntiqueShop
 		tmp.output();	
     } 
 } 
+  </code>
 </pre><br/>
 <h4>How can overridden methods be determined?</h4>
 The below figure describes the memory map when the code runs. 
@@ -218,7 +232,9 @@ The below figure describes the memory map when the code runs.
 
 <p>Class <b>Object</b> is the root of the class hierarchy. Every class has Object as a superclass. All objects, including arrays, implement the methods of this class. The Object’s toString() method  returns a string consisting of the name of the class of which the object is an instance, the at-sign character `@', and the unsigned hexadecimal representation of the hash code of the object.</p><br/>
 <p>We edit the main method in the AntiqueShop to call the toString method</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class AntiqueShop
 { 
 	public static void main(String[] args){
@@ -228,6 +244,7 @@ public class AntiqueShop
 		<font style="background-color: cyan;">System.out.print(tmp);</font>
     } 
 } 
+  </code>
 </pre><br/>
 <pre style="background-color: #F2F2F2; border: 1px solid black;">
 	<b>The output</b>: Item@12543  Item@12543
@@ -235,7 +252,9 @@ public class AntiqueShop
 <p><em>[read <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#toString()" target="_blank">more</a>]</em></p>
 <div class="problem"><b>TIPS</b>:It is recommended that all subclasses override this method. The result should be a concise but informative representation that is easy for a person to read</div>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Item{
 	
 	@override
@@ -252,6 +271,7 @@ public class AntiqueShop
 		<font style="background-color: cyan;">System.out.print(tmp);</font>
     } 
 } 
+  </code>
 </pre><br/>
 <p>Because the Item class overrides the toString method from the Object superclass. So, the output will be</p>
 <pre style="background-color: #F2F2F2; border: 1px solid black;">
@@ -270,7 +290,9 @@ implementation. The implementation of the method falls to any class that
 extends the class that defined the abstract method.</div>
 <p>First, let’s add the definition of the abstract method to Item:</p>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;width:100%;">
+<pre style="background-color: #F2F2F2; border: 1px solid black;width:100%; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public abstract class Item
 { 
 	protected int value;
@@ -280,13 +302,16 @@ public abstract class Item
 	//it is abstract because we lack information to implement.  
 	...         
 } 
+  </code>
 </pre><br/>
 <p>Note also the addition of the <b>abstract</b> keyword in the class definition itself.
 The Item class has become an abstract class.</p>
 <div class="classDIV2"><b>An abstract class</b> is a class that contains one or more abstract method
 definitions.</div>
 <p>We turn to the sub classes. they extend Item, they inherit the <em>abstract</em> definition of the <em>displayDetails()</em> method. They are now required to provide a concrete implementation of that method. The compiler will not regard the sub class definitions as complete until they provide such a concrete implementation. So, using the Vase class as an example:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Vase extends Item
 { 
 	private int height;
@@ -301,9 +326,12 @@ public class Vase extends Item
 		   System.out.println("The price is " +  2000 +"$");   
 	}
 }
+  </code>
 </pre><br/>
 <p>We are obliged to similarly equip the Statue and Painting sub classes:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Statue extends Item
 { 
 	private int weight;
@@ -318,8 +346,11 @@ public class Statue extends Item
 		   System.out.println("The price is " +  3000 +"$");   
 	}
 }
+  </code>
 </pre><br/>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Painting extends Item
 { 
 	private int width;
@@ -336,6 +367,7 @@ public class Painting extends Item
 		   System.out.println("The price is " +  5000 +"$");   
 	}
 }
+  </code>
 </pre><br/>
 <div class="problem"><b>Rule</b>:A sub class is only complete once it has provided concrete implementations of all abstract methods inherited from its parent super class/classes.</div>
 <div class="problem"><b>Rule</b>:Abstract classes cannot be instantiated</div>
@@ -367,18 +399,23 @@ contain method signatures and fields</em>. It cannot, in general, contain an imp
 	 <li>A chef/called code/implementation code will perform this requirement.</li>
 </ul><br/><br/>
 <p>In Java, we will create an interface as follows:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public interface Menu
 { 
 	public int unitPrice=10;
 	public void getSalad();
 	public void getBeefsteak();
 }
+  </code>
 </pre><br/>
 <p>Consider the above code, the menu contains two methods that user can call, without any information about how it does what it does. The methods have no body to them. That's because we're leaving the body's definition to the implementing class.</p><br/>
 
 <p>The Chef class will implement these methods </p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Chef implements Menu
 { 
 	private String name;
@@ -390,8 +427,11 @@ public class Chef implements Menu
 		System.out.println("This is a beefsteak");
     }
 }
+  </code>
 </pre><br/>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Tester
 { 
 	public static void main(String[] args){
@@ -400,6 +440,7 @@ public class Tester
         m.getBeefsteak();
    } 
 }
+  </code>
 </pre><br/>
 <p>Now, it's polymorphism feature. When you instantiate the Chef class, you can assign it to a variable declared as an Menu (an Interface type) rather than Chef (a class type)</p><br/><br/>
 
@@ -409,15 +450,20 @@ public class Tester
 	<li>Java does not support "multiple inheritance" (a class can only inherit from one superclass). However, it can be achieved with interfaces, because the class can implement multiple interfaces. Note: To implement multiple interfaces, separate them with a comma (see example below). [ refer to <a href="https://www.w3schools.com/java/java_interface.asp" target="_blank">w3school</a>]</li>  
 </ul><br/><br/>
 <span>Multiple Interfaces</span>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public interface VIPMenu
 { 
 	public int unitPrice2=100;
 	public void getSalmon();
 	public void getFishEggs();
 }
+  </code>
 </pre><br/>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Chef implements Menu, VIPMenu
 { 
 	private String name;
@@ -435,8 +481,11 @@ public class Chef implements Menu, VIPMenu
       System.out.println("This is a fish eggs");
     }
 }
+  </code>
 </pre><br/>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class Tester
 { 
 	public static void main(String[] args){
@@ -448,6 +497,7 @@ public class Tester
         m2.getSalmon();
    } 
 }
+  </code>
 </pre><br/>
 <div class="problem">Notes on Interfaces:
 <ul>	

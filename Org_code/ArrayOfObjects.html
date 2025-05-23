@@ -18,7 +18,9 @@
 
 <p>In the previous topic, A antique shop that sells antique items, namely vases, statues, and paintings. For now, we want to manage the list of objects such as vases, statues, paintings in an array.  The objects pointed to by the array elements may be of differing dynamic type, but are of the same static type(type of the superclass).</p><br/>
 <p>for example, we create the file named <em>ItemList.java</em>, it contains an array as follows:</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class ItemList{
 	Item [] list;   // an array to store all items
 	int numOfItem;  // to store the number of items that added to the list
@@ -28,6 +30,7 @@ public class ItemList{
               numOfItem=0;
     }    
 }
+  </code>
 </pre><br/>
 <p>Following are the basic operations supported by an array.</p>
 <ul><li>print all the array elements(objects) one by one.</li>
@@ -37,7 +40,9 @@ public class ItemList{
     <li>Updates an object at the given index.</li></ul>
 
 <p>we will implement these later. For now, the main method to test some basic functions in the antique shop.</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class antiqueShop{
 	public static void main(String[] args){
             <font style="background-color:cyan;">ItemList obj=new ItemList();</font>
@@ -95,6 +100,7 @@ public class antiqueShop{
       
     }
 }
+  </code>
 </pre><br/>
 <p>To explore the instruction that is highlighted, consider the figure below </p>
 
@@ -102,7 +108,9 @@ public class antiqueShop{
 <p>After starting, the obj variable points to address 1000, this block contains the reference variable <em>list</em> that is pointing to address 2000. It is an array of pointers. All elements are initiated to <em>null</em> </p><br/>
 
 <p>To complete the program, we add a method named <e>addItem</e> to the ItemList class. </p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class ItemList{
 	...
 	public boolean addItem(Item item){
@@ -113,9 +121,12 @@ public class ItemList{
           return true;
     }
 }
+  </code>
 </pre><br/>
 <p>Edit the <em>case 1</em> in the main method</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class antiqueShop{
 	public static void main(String[] args){
          ....
@@ -128,7 +139,8 @@ public class antiqueShop{
                 }
                 break;
      }
-}</pre><br/>
+}</code>
+</pre><br/>
 <p>If the choice is 1, steps are performed:</p>
 <ol>
 <li> A Vase object is created at address 300.</li>
@@ -138,7 +150,9 @@ public class antiqueShop{
 <li>Increase the numOfItem by 1</li></ol>
 <img src="images/array4.png"/><br/>
 <p> We add more some methods to the ItemList class</p>
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class ItemList{
 	...
 	//this method prints out information of all items
@@ -218,9 +232,12 @@ public class ItemList{
     }  
        
 }
+  </code>
 </pre><br/>
 
-<pre style="background-color: #F2F2F2; border: 1px solid black;">
+<pre style="background-color: #F2F2F2; border: 1px solid black; position: relative;">
+  <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)" style="position:absolute;top:4px;right:4px;background:none;border:none;cursor:pointer;" title="Copy code"><img src="/public/copy.ico" alt="Copy" style="width:20px;height:20px;"></button>
+  <code>
 public class antiqueShop{
 	public static void main(String[] args){
          ....
@@ -282,6 +299,7 @@ public class antiqueShop{
             ... 
      }
 }
+  </code>
 </pre><br/>
 <p>To explore what is doing, we look at the figure:</p>
 <img src="images/array5.png"><br/>

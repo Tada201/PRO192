@@ -1,5 +1,4 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const DynamicMemorySection = () => {
   return (
@@ -35,12 +34,12 @@ const DynamicMemorySection = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Dynamic Allocation</h2>
         <p className="mb-4">Example code:</p>
-        <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
-{`public static void main(String[] args){
-    int a[]=new int[5];   // [1]
-    String s=new String("hello");  // [2]
+        <CopyableCodeBlock language="java">
+{`public static void main(String[] args) {
+    int a[] = new int[5];   // [1]
+    String s = new String("hello");  // [2]
 }`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <ul className="list-disc ml-6 mb-2">
           <li>When <b>main</b> runs, <code>a</code> and <code>s</code> are allocated in stack memory as references.</li>
           <li>At [1], <code>new</code> allocates memory in heap for an array of 5 elements and returns its address to <code>a</code>.</li>
@@ -48,10 +47,10 @@ const DynamicMemorySection = () => {
         </ul>
         <img src="/Org_code/images/allocation.png" alt="Dynamic allocation" className="my-4" />
         <p className="mb-4">To make a reference point to nothing, use <code>null</code>:</p>
-        <SyntaxHighlighter language="java" style={atomDark} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`int a[]=null;
 String s=null;`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Dynamic Deallocation</h2>

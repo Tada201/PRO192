@@ -1,3 +1,5 @@
+import CopyableCodeBlock from './CopyableCodeBlock';
+
 const ExceptionSection = () => {
   return (
     <div className="info-section p-4 mb-4 bg-white dark:bg-gray-800 rounded shadow">
@@ -55,6 +57,18 @@ const ExceptionSection = () => {
           <li>A try statement may be nested inside either the try or catch block of another try statement. <a href="https://beginnersbook.com/2013/04/nested-try-catch/#:~:text=When%20a%20try%20catch%20block,that%20that%20catch%20block%20executes." target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">See nesting of try/catch blocks</a></li>
         </ul>
       </section>
+      <CopyableCodeBlock language="java">
+{`try {
+  // code that may throw an exception
+  FileReader file = new FileReader("file.txt");
+} catch (FileNotFoundException e) {
+  // handle the exception
+  System.out.println("File not found");
+} finally {
+  // code that always executes
+  System.out.println("Finally block executed");
+}`}
+      </CopyableCodeBlock>
     </div>
   );
 };

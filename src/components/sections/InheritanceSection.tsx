@@ -1,5 +1,4 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CopyableCodeBlock from './CopyableCodeBlock';
 
 const InheritanceSection = () => {
   return (
@@ -33,7 +32,7 @@ const InheritanceSection = () => {
         <img src="/Org_code/images/inheritance5.png" alt="Inheritance Example 5" className="my-4" />
         <p>To implement the "is-a" relationship of the above class diagram, we use the keyword <b>"extends"</b></p>
         <p>Assume that, these classes are stored in the same package</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Item
 { 
      int value;
@@ -55,8 +54,8 @@ const InheritanceSection = () => {
     //other logic methods
 } 
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        </CopyableCodeBlock>
+        <CopyableCodeBlock language="java">
 {`public class Vase extends Item
 { 
      int height;
@@ -69,8 +68,8 @@ const InheritanceSection = () => {
     //other logic methods
 } 
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        </CopyableCodeBlock>
+        <CopyableCodeBlock language="java">
 {`public class Statue extends Item
 { 
      int weight;
@@ -83,8 +82,8 @@ const InheritanceSection = () => {
     //other logic methods
 } 
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        </CopyableCodeBlock>
+        <CopyableCodeBlock language="java">
 {`public class Painting extends Item
 { 
      int height;
@@ -99,13 +98,13 @@ const InheritanceSection = () => {
     //other logic methods
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">AntiqueShop Example</h2>
         <p>The <i>Vase</i> class has a total of <b>four</b> attributes. Two of these are unique to it, and two are “inherited” from its superclass. Similarly, the <i>Painting</i> class has <b>six</b> attributes, four unique to it, and two inherited from its superclass. So a super, base or parent class contains a basic set of attributes that are intended to form a part of the implementation of sub classes that are built from it. The sub classes have their own attributes that make them unique, and they inherit attributes from their superclass.</p>
         <p>Now, you create the file named "AntiqueShop.java", the method main is in here</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
@@ -141,13 +140,13 @@ const InheritanceSection = () => {
     } 
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Functions in Inheritance</h2>
         <p>We create three objects v1,s1,p1 from three subclasses. These objects have "inherited" attributes</p>
         <p>Similarly, we add a method to the super class Item, it is also inherited in three sub classes. we are able to call those inherited methods as if they had been defined in their own class definitions. For example, we add the method "output()" to the Item class.</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Item
 { 
     public int value;
@@ -163,9 +162,9 @@ const InheritanceSection = () => {
     }
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>Edit the method main:</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
@@ -187,7 +186,7 @@ const InheritanceSection = () => {
     } 
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <div className="bg-gray-200 border-l-4 border-gray-600 p-4 my-2 text-gray-900 dark:bg-gray-700 dark:border-gray-300 dark:text-white rounded">
           <b>Output:</b>
           <pre className="whitespace-pre-wrap">This item is worth 100 pounds
@@ -209,7 +208,7 @@ This item is created by Test3</pre>
         <h2 className="text-2xl font-semibold mb-2">Adding Constructors</h2>
         <p>We now know that inheritance allows sub classes to inherit attributes and methods from a super class. We now consider how we should build constructor methods so that instances of our sub classes are created in the most efficient manner.</p>
         <p>Consider the constructors is added to the Vase class.</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Vase extends Item
 { 
     private int height;
@@ -230,11 +229,11 @@ This item is created by Test3</pre>
     }
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>Because the Vase class has four fields, you can implement constructors that look like the above. But, that is not efficient coding. It would involve code duplication</p>
         <p>To reduce code duplication, common fields are initialized by using constructors of the superclass.</p>
         <p>We edit the code of the Vase class as follows:</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Vase extends Item
 { 
     private int height;
@@ -253,7 +252,7 @@ This item is created by Test3</pre>
     }
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>The <b>super</b> keyword refers to the super class</p>
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>Note</b>: Where a sub class is to call a constructor in its parent class using the super() method call, it must be so as the first line of its own constructor. This is to ensure that objects are constructed from their most distant super class first.</div>
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>Note</b>: A derived class does <b>not inherit a superclass constructor by default</b></div>
@@ -261,7 +260,7 @@ This item is created by Test3</pre>
         <p>Similarly, we add constructors to other sub classes</p>
         <p>We use the Java keyword <b>super</b> as the qualifier for calling a superclass method:  <br/><b>super.methodName(arguments);</b></p>
         <p>for example:</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Item{
      ...
      void displayDiscount(){  System.out.println("discounting ...");}  
@@ -279,7 +278,7 @@ public class Vase extends Item{
         obj.displayDiscount();
     }  
 }`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>In a Vase subclass, The "displayDiscount" method has the same signature (name, plus the number and the type of its parameters) and return type as in the superclass. It is called the override the superclass's method. We will learn the override method in the next topic</p>
         <p>Whenever we wish to invoke the version of super's methods (for example "displayDiscount") that was defined by our superclass. We use the <b>"super"</b> keyword</p>
         <div className="bg-gray-50 border-l-4 border-gray-400 p-4 my-2 dark:bg-gray-700 dark:border-gray-300 dark:text-white">
@@ -293,7 +292,7 @@ and taking ...</pre>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Using instanceof operator</h2>
         <p>Consider the code in the file AntiqueShop.java:</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
@@ -306,7 +305,7 @@ and taking ...</pre>
     } 
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>In the above code, we create three objects v1, s1, p1 and initialize values by the constructor with parameters. And then, a reference variable tmp that has the type to be the Item superclass. It is storing the address of object v1. See the figure below:</p>
         <img src="/Org_code/images/inheritance6.png" alt="Inheritance Example 6" className="my-4" />
         <p><b>dynamic type</b>: A reference variable that has the type of the superclass can store the address of the object of sub class. It is called to be <i>dynamic type</i>, the type that is has at runtime.</p>
@@ -315,7 +314,7 @@ and taking ...</pre>
         <p>How to check the tmp variable is pointing to the address of a specified object?</p>
         <p>Using the <b>instanceof</b> keyword. <a href="https://www.javatpoint.com/downcasting-with-instanceof-operator" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">read more</a></p>
         <p>Consider the code:</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
@@ -333,7 +332,7 @@ and taking ...</pre>
     } 
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <div className="bg-gray-50 border-l-4 border-gray-400 p-4 my-2">
           <b>Output:</b>
           <pre className="whitespace-pre-wrap">tmp is pointing to the Vase object</pre>
@@ -343,7 +342,7 @@ and taking ...</pre>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Casting</h2>
         <p>Now, we add a method "putFlowers()" to the Vase class</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class Vase extends Item
 { 
     private int height;
@@ -365,9 +364,9 @@ and taking ...</pre>
     }
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>In the method main, we edit</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
@@ -388,14 +387,14 @@ and taking ...</pre>
     } 
 } 
 `}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <p>The <i>tmp</i> variable that has the type of the superclass only calls methods of the superclass. To call methods of the subclass we must <i>cast explicitly</i>. If the code has attempted to cast an object to a subclass of which it is not an instance then a <i>ClassCastException</i> error will be thrown. For example,</p>
-        <SyntaxHighlighter language="java" style={atomDark} showLineNumbers={true} customStyle={{ borderRadius: '0.375rem', padding: '1rem', margin: '1rem 0' }} className="text-sm shadow-md max-w-full overflow-x-auto">
+        <CopyableCodeBlock language="java">
 {`...
 System.out.println("tmp is pointing to the Vase object");
 ((Statue)tmp).setColour("Gray"); // causes an error
 ...`}
-        </SyntaxHighlighter>
+        </CopyableCodeBlock>
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2"><b>Note</b>: In Java, The Object class is the parent class of all the classes by default.</div>
       </section>
       <section className="mb-8">
@@ -412,12 +411,6 @@ System.out.println("tmp is pointing to the Vase object");
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
           <li><a href="/Org_code/resource/Inheritance.pdf" download className="text-blue-600 underline">Inheritance.pdf</a></li>
-        </ul>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Workshop</h2>
-        <ul>
-          <li>Complete the <a href="/Org_code/workshop/workshop4.pdf" download className="text-blue-600 underline">workshop4</a></li>
         </ul>
       </section>
     </div>
