@@ -1,0 +1,63 @@
+<html>
+<head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="PRO192.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav> 	
+	<h2>Standard Input and Output</h2>
+	<a href="#stream">I/O Streams</a>|
+	<a href="#commandline">I/O from the Command Line</a>|
+	<a href="#example">Example</a>|
+	<a href="#workshop">Workshop</a>   
+</nav>
+<br/><br/>
+<section>
+	<p>This topic covers the Java platform classes used for basic input and output. It focuses primarily on I/O Streams, a powerful concept that greatly simplifies I/O operations</p><br/><br/>
+	<a name="stream"></a>
+	<span>I/O Stream</span><br/><br/>
+	<p>An I/O Stream represents an input source or an output destination. A stream can represent many different kinds of sources and destinations, including disk files, devices, other programs, and memory arrays.</p>
+  <p>Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects. Some streams simply pass on data; others manipulate and transform the data in useful ways.</p>
+  <em>[for <a href="https://docs.oracle.com/javase/tutorial/essential/io/streams.html" target="_blank">detail</a>]</em><br/><br/>
+   <a name="commandline"></a> 
+   <span>I/O from the Command Line</span><br/><br/>
+   <p>A program is often run from the command line and interacts with the user in the command line environment. The Java platform supports this kind of interaction in two ways: through the Standard Streams and through the Console.</p><br/>
+   <p>The Java platform supports three Standard Streams: Standard Input, accessed through System.in; Standard Output, accessed through System.out; and Standard Error, accessed through System.err. <br/><br/>These objects are defined automatically and do not need to be opened. Standard Output and Standard Error are both for output; having error output separately allows the user to divert regular output to a file and still be able to read error messages. For more information, refer to the <a href="https://docs.oracle.com/javase/tutorial/essential/io/cl.html" target="_blank">documentation</a> for your command line interpreter.</p><br/>
+   <p>To get user input, we can also use the Scanner class <em>[for <a href="https://docs.oracle.com/javase/tutorial/essential/io/scanning.html" target="_blank">detail</a>]</em>. This class supports some methods to get various types from the user<br/><br/>
+  	<table id="tbl2">
+  		<tr><th>Method</th><th>	Description</th></tr>
+		<tr><td>nextBoolean()</td><td>	Reads a boolean value from the user</td></tr>
+		<tr><td>nextByte()</td><td>Reads a byte value from the user</td></tr>
+		<tr><td>nextDouble()</td><td>Reads a double value from the user</td></tr>
+		<tr><td>nextFloat()</td><td>Reads a float value from the user</td></tr>
+		<tr><td>nextInt()</td><td>	Reads a int value from the user</td></tr>
+		<tr><td>nextLine()</td><td>	Reads a String value from the user</td></tr>
+		<tr><td>nextLong()</td><td>	Reads a long value from the user</td></tr>
+		<tr><td>nextShort()</td><td>Reads a short value from the user</td></tr>
+
+  	</table></p><br/><br/>
+  	<a name="example"></a>
+  	<span>Example</span>
+  	<img src="images/ioexample.png">
+  	<p>In the above example, we need to import the library class <em>Scanner</em> from the package <em>java.util.Scanner</em>. To use this class at the row 10, we declare the variable sc and create an object from this class. why do we need this? do not worry, when you go to the topic <em>class and object </em>, you will be explained that why you do this.</i>
+  	  </p>
+  	  <p>At the row 11, a message <em>Enter number of elements</em> is printed out </p>
+  	  <p>at the row 12, the statement <em>sc.nextLine()</em> to get a string from the user and then, we use <em>Integer.parseInt()</em> to convert the inpputed string to the integer value.</p>
+  	  <p>At the row 19, <em>System.out.format</em> is used in Java to format output</p>
+  	<br/><br/> 
+    <span>Summary</span><br/><br/>
+   <ul>
+        <li>Easy way to get the user data is to use the library class Scanner</li>
+        <li>Using System.out to print out data to the console</li>
+        <li>We can convert a string to the number by using some classes Integer, Float,.... </li>
+        
+   </ul>
+</section><br/><br/>
+<section class="resource">
+	<h2>Workshop</h2>
+    <ul><li>Complete the <a href="workshop/workshop1.pdf" download>workshop1</a></li></ul>  <a name="workshop"></a>
+</section>
+</body>
+</html>
+</body>

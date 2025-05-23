@@ -12,6 +12,18 @@ export default defineConfig({
           src: 'Org_code/images/*',
           dest: 'images',
         },
+        {
+          src: 'Org_code/resource/*',
+          dest: 'resource',
+        },
+        {
+          src: 'Org_code/*.html',
+          dest: '',
+        },
+        {
+          src: 'Org_code/*.xlsx',
+          dest: '',
+        },
       ],
     }),
   ],
