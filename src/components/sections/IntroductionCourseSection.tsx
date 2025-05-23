@@ -1,4 +1,3 @@
-
 const IntroductionCourseSection = () => {
   return (
     <>
@@ -25,7 +24,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           The following structure diagram identifies the activities.
         </p>
-        <img src="/Org_code/images/algorithmic.png" alt="Algorithmic structure diagram" className="mb-4 rounded shadow" />
+        <img src="/images/algorithmic.png" alt="Algorithmic structure diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           If we switch our attention to the objects involved, we find a Course and a Hybrid Course. Focusing on a Course, we observe that it has a Course Code. We lookup the Code in the institution's Calendar to determine when that Course is offered.
@@ -33,7 +32,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           We say that a Course has a Code and uses a Grading Scheme and that a Hybrid Course is a kind of Course. The diagram below shows these relationships between the objects in this problem domain. The connectors identify the types of relationships. The closed circle connector identifies a <em>has-a</em> relationship, the open circle connector identifies a uses-a relationship and the arrow connector identifies an <em>is-a-kind-of</em> relationship.
         </p>
-        <img src="/Org_code/images/class_relationships.png" alt="Class relationships diagram" className="mb-4 rounded shadow" />
+        <img src="/images/class_relationships.png" alt="Class relationships diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           In switching our attention from the activities in the structure chart to the objects in the relationship diagram we have switched from a procedural description of the problem to an object-oriented description.
@@ -66,7 +65,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           An object-oriented programming solution to an application problem consists of components called objects. The process of designing an object-oriented solution likewise involves abstraction. We distinguish the most important features of the object, identify them publicly and hide the less important details within the object itself.
         </p>
-        <img src="/Org_code/images/abstraction.png" alt="Abstraction diagram" className="mb-4 rounded shadow" />
+        <img src="/images/abstraction.png" alt="Abstraction diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           Each object has a crisp conceptual boundary and acts in ways appropriate to itself. Compare a book with a set of notes. A book has pages that are bound and can be flipped. The page order is fixed. A set of notes consists of loose pages that can be rearranged in any order. We represent the book as an object and the set of notes as another object; each object has a different structure.
@@ -83,7 +82,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           We describe the structure of similar objects in terms of their class. Objects of the same class have the same structure, but possibly different states. The variable types that describe their states are identical, but generally have different values. For example, all of the books in the figure above have a title and an author, but each book has a different title and a different author.
         </p>
-        <img src="/Org_code/images/classes.png" alt="Classes diagram" className="mb-4 rounded shadow" />
+        <img src="/images/classes.png" alt="Classes diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           We say that each object is an instance of its class.
@@ -93,7 +92,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           The Unified Modelling Language (UML) is a general-purpose modeling language developed for describing systems of objects and relationships between their classes. This language defines standard symbols for classes and their relationships.
         </p>
-        <img src="/Org_code/images/class_relationships.png" alt="Class relationships diagram" className="mb-4 rounded shadow" />
+        <img src="/images/class_relationships.png" alt="Class relationships diagram" className="mb-4 rounded shadow" />
 
         <h3 className="text-xl font-semibold mb-2">The Class Diagram</h3>
         <p className="mb-4">
@@ -115,7 +114,7 @@ const IntroductionCourseSection = () => {
           <br />
           ' ': default(package)  
         </p>
-        <img src="/Org_code/images/classUML.png" alt="Class UML diagram" className="mb-4 rounded shadow" />
+        <img src="/images/classUML.png" alt="Class UML diagram" className="mb-4 rounded shadow" />
 
         <h3 className="text-xl font-semibold mb-2">Terminology</h3>
         <p className="mb-4">
@@ -133,7 +132,7 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           A class definition declares the variables and the function prototypes. The variables store each object's data and the functions contain the logic that operates on that data. Clients access objects through calls to these functions without knowledge of the data stored within the objects or the logic that manipulates that data.  
         </p>
-        <img src="/Org_code/images/encapsulation.png" alt="Encapsulation diagram" className="mb-4 rounded shadow" />
+        <img src="/images/encapsulation.png" alt="Encapsulation diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           A well-encapsulated class hides all implementation details within itself. The client does not see the data that the class' object stores within itself or the logic that it uses to manage its internal data. The client only sees a clean and simple interface to the object.
@@ -149,8 +148,8 @@ const IntroductionCourseSection = () => {
         <p className="mb-4">
           A mode() query on a Course type reports a different result than a mode() query on a Hybrid Course type. On the other hand, an assessments() query on a Course type reports the same result as on an HybridCourse type.  
         </p>
-        <img src="/Org_code/images/differentBehavior.png" alt="Different behavior diagram" className="mb-4 rounded shadow" />
-        <img src="/Org_code/images/identicalBehavior.png" alt="Identical behavior diagram" className="mb-4 rounded shadow" />
+        <img src="/images/differentBehavior.png" alt="Different behavior diagram" className="mb-4 rounded shadow" />
+        <img src="/images/identicalBehavior.png" alt="Identical behavior diagram" className="mb-4 rounded shadow" />
 
         <p className="mb-4">
           Polymorphic programming allows us to minimize the duplication of code amongst objects that belong to the same inheritance hierarchy.
@@ -170,7 +169,7 @@ const IntroductionCourseSection = () => {
 
         <h3 className="text-xl font-semibold mb-2">Course Slide</h3>
         <p>
-          - <a href="/Org_code/resource/Introduction.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Introduction.pdf</a>
+          - <a href="/resource/Introduction.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Introduction.pdf</a>
         </p>
       </div>
     </>

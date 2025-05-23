@@ -460,8 +460,8 @@ const ArrayOfObjectsSection = () => {
       <section className="mb-8" id="course-slide">
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul className="list-disc list-inside mb-4">
-          <li><a href="/Org_code/resource/ArrayOfObjects.pdf" download className="text-blue-600 hover:underline">Array of Objects.pdf</a></li>
-          <li><a href="/Org_code/resource/File IO.pdf" download className="text-blue-600 hover:underline">File I/O.pdf</a></li>
+          <li><a href="/resource/ArrayOfObjects.pdf" download className="text-blue-600 hover:underline">Array of Objects.pdf</a></li>
+          <li><a href="/resource/File IO.pdf" download className="text-blue-600 hover:underline">File I/O.pdf</a></li>
         </ul>
       </section>
     </div>

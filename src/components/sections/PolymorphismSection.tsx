@@ -127,7 +127,7 @@ public class Chef implements Menu {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
-          <li><a href="/Org_code/resource/Polymorphism.pdf" download className="text-blue-600 underline">Polymorphism.pdf</a></li>
+          <li><a href="/resource/Polymorphism.pdf" download className="text-blue-600 underline">Polymorphism.pdf</a></li>
         </ul>
       </section>
     </div>

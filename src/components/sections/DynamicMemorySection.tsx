@@ -89,7 +89,7 @@ String s=null;`}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
-          <li><a href="/Org_code/resource/Memory Management in Java.pdf" download className="text-blue-600 underline">Memory Management in Java.pdf</a></li>
+          <li><a href="/resource/Memory Management in Java.pdf" download className="text-blue-600 underline">Memory Management in Java.pdf</a></li>
         </ul>
       </section>
     </div>

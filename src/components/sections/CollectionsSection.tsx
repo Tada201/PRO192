@@ -213,13 +213,13 @@ Choose 1..6:`}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
-          <li><a href="/Org_code/resource/Collections.pdf" download className="text-blue-600 underline">Collections.pdf</a></li>
+          <li><a href="/resource/Collections.pdf" download className="text-blue-600 underline">Collections.pdf</a></li>
         </ul>
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Reading</h2>
         <ul>
-          <li><a href="/Org_code/resource/Support Classes.pdf" download className="text-blue-600 underline">Support Classes.pdf</a></li>
+          <li><a href="/resource/Support Classes.pdf" download className="text-blue-600 underline">Support Classes.pdf</a></li>
         </ul>
       </section>
     </div>

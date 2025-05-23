@@ -137,14 +137,14 @@ float anArrayOfFloats[];`}
 
       <h3 className="text-xl font-semibold mb-2">Course Slide</h3>
       <p>
-        - <a href="/Org_code/resource/Learning the Java Language.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learning the Java Language.pdf</a>
+        - <a href="/resource/Learning the Java Language.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learning the Java Language.pdf</a>
       </p>
 
       <h3 className="text-xl font-semibold mb-2">Reading</h3>
       <ul className="list-disc list-inside mb-4">
-        <li><a href="/Org_code/resource/Download & Install JDK & NetBeans 8.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Download & Install JDK & NetBeans 8.pdf</a></li>
-        <li><a href="/Org_code/resource/Get start.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Get Start.pdf</a></li>
-        <li><a href="/Org_code/resource/Numbers and Strings.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Numbers and Strings.pdf</a></li>
+        <li><a href="/resource/Download & Install JDK & NetBeans 8.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Download & Install JDK & NetBeans 8.pdf</a></li>
+        <li><a href="/resource/Get start.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Get Start.pdf</a></li>
+        <li><a href="/resource/Numbers and Strings.pdf" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Numbers and Strings.pdf</a></li>
       </ul>
     </div>
   );

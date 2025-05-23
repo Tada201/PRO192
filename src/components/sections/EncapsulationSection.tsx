@@ -337,7 +337,7 @@ public class Tester {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Course Slide</h2>
         <ul>
-          <li><a href="/Org_code/resource/Encapsulation.pdf" download className="text-blue-600 underline">Encapsulation.pdf</a></li>
+          <li><a href="/resource/Encapsulation.pdf" download className="text-blue-600 underline">Encapsulation.pdf</a></li>
         </ul>
       </section>
     </div>
