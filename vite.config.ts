@@ -18,4 +18,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['lucide-react'],
   },
+  server: {
+    allowedHosts: ['devserver-main--pro192web.netlify.app'],
+  },
 });
