@@ -1,6 +1,6 @@
 const IntroductionSection = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 bg-blue-100 dark:bg-gray-900 rounded shadow">
+    <div className="info-section">
       <h2>Welcome to Object-Oriented</h2>
       <nav>
         <a href="#COMPLEXITY" className="mr-2 text-blue-600 hover:underline">A Language for Complex Applications</a> | 

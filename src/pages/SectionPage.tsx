@@ -117,26 +117,25 @@ const SectionPage = () => {
       {section.id === 'io' && <FileIOSection />}
       {/* TODO: Add FileIOSection when implemented */}
 
-      <div className="mt-8 flex justify-between">
+      <div className="mt-8 flex flex-col md:flex-row justify-between gap-6">
         {prevSection ? (
           <Link 
             to={`/section/${prevSection.id}`} 
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+            className="inline-flex items-center px-4 py-2 border border-blue-400 bg-blue-400/60 text-blue-900 dark:bg-blue-900 dark:border-blue-500 dark:text-blue-200 rounded-lg shadow hover:bg-blue-500 hover:text-white dark:hover:bg-blue-800 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors duration-200 text-base font-normal min-w-[200px] justify-center"
           >
-            <ArrowLeft className="h-4 w-4 mr-1" />
+            <ArrowLeft className="h-5 w-5 mr-2" />
             {t('previous')}: {t(`${prevSection.translationKey}Title`)}
           </Link>
         ) : (
           <div></div>
         )}
-        
         {nextSection ? (
           <Link 
             to={`/section/${nextSection.id}`} 
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+            className="inline-flex items-center px-4 py-2 border border-blue-400 bg-blue-400/60 text-blue-900 dark:bg-blue-900 dark:border-blue-500 dark:text-blue-200 rounded-lg shadow hover:bg-blue-500 hover:text-white dark:hover:bg-blue-800 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors duration-200 text-base font-normal min-w-[200px] justify-center"
           >
             {t('next')}: {t(`${nextSection.translationKey}Title`)}
-            <ArrowRight className="h-4 w-4 ml-1" />
+            <ArrowRight className="h-5 w-5 ml-2" />
           </Link>
         ) : (
           <div></div>
