@@ -33,14 +33,14 @@ const DynamicMemorySection = () => {
           <li><b>Dynamic heap</b>: The runtime data area for all Java objects and arrays. Created when the JVM starts and may grow/shrink as the application runs. Objects not used become garbage and are de-allocated.</li>
           <li><b>Stack</b>: Memory for temporary variables and method calls. Each method call creates a new block in the stack for its local values and references. When the method ends, the block is erased.</li>
         </ul>
-        <img src="/images/memory.png" alt="Java memory layout" className="my-4" />
+        <img src="/media/memory.png" alt="Java memory layout" className="my-4" />
         <ol className="list-decimal ml-6 mb-2">
           <li>When the program runs, the class definition <b>Tester</b> is loaded to static heap.</li>
           <li>Running <b>main</b> creates stack space for variables <code>age</code> and <code>sc</code>. <code>age</code> is stored directly in stack; <code>sc</code> points to a <b>Scanner</b> object in heap.</li>
           <li>When <b>main</b> finishes, its stack space is discarded. <code>age</code> and <code>sc</code> are killed.</li>
           <li>The <b>Scanner</b> object in heap still exists and becomes garbage.</li>
         </ol>
-        <img src="/images/memory2.png" alt="Java memory after main" className="my-4" />
+        <img src="/media/memory2.png" alt="Java memory after main" className="my-4" />
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Dynamic Allocation</h2>
@@ -56,7 +56,7 @@ const DynamicMemorySection = () => {
           <li>At [1], <code>new</code> allocates memory in heap for an array of 5 elements and returns its address to <code>a</code>.</li>
           <li>At [2], <code>new</code> allocates memory in heap for the string "hello" and returns its address to <code>s</code>.</li>
         </ul>
-        <img src="/images/allocation.png" alt="Dynamic allocation" className="my-4" />
+        <img src="/media/allocation.png" alt="Dynamic allocation" className="my-4" />
         <p className="mb-4">To make a reference point to nothing, use <code>null</code>:</p>
         <CopyableCodeBlock language="java">
 {`int a[]=null;
@@ -68,7 +68,7 @@ String s=null;`}
         <p className="mb-4">
           In Java, you never explicitly free memory. Java provides <b>automatic garbage collection</b>. Local variables in a method are allocated when the method runs and deallocated automatically when it terminates. Unused objects in heap memory are deallocated by the Java system.
         </p>
-        <img src="/images/memory3.png" alt="Scope and garbage collection" className="my-4" />
+        <img src="/media/memory3.png" alt="Scope and garbage collection" className="my-4" />
         <p className="mb-4">
           When the program runs to a certain line, variables may go out of scope and objects become garbage. Setting a reference to <code>null</code> also makes the object eligible for garbage collection.
         </p>

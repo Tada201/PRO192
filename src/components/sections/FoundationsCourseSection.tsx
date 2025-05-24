@@ -10,7 +10,7 @@ const FoundationsCourseSection = () => {
         The Java Virtual Machine is an abstract computing machine. Like a real computing machine, it has an instruction set and manipulates various memory areas at run time. It is reasonably common to implement a programming language using a virtual machine; the best-known virtual machine may be the P-Code machine of UCSD Pascal.  
         <a href="http://en.wikipedia.org/wiki/Java_virtual_machine" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">See Wiki for a detailed exposition</a>.
       </p>
-      <img src="/images/JVM.png" alt="Java Virtual Machine" className="mb-4 rounded shadow" />
+      <img src="/media/JVM.png" alt="Java Virtual Machine" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Platform Independence</h3>
       <p className="mb-4">The key that allowed Java to solve both the security and the portability problems is that the output of a Java compiler is not executable code. Rather, it is ByteCode - a highly optimized set of instructions designed to be executed by the Java run-time system, which is called the Java Virtual Machine (JVM).</p>
@@ -23,17 +23,17 @@ const FoundationsCourseSection = () => {
         <li>Write code</li>
         <li>Compile/Run the program</li>
       </ol>
-      <img src="/images/firstProgram.png" alt="First Java Program" className="mb-4 rounded shadow" />
-      <img src="/images/step2.png" alt="Step 2" className="mb-4 rounded shadow" />
-      <img src="/images/step22.png" alt="Step 2.2" className="mb-4 rounded shadow" />
-      <img src="/images/step3.png" alt="Step 3" className="mb-4 rounded shadow" />
-      <img src="/images/step4.png" alt="Step 4" className="mb-4 rounded shadow" />
+      <img src="/media/firstProgram.png" alt="First Java Program" className="mb-4 rounded shadow" />
+      <img src="/media/step2.png" alt="Step 2" className="mb-4 rounded shadow" />
+      <img src="/media/step22.png" alt="Step 2.2" className="mb-4 rounded shadow" />
+      <img src="/media/step3.png" alt="Step 3" className="mb-4 rounded shadow" />
+      <img src="/media/step4.png" alt="Step 4" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Keywords and Identifiers</h3>
       <p className="mb-4">
         Keywords: Almost all of them are similar to those in C language.  
       </p>
-      <img src="/images/keyword.png" alt="Keywords" className="mb-4 rounded shadow" />
+      <img src="/media/keyword.png" alt="Keywords" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Data Types</h3>
       <p className="mb-4">
@@ -48,7 +48,7 @@ const FoundationsCourseSection = () => {
 {`int RollID;
 char type='A';`}
       </CopyableCodeBlock>
-      <img src="/images/PrimaryDataType.png" alt="Primary Data Types" className="mb-4 rounded shadow" />
+      <img src="/media/PrimaryDataType.png" alt="Primary Data Types" className="mb-4 rounded shadow" />
 
       <h4 className="text-lg font-semibold mb-2">Reference Type</h4>
       <p className="mb-4">
@@ -65,8 +65,8 @@ char type='A';`}
 ar= new int[3];
 ar[0]=1; ar[1]=2; ar[2]=3;`}
       </CopyableCodeBlock>
-      <img src="/images/referenceDatatype.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
-      <img src="/images/array.png" alt="Array" className="mb-4 rounded shadow" />
+      <img src="/media/referenceDatatype.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
+      <img src="/media/array.png" alt="Array" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Scope</h3>
       <p className="mb-4">
@@ -89,7 +89,7 @@ ar[0]=1; ar[1]=2; ar[2]=3;`}
         The length of an array is established when the array is created.  
         Each item in an array is called an element, and each element is accessed by its numerical index.
       </p>
-      <img src="/images/array2.png" alt="One Dimensional Array" className="mb-4 rounded shadow" />
+      <img src="/media/array2.png" alt="One Dimensional Array" className="mb-4 rounded shadow" />
       <CopyableCodeBlock language="java">
 {`int[] ar;  // for detail click here
 float anArrayOfFloats[];`}
@@ -99,11 +99,11 @@ float anArrayOfFloats[];`}
       <p className="mb-4">
         Consider the example:
       </p>
-      <img src="/images/2DarrayCode.png" alt="2D Array Code" className="mb-4 rounded shadow" />
+      <img src="/media/2DarrayCode.png" alt="2D Array Code" className="mb-4 rounded shadow" />
       <p className="mb-4">
         This is a sample memory map of the above code
       </p>
-      <img src="/images/2Darray.png" alt="2D Array Memory Map" className="mb-4 rounded shadow" />
+      <img src="/media/2Darray.png" alt="2D Array Memory Map" className="mb-4 rounded shadow" />
 
       <p className="mb-4">
         we have created a multidimensional array named <em>m</em>, it holds 8 elements. The variable m is storing the value: <em>8000</em> that is the address of an array. m can be seen as an array of one–dimensional array.  
@@ -113,9 +113,9 @@ float anArrayOfFloats[];`}
       </p>
 
       <h3 className="text-xl font-semibold mb-2">Operators</h3>
-      <img src="/images/Operator.png" alt="Operators" className="mb-4 rounded shadow" />
-      <img src="/images/operator2.png" alt="Operators 2" className="mb-4 rounded shadow" />
-      <img src="/images/operator3.png" alt="Operators 3" className="mb-4 rounded shadow" />
+      <img src="/media/Operator.png" alt="Operators" className="mb-4 rounded shadow" />
+      <img src="/media/operator2.png" alt="Operators 2" className="mb-4 rounded shadow" />
+      <img src="/media/operator3.png" alt="Operators 3" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Logic constructs</h3>
       <p className="mb-4">

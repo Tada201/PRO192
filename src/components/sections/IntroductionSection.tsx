@@ -22,14 +22,14 @@ const IntroductionSection = () => {
           <li>earns a grade in each course</li>
         </ul>
         <p>The following structure diagram identifies the activities.</p>
-        <img src="/images/algorithmic.png" alt="Algorithmic diagram" />
+        <img src="/media/algorithmic.png" alt="Algorithmic diagram" />
         <p>
           If we switch our attention to the objects involved, we find a Course and a Hybrid Course. Focusing on a Course, we observe that it has a Course Code. We lookup the Code in the institution's Calendar to determine when that Course is offered.
         </p>
         <p>
           We say that a Course has a Code and uses a Grading Scheme and that a Hybrid Course is a kind of Course. The diagram below shows these relationships between the objects in this problem domain. The connectors identify the types of relationships. The closed circle connector identifies a <em>has-a</em> relationship, the open circle connector identifies a uses-a relationship and the arrow connector identifies an <em>is-a-kind-of</em> relationship.
         </p>
-        <img src="/images/class_relationships.png" alt="Class relationships diagram" />
+        <img src="/media/class_relationships.png" alt="Class relationships diagram" />
         <p>
           In switching our attention from the activities in the structure chart to the objects in the relationship diagram we have switched from a procedural description of the problem to an object-oriented description.
         </p>
@@ -59,7 +59,7 @@ const IntroductionSection = () => {
         <p>
           An object-oriented programming solution to an application problem consists of components called objects. The process of designing an object-oriented solution likewise involves abstraction. We distinguish the most important features of the object, identify them publicly and hide the less important details within the object itself.
         </p>
-        <img src="/images/abstraction.png" alt="Abstraction diagram" />
+        <img src="/media/abstraction.png" alt="Abstraction diagram" />
         <p>
           Each object has a crisp conceptual boundary and acts in ways appropriate to itself. Compare a book with a set of notes. A book has pages that are bound and can be flipped. The page order is fixed. A set of notes consists of loose pages that can be rearranged in any order. We represent the book as an object and the set of notes as another object; each object has a different structure.
         </p>
@@ -73,7 +73,7 @@ const IntroductionSection = () => {
         <p>
           We describe the structure of similar objects in terms of their class. Objects of the same class have the same structure, but possibly different states. The variable types that describe their states are identical, but generally have different values. For example, all of the books in the figure above have a title and an author, but each book has a different title and a different author.
         </p>
-        <img src="/images/classes.png" alt="Classes diagram" />
+        <img src="/media/classes.png" alt="Classes diagram" />
         <br />
         <p>We say that each object is an instance of its class.</p>
         <br />
@@ -81,7 +81,7 @@ const IntroductionSection = () => {
         <p>
           The Unified Modelling Language (UML) is a general-purpose modeling language developed for describing systems of objects and relationships between their classes. This language defines standard symbols for classes and their relationships.
         </p>
-        <img src="/images/class_relationships.png" alt="Class relationships diagram" />
+        <img src="/media/class_relationships.png" alt="Class relationships diagram" />
         <br />
         <span>The Class Diagram</span><br />
         <p>The primary graphic in UML is the class diagram: a rectangular box with three compartments:</p>
@@ -95,7 +95,7 @@ const IntroductionSection = () => {
           '-': private<br />
           '#': protected<br />
           ' ': default(package)<br />
-          <img src="/images/classUML.png" alt="Class UML diagram" />
+          <img src="/media/classUML.png" alt="Class UML diagram" />
         </p>
         <p>The naming conventions include:
           <ul>
@@ -115,7 +115,7 @@ const IntroductionSection = () => {
         <p>Encapsulation is the primary concept of object-oriented programming. It refers to the integration of data and logic within a class' implementation that establishes the crisp interface between the implementation and any client. Encapsulation maintains high cohesion within a class and low coupling between the class' implementation and any one of its clients.</p>
         <p>
           A class definition declares the variables and the function prototypes. The variables store each object's data and the functions contain the logic that operates on that data. Clients access objects through calls to these functions without knowledge of the data stored within the objects or the logic that manipulates that data.
-          <img src="/images/encapsulation.png" alt="Encapsulation diagram" />
+          <img src="/media/encapsulation.png" alt="Encapsulation diagram" />
         </p>
         <p>
           A well-encapsulated class hides all implementation details within itself. The client does not see the data that the class' object stores within itself or the logic that it uses to manage its internal data. The client only sees a clean and simple interface to the object.
@@ -129,8 +129,8 @@ const IntroductionSection = () => {
         <p>
           A mode() query on a Course type reports a different result than a mode() query on a Hybrid Course type. On the other hand, an assessments() query on a Course type reports the same result as on an HybridCourse type.
           <br />
-          <img src="/images/differentBehavior.png" alt="different behavior polymorphism" />
-          <img src="/images/identicalBehavior.png" alt="identical behavior polymorphism" />
+          <img src="/media/differentBehavior.png" alt="different behavior polymorphism" />
+          <img src="/media/identicalBehavior.png" alt="identical behavior polymorphism" />
         </p>
         <p>
           Polymorphic programming allows us to minimize the duplication of code amongst objects that belong to the same inheritance hierarchy.

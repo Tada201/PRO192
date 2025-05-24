@@ -89,7 +89,7 @@ const ArrayOfObjectsSection = () => {
         }
 }`}</CopyableCodeBlock>
         <p className="mt-4">To explore the instruction that is highlighted, consider the figure below </p>
-        <img src="/images/array3.png" alt="array3" className="my-4" />
+        <img src="/media/array3.png" alt="array3" className="my-4" />
         <p>After starting, the obj variable points to address 1000, this block contains the reference variable <em>list</em> that is pointing to address 2000. It is an array of pointers. All elements are initiated to <em>null</em> </p>
         <p className="mt-4">To complete the program, we add a method named <em>addItem</em> to the ItemList class. </p>
         <CopyableCodeBlock language="java">{`public class ItemList{
@@ -124,7 +124,7 @@ const ArrayOfObjectsSection = () => {
           <li>Add this address to the array at an index that is numOfItem. </li>
           <li>Increase the numOfItem by 1</li>
         </ol>
-        <img src="/images/array4.png" alt="array4" className="my-4" />
+        <img src="/media/array4.png" alt="array4" className="my-4" />
         <p> We add more some methods to the ItemList class</p>
         <CopyableCodeBlock language="java">{`public class ItemList{
 	...
@@ -267,7 +267,7 @@ const ArrayOfObjectsSection = () => {
      }
 }`}</CopyableCodeBlock>
         <p>To explore what is doing, we look at the figure:</p>
-        <img src="/images/array5.png" alt="array5" className="my-4" />
+        <img src="/media/array5.png" alt="array5" className="my-4" />
         <p>The <em>findItemIndex</em> method finds the item within the list and returns the position of the first occurrence in the list. For example, if you wish to get the <em>position</em> of the item which value is <em>100</em> then the method returns <em>0</em></p>
         <p className="mt-4">The <em>findItem</em> method finds the item within the list and returns the address of the first occurrence in the list. For example, if you wish to get the <em>item</em> which creator is <em>Paris</em> then the method returns <em>300</em></p>
         <p className="mt-4">If you wish to remove the item at index 1, the method <em>removeItem(index)</em> will shift any subsequent elements to the up. After shifting, the old item that was at position 1 becomes garbage and Java will deallocate it.</p>
@@ -295,23 +295,23 @@ const ArrayOfObjectsSection = () => {
         <p>I/O Stream contains a reference to a data source, methods for accessing data in the source, and methods for type conversions</p>
         <p>Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects. Some streams simply pass on data; others manipulate and transform the data in useful ways (type conversions may be needed).</p>
         <p>No matter how they work internally, all streams present the same simple model to programs that use them: A stream is a sequence of data. A program uses an input stream to read data from a source, one item at a time and uses an output stream to write data to a destination, one item at a time.</p>
-        <img src="/images/IO.01.gif" alt="IO.01" className="my-4" />
-        <img src="/images/IO.02.gif" alt="IO.02" className="my-4" />
+        <img src="/media/IO.01.gif" alt="IO.01" className="my-4" />
+        <img src="/media/IO.02.gif" alt="IO.02" className="my-4" />
         <p><em>[ Introduction to the <a href="https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html" target="_blank" className="text-blue-600 hover:underline">java.io package</a>]</em></p>
         <p><em>[ Introduction to I/O <a href="https://docs.oracle.com/javase/tutorial/essential/io/streams.html" target="_blank" className="text-blue-600 hover:underline">Stream</a>]</em></p>
         <p><em>[ Introduction to the <a href="https://docs.oracle.com/javase/7/docs/api/java/io/File.html" target="_blank" className="text-blue-600 hover:underline">File</a> class]</em></p>
         <div className="my-4 p-2 bg-yellow-100 dark:bg-yellow-900 rounded border-l-4 border-yellow-400"><b>In the following program, the user will give a pathname, the program will show information about this pathname in the file system.</b></div>
-        <img src="/images/IO.09A.gif" alt="IO.09A" className="my-4" />
-        <img src="/images/IO.09B.gif" alt="IO.09B" className="my-4" />
-        <img src="/images/IO.09C.gif" alt="IO.09C" className="my-4" />
-        <img src="/images/IO.09D.gif" alt="IO.09D" className="my-4" />
+        <img src="/media/IO.09A.gif" alt="IO.09A" className="my-4" />
+        <img src="/media/IO.09B.gif" alt="IO.09B" className="my-4" />
+        <img src="/media/IO.09C.gif" alt="IO.09C" className="my-4" />
+        <img src="/media/IO.09D.gif" alt="IO.09D" className="my-4" />
         <p>Result in 3 cases:</p>
-        <img src="/images/IO.09E.gif" alt="IO.09E" className="my-4" />
+        <img src="/media/IO.09E.gif" alt="IO.09E" className="my-4" />
         <span className="font-semibold">Accessing ASCII text files</span>
         <p className="mt-4">When a text file is used, the file designer will decide text organization (data meanings) in a file. So, all read/write operations must perform appropriately. </p>
         <p>Two following pictures depict ways we can use to access a text file:</p>
-        <img src="/images/IO.10.gif" alt="IO.10" className="my-4" />
-        <img src="/images/IO.11.gif" alt="IO.11" className="my-4" />
+        <img src="/media/IO.10.gif" alt="IO.10" className="my-4" />
+        <img src="/media/IO.11.gif" alt="IO.11" className="my-4" />
       </section>
       <section className="mb-8" id="build">
         <h2 className="text-2xl font-semibold mb-2">Build a complete program</h2>
@@ -349,13 +349,13 @@ const ArrayOfObjectsSection = () => {
           - Class ProductManager for the program.
         </div>
         <p className="font-bold">Software structure and menu:</p>
-        <img src="/images/IO.12A.gif" alt="IO.12A" className="my-4" />
+        <img src="/media/IO.12A.gif" alt="IO.12A" className="my-4" />
         <p>Note: A class that uses classes in a package should be outside of the package. The ProductManger class is put outside of the products package.</p>
-        <img src="/images/IO.12B.gif" alt="IO.12B" className="my-4" />
+        <img src="/media/IO.12B.gif" alt="IO.12B" className="my-4" />
         <p className="font-bold">Implementations</p>
         <p>The Inputter class is the tool for inputting data based on the program’s constraints.</p>
-        <img src="/images/IO.12C.gif" alt="IO.12C" className="my-4" />
-        <img src="/images/IO.12D.gif" alt="IO.12D" className="my-4" />
+        <img src="/media/IO.12C.gif" alt="IO.12C" className="my-4" />
+        <img src="/media/IO.12D.gif" alt="IO.12D" className="my-4" />
         <div className="my-4 p-2 bg-gray-100 dark:bg-gray-700 rounded"><b>Regular Expression</b> A regular expression is a way or a language that helps us to describe strings that are in a pre-defined specific pattern.<br />
          Example: “[pP][\\d]{3}”:  Pattern for “p000", “P001”, “P909” <br />
         Meanings of parts:<br />
@@ -364,22 +364,22 @@ const ArrayOfObjectsSection = () => {
         In the String class, we can use the boolean matches(String regEx) method to check a string whether it matches the specified regular expression or not.<br />
         <em>[For <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/regex/Pattern.html" target="_blank" className="text-blue-600 hover:underline">more details</a>]</em>
         </div>
-        <img src="/images/IO.12E.gif" alt="IO.12E" className="my-4" />
-        <img src="/images/IO.12F.gif" alt="IO.12F" className="my-4" />
-        <img src="/images/IO.12G.gif" alt="IO.12G" className="my-4" />
-        <img src="/images/IO.12H.gif" alt="IO.12H" className="my-4" />
-        <img src="/images/IO.12I.gif" alt="IO.12I" className="my-4" />
-        <img src="/images/IO.12J.gif" alt="IO.12J" className="my-4" />
-        <img src="/images/IO.12K.gif" alt="IO.12K" className="my-4" />
-        <img src="/images/IO.12L.gif" alt="IO.12L" className="my-4" />
-        <img src="/images/IO.12M.gif" alt="IO.12M" className="my-4" />
-        <img src="/images/IO.12N.gif" alt="IO.12N" className="my-4" />
-        <img src="/images/IO.12O.gif" alt="IO.12O" className="my-4" />
-        <img src="/images/IO.12P.gif" alt="IO.12P" className="my-4" />
-        <img src="/images/IO.12Q.gif" alt="IO.12Q" className="my-4" />
-        <img src="/images/IO.12R.gif" alt="IO.12R" className="my-4" />
-        <img src="/images/IO.12S.gif" alt="IO.12S" className="my-4" />
-        <img src="/images/IO.12T.gif" alt="IO.12T" className="my-4" />
+        <img src="/media/IO.12E.gif" alt="IO.12E" className="my-4" />
+        <img src="/media/IO.12F.gif" alt="IO.12F" className="my-4" />
+        <img src="/media/IO.12G.gif" alt="IO.12G" className="my-4" />
+        <img src="/media/IO.12H.gif" alt="IO.12H" className="my-4" />
+        <img src="/media/IO.12I.gif" alt="IO.12I" className="my-4" />
+        <img src="/media/IO.12J.gif" alt="IO.12J" className="my-4" />
+        <img src="/media/IO.12K.gif" alt="IO.12K" className="my-4" />
+        <img src="/media/IO.12L.gif" alt="IO.12L" className="my-4" />
+        <img src="/media/IO.12M.gif" alt="IO.12M" className="my-4" />
+        <img src="/media/IO.12N.gif" alt="IO.12N" className="my-4" />
+        <img src="/media/IO.12O.gif" alt="IO.12O" className="my-4" />
+        <img src="/media/IO.12P.gif" alt="IO.12P" className="my-4" />
+        <img src="/media/IO.12Q.gif" alt="IO.12Q" className="my-4" />
+        <img src="/media/IO.12R.gif" alt="IO.12R" className="my-4" />
+        <img src="/media/IO.12S.gif" alt="IO.12S" className="my-4" />
+        <img src="/media/IO.12T.gif" alt="IO.12T" className="my-4" />
         <span className="font-semibold">Exercise</span>
         <div className="my-4 p-2 bg-yellow-100 dark:bg-yellow-900 rounded border-l-4 border-yellow-400">
           Upgrade the Product Manager program above. Add the following extra operations to this program:<br />
@@ -407,9 +407,9 @@ const ArrayOfObjectsSection = () => {
         - the transient modifier is used when a field having value as a result of computation from other fields.  [read <a href="https://www.geeksforgeeks.org/transient-keyword-java/#:~:text=transient%20keyword%20in%20Java.%20transient%20is%20a%20variables,save%20default%20value%20of%20that%20variable%20data%20type." target="_blank" className="text-blue-600 hover:underline">more</a>]
         </p>
         <p>Model for reading objects from and writing objects to an object stream.</p>
-        <img src="/images/IO.16.gif" alt="IO.16" className="my-4" />
+        <img src="/media/IO.16.gif" alt="IO.16" className="my-4" />
         <p>The following image helps us explore the structure of an object file in Java.</p>
-        <img src="/images/IO.17.gif" alt="IO.17" className="my-4" />
+        <img src="/media/IO.17.gif" alt="IO.17" className="my-4" />
         <ol className="list-decimal list-inside mb-4">
           <li> Package and class information including field names, field types (I: int) are put at the beginning of the file.</li>
           <li>Fields are written to file in reverse order.</li>
@@ -423,16 +423,16 @@ const ArrayOfObjectsSection = () => {
           <b>Problem</b>:The following demonstration will depict the way to access an object file containing some books.
         </div>
         <p>Software structure of Book Managing Program</p>
-        <img src="/images/IO.18A.gif" alt="IO.18A" className="my-4" />
-        <img src="/images/IO.18B.gif" alt="IO.18B" className="my-4" />
-        <img src="/images/IO.18C.gif" alt="IO.18C" className="my-4" />
-        <img src="/images/IO.18D.gif" alt="IO.18D" className="my-4" />
-        <img src="/images/IO.18E.gif" alt="IO.18E" className="my-4" />
-        <img src="/images/IO.18F.gif" alt="IO.18F" className="my-4" />
-        <img src="/images/IO.18G.gif" alt="IO.18G" className="my-4" />
-        <img src="/images/IO.18H.gif" alt="IO.18H" className="my-4" />
+        <img src="/media/IO.18A.gif" alt="IO.18A" className="my-4" />
+        <img src="/media/IO.18B.gif" alt="IO.18B" className="my-4" />
+        <img src="/media/IO.18C.gif" alt="IO.18C" className="my-4" />
+        <img src="/media/IO.18D.gif" alt="IO.18D" className="my-4" />
+        <img src="/media/IO.18E.gif" alt="IO.18E" className="my-4" />
+        <img src="/media/IO.18F.gif" alt="IO.18F" className="my-4" />
+        <img src="/media/IO.18G.gif" alt="IO.18G" className="my-4" />
+        <img src="/media/IO.18H.gif" alt="IO.18H" className="my-4" />
         <p>The result:</p>
-        <img src="/images/IO.18I.gif" alt="IO.18I" className="my-4" />
+        <img src="/media/IO.18I.gif" alt="IO.18I" className="my-4" />
         <span className="font-semibold">Exercise</span>
         <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded mb-4 whitespace-pre-line">
           Develop the above demonstration program for managing books with the following specifications:

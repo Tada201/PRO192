@@ -29,11 +29,11 @@ const EncapsulationSection = () => {
           <li><b>Looking for verbs</b>, methods or behaviors are often described by verbs.</li>
           <li><b>Find the relationship</b> among classes. <b>TIPS</b>: <em>If your problem has two main nouns. They have often the relationship.</em></li>
         </ol>
-        <img src="/images/encapsulation1.png" alt="Encapsulation example 1" className="my-4" />
+        <img src="/media/encapsulation1.png" alt="Encapsulation example 1" className="my-4" />
         <p>We use Unified Modeling Language(UML) to describe the class structure. UML provides mechanisms to represent class members, such as attributes and methods, and additional information.</p>
           <a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Read this article to get more about UML{'>'}</a>
         <p className="mt-2">A UML class diagram is used to represent the Car class</p>
-        <img src="/images/encapsulation2.png" alt="Encapsulation example 2" className="my-4" />
+        <img src="/media/encapsulation2.png" alt="Encapsulation example 2" className="my-4" />
         <h3 className="font-semibold mt-4">How to draw the class structure?</h3>
         <ul className="list-disc ml-6 mb-2">
           <li>put main noun(Car) to make the class name</li>
@@ -94,8 +94,8 @@ const EncapsulationSection = () => {
     }
 }`}
         </CopyableCodeBlock>
-        <img src="/images/demoCarClass.png" alt="Demo Car Class" className="my-4" />
-        <img src="/images/outputCarClass.png" alt="Output Car Class" className="my-4" />
+        <img src="/media/demoCarClass.png" alt="Demo Car Class" className="my-4" />
+        <img src="/media/outputCarClass.png" alt="Output Car Class" className="my-4" />
       </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Constructor</h2>
@@ -107,13 +107,13 @@ const EncapsulationSection = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Overloading Constructor</h2>
         <p>Overloading a class' constructor adds communication options for client code. Client code can select the most appropriate set of arguments at creation time.</p>
-        <img src="/images/Encapsulation8.png" alt="Encapsulation8" className="my-4" />
+        <img src="/media/Encapsulation8.png" alt="Encapsulation8" className="my-4" />
         <p>This method is called the <b>constructor with parameters</b>.</p>
-        <img src="/images/encapsulation9.png" alt="Encapsulation9" className="my-4" />
+        <img src="/media/encapsulation9.png" alt="Encapsulation9" className="my-4" />
         <p>In the above code, the third object c3 is created and c3 invokes the constructor with parameters. All fields of c3 are assigned as {'{"red", 100, true, true}'}. </p>
-        <img src="/images/encapsulation10.png" alt="Encapsulation10" className="my-4" />
+        <img src="/media/encapsulation10.png" alt="Encapsulation10" className="my-4" />
         <p>Because c3 invokes pressAcceleratorButton(), The state of c3 is printed out.</p>
-        <img src="/images/encapsulation11.png" alt="Encapsulation11" className="my-4" />
+        <img src="/media/encapsulation11.png" alt="Encapsulation11" className="my-4" />
         <p><b>Note</b>: If the class definition includes the prototype for a constructor with some parameters but does not include the prototype for a no-argument default constructor, the compiler DOES NOT insert an empty-body, no-argument default constructor. The compiler only inserts an empty-body, no-argument default constructor if the class definition does not declare ANY constructor.</p>
         <p>All methods that are implemented in the Car class at the time are called member methods/functions.</p>
       </section>
@@ -125,7 +125,7 @@ const EncapsulationSection = () => {
         <p>The keyword <b>this</b> returns the address of the current object. That is, this holds the address of the region of memory that contains all of the data stored in the instance variables of current object.</p>
         <p><b>Scope of this:</b> This is created and used just when the member method is called. After the member method terminates <b>this</b> will be discarded.</p>
         <a href="https://www.javatpoint.com/this-keyword" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">more</a>
-        <img src="/images/Encapsulation12.png" alt="Encapsulation12" className="my-4" />
+        <img src="/media/Encapsulation12.png" alt="Encapsulation12" className="my-4" />
         <p>Upon entering the constructor with parameters, the pointer <b>this</b> is created by Java and it is storing the address of the object (4000). <b>c3 and this</b> are pointing to the current object. Using <b>this</b> in here to distinguish local variable and instance variable/field. After assigning values of input parameters to instance variables of c3, <b>this</b> will be discarded.</p>
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>TIPS</b>: If parameters (formal arguments) of a member method and instance variables/fields are same. So, we are using this keyword to distinguish local variable and instance variable.</div>
       </section>
@@ -133,15 +133,15 @@ const EncapsulationSection = () => {
         <h2 className="text-2xl font-semibold mb-2">Member functions</h2>
         <p>Member functions are the functions, which have their declaration inside the class definition and work on the data members of the class.</p>
         <p>At the time, the Car class contains member functions as:</p>
-        <img src="/images/encapsulation13.png" alt="Encapsulation13" className="my-4" />
+        <img src="/media/encapsulation13.png" alt="Encapsulation13" className="my-4" />
         <p>After an object is created and assigned default values. Now, if you want to set one instance variable to other value. for example, change only one instance variable colour of c3 to 'black'. What solution for this case?</p>
         <p>It's OK, we will add more a method <b>setColour()</b> to the Car class design. The code as:</p>
-        <img src="/images/encapsulation14.png" alt="Encapsulation14" className="my-4" />
+        <img src="/media/encapsulation14.png" alt="Encapsulation14" className="my-4" />
         <p>The main code:</p>
-        <img src="/images/encapsulation15.png" alt="Encapsulation15" className="my-4" />
+        <img src="/media/encapsulation15.png" alt="Encapsulation15" className="my-4" />
         <p>the pointer <b>c3 invokes setColour("black")</b>. Therefore, at the time <b>this.Colour=...</b> is used to access to instance variable of c3.</p>
         <p>The same above idea, if you want to get the value of one instance variable you should add more a method <b>getColour()</b></p>
-        <img src="/images/encapsulation16.png" alt="Encapsulation16" className="my-4" />
+        <img src="/media/encapsulation16.png" alt="Encapsulation16" className="my-4" />
         <p>You can also add more other getters/setters. The completed code:</p>
         <CopyableCodeBlock language="java">
 {`public class Car {
@@ -226,7 +226,7 @@ Colour of c3:black</pre>
         <h3 className="font-semibold mt-4">Creating a package</h3>
         <p>To create a package, you choose a name for the package and put a package statement with that name at the top of every source file that contains the types (classes, interfaces, enumerations, and annotation types) that you want to include in the package.</p>
         <p>The package statement (for example, <i>package mypkg;</i>) must be the first line in the source file. There can be only one package statement in each source file, and it applies to all types in the file.</p>
-        <img src="/images/package.png" alt="Package Example" className="my-4" />
+        <img src="/media/package.png" alt="Package Example" className="my-4" />
           <a href="https://docs.oracle.com/javase/tutorial/java/package/createpkgs.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">read more{'>'}</a>
       </section>
       <section className="mb-8">
@@ -239,9 +239,9 @@ Colour of c3:black</pre>
           <li>default: if don't any notation, it is treated as default</li>
         </ul>
         <p>these keywords are called <b>access modifier</b></p>
-        <img src="/images/encapsulation20.png" alt="Encapsulation20" className="my-4" />
+        <img src="/media/encapsulation20.png" alt="Encapsulation20" className="my-4" />
         <p>Let's understand the access modifiers in Java by a simple table.</p>
-        <img src="/images/encapsulation21.png" alt="Encapsulation21" className="my-4" />
+        <img src="/media/encapsulation21.png" alt="Encapsulation21" className="my-4" />
         <h3 className="font-semibold mt-4">private</h3>
         <p>The private access modifier is accessible only within the class.</p>
         <p>We cut the method main in the file Car.java. Paste it to the other file named Tester.java.</p>
