@@ -1,5 +1,4 @@
 import  { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -23,7 +22,7 @@ const HeroSection = () => {
           <button 
             className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 shadow-sm"
             onClick={() => {
-              alert('Syllabus download will be available soon.');
+              window.location.href = 'https://drive.google.com/file/d/1F-MrzcO8qpKdOirw5AA0-ZzfHs6Su0XG/view';
             }}
           >
             Download Syllabus
