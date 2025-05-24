@@ -13,7 +13,7 @@ export const sections: Section[] = [
     translationKey: "welcome"
   },
   {
-    id: "Course Introduction",
+    id: "introductionCourse",
     icon: BookOpen,
     translationKey: "introductionCourse"
   },
