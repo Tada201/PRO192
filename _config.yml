@@ -1,6 +1,6 @@
 title: My Jekyll Site
 description: Test site for Jekyll
 author: Tada201
-baseurl: ""
-url: "https://github.com/Tada201/PRO192.git"
+baseurl: "/PRO192"
+url: "https://tada201.github.io/PRO192"
 theme: minima
