@@ -42,8 +42,8 @@ jobs:
 
       - name: Copy React build to Jekyll source
         run: |
-          mkdir -p ./public/react
-          cp -r ./dist/* ./public/react/
+          mkdir -p ./public
+          cp -r ./dist/* ./public/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
