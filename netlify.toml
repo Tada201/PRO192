@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build && rm -rf public/* && cp -r dist/* public/"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
