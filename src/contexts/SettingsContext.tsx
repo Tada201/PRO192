@@ -1,5 +1,7 @@
 import  { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
+// Global mouse click audio feedback (works regardless of custom cursor)
+
 interface Settings {
   theme: 'light' | 'dark';
   textSize: 'small' | 'medium' | 'large';
@@ -18,8 +20,8 @@ const defaultSettings: Settings = {
   language: 'en',
   fontStyle: 'open_sans',
   colorBlindnessMode: 'none',
-  customCursorEnabled: true, // Add this line
-  audioEnabled: true
+  customCursorEnabled: true, // Always enabled by default
+  audioEnabled: true // Always enabled by default
 };
 
 interface SettingsContextType {
@@ -35,7 +37,6 @@ interface SettingsProviderProps {
 
 export function SettingsProvider({ children }: SettingsProviderProps) {
   const [settings, setSettings] = useState<Settings>(() => {
-    // Load settings from localStorage if available
     if (typeof window !== 'undefined') {
       const savedSettings = localStorage.getItem('pro192-settings');
       return savedSettings ? JSON.parse(savedSettings) : defaultSettings;
@@ -118,8 +119,6 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
   const updateSettings = (newSettings: Partial<Settings>) => {
     const updatedSettings = { ...settings, ...newSettings };
     setSettings(updatedSettings);
-    
-    // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('pro192-settings', JSON.stringify(updatedSettings));
     }
@@ -138,4 +137,28 @@ export function useSettings() {
     throw new Error('useSettings must be used within a SettingsProvider');
   }
   return context;
+}
+
+// Global mouse click audio feedback (works regardless of custom cursor)
+export function GlobalMouseAudio() {
+  const { settings } = useSettings();
+  useEffect(() => {
+    const handleMouseDown = () => {
+      if (settings.audioEnabled) {
+        const audio = document.createElement('audio');
+        audio.preload = 'auto';
+        if (audio.canPlayType('audio/webm')) {
+          audio.src = '/audio/granted.webm';
+        } else {
+          audio.src = '/audio/granted.wav';
+        }
+        audio.play().catch(() => {});
+      }
+    };
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => {
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [settings.audioEnabled]);
+  return null;
 }

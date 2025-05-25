@@ -60,6 +60,7 @@ const CustomCursor = () => {
   const [powerUp, setPowerUp] = useState(true);
   const prevHoverRef = useRef(false);
   const prevInteractiveEl = useRef<HTMLElement | null>(null);
+  const audioPlayingRef = useRef(false);
 
   // Power-up animation on mount
   useEffect(() => {
@@ -92,6 +93,7 @@ const CustomCursor = () => {
         setIsHovering(hovering);
         // Play audio feedback only if enabled
         if (settings.audioEnabled) {
+          // Remove playTone for click events, only play on hover
           if (hovering && !prevHoverRef.current) {
             setTimeout(() => playTone(700, 0.05), 3);
           }
@@ -119,7 +121,28 @@ const CustomCursor = () => {
   useEffect(() => {
     const handleMouseDown = () => {
       setIsClicking(true);
-      if (settings.audioEnabled) setTimeout(() => playTone(400, 0.1), 3);
+      if (settings.audioEnabled && !audioPlayingRef.current) {
+        audioPlayingRef.current = true;
+        const audio = document.createElement('audio');
+        audio.preload = 'auto';
+        if (audio.canPlayType('audio/webm')) {
+          audio.src = '/audio/granted.webm';
+        } else {
+          audio.src = '/audio/granted.wav';
+        }
+        audio.onended = () => {
+          audioPlayingRef.current = false;
+        };
+        audio.onpause = () => {
+          audioPlayingRef.current = false;
+        };
+        audio.onerror = () => {
+          audioPlayingRef.current = false;
+        };
+        audio.play().catch(() => {
+          audioPlayingRef.current = false;
+        });
+      }
     };
     const handleMouseUp = () => {
       setIsClicking(false);

@@ -1,4 +1,4 @@
-import  { X, Menu } from 'lucide-react';
+import { X, Menu, Home } from 'lucide-react';
 import { sections } from '../data/sections';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
@@ -61,7 +61,7 @@ const Sidebar = ({ isOpen, onClose, isExpanded }: SidebarProps) => {
                 if (window.innerWidth < 768) onClose();
               }}
             >
-            <img src="/house.ico" alt="Home" className="h-4 w-4 mr-3" />
+            <Home className="h-4 w-4 mr-3" />
             {isExpanded ? t('homeTitle') : <span className="sr-only">{t('homeTitle')}</span>}
           </Link>
           
@@ -102,4 +102,3 @@ const Sidebar = ({ isOpen, onClose, isExpanded }: SidebarProps) => {
 };
 
 export default Sidebar;
- 
