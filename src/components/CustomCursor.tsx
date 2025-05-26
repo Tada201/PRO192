@@ -62,6 +62,10 @@ const CustomCursor = () => {
   const prevInteractiveEl = useRef<HTMLElement | null>(null);
   const audioPlayingRef = useRef(false);
 
+  // Enable/disable devtool for audio debugging
+  // Set this to true to enable devtool logs
+  const devtool = false; // Change to true to enable
+
   // Power-up animation on mount
   useEffect(() => {
     setCursorSize(0);
@@ -123,6 +127,7 @@ const CustomCursor = () => {
       setIsClicking(true);
       if (settings.audioEnabled && !audioPlayingRef.current) {
         audioPlayingRef.current = true;
+        if (devtool) console.log('[CustomCursor] Playing click audio');
         const audio = document.createElement('audio');
         audio.preload = 'auto';
         if (audio.canPlayType('audio/webm')) {
@@ -131,15 +136,19 @@ const CustomCursor = () => {
           audio.src = '/audio/granted.wav';
         }
         audio.onended = () => {
+          if (devtool) console.log('[CustomCursor] Audio ended');
           audioPlayingRef.current = false;
         };
         audio.onpause = () => {
+          if (devtool) console.log('[CustomCursor] Audio paused');
           audioPlayingRef.current = false;
         };
         audio.onerror = () => {
+          if (devtool) console.log('[CustomCursor] Audio error');
           audioPlayingRef.current = false;
         };
         audio.play().catch(() => {
+          if (devtool) console.log('[CustomCursor] Audio play error');
           audioPlayingRef.current = false;
         });
       }
