@@ -53,9 +53,9 @@ export const sections: Section[] = [
     translationKey: "dynamicMemory"
   },
   {
-    id: "exception",
+    id: 'exception',
     icon: AlertTriangle,
-    translationKey: "exception"
+    translationKey: 'exception'
   },
   {
     id: "io",
