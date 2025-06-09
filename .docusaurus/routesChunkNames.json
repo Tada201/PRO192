@@ -1,0 +1,121 @@
+{
+  "/docs/__docusaurus/debug-e58": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/config-2ce": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/content-11b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    },
+    "__props": "__props---docs-docusaurus-debug-content-344-8d5"
+  },
+  "/docs/__docusaurus/debug/globalData-f13": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/metadata-bff": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/registry-830": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/__docusaurus/debug/routes-13e": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docs-docusaurus-debugb-38-c84"
+    }
+  },
+  "/docs/Home-d7d": {
+    "__comp": "__comp---site-src-pages-home-tsx-5-f-9-639",
+    "__context": {
+      "plugin": "plugin---docs-homea-74-14d"
+    },
+    "config": "config---docs-home-5-e-9-7ce"
+  },
+  "/docs/SearchResults-40c": {
+    "__comp": "__comp---site-src-pages-search-results-tsx-2-ef-609",
+    "__context": {
+      "plugin": "plugin---docs-homea-74-14d"
+    },
+    "config": "config---docs-home-5-e-9-7ce"
+  },
+  "/docs/SectionPage-d07": {
+    "__comp": "__comp---site-src-pages-section-page-tsx-217-c1a",
+    "__context": {
+      "plugin": "plugin---docs-homea-74-14d"
+    },
+    "config": "config---docs-home-5-e-9-7ce"
+  },
+  "/docs/syllabus-pro192-spring2021-7c6": {
+    "__comp": "__comp---site-src-pages-syllabus-pro-192-spring-2021-tsx-516-f02",
+    "__context": {
+      "plugin": "plugin---docs-homea-74-14d"
+    },
+    "config": "config---docs-home-5-e-9-7ce"
+  },
+  "/docs/syllabus-tabs-18c": {
+    "__comp": "__comp---site-src-pages-syllabus-tabs-tsx-892-c9d",
+    "__context": {
+      "plugin": "plugin---docs-homea-74-14d"
+    },
+    "config": "config---docs-home-5-e-9-7ce"
+  },
+  "/docs/docs-94d": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docs-docsaba-31e"
+    }
+  },
+  "/docs/docs-e48": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-docsa-20-f19"
+  },
+  "/docs/docs-0f9": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/docs/example-633": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-examplee-3-e-623"
+  },
+  "/docs/docs/Syllabus_mat/sheet001-ee1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-sheet-001591-f28"
+  },
+  "/docs/docs/Syllabus_mat/sheet002-95f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-sheet-002462-ed9"
+  },
+  "/docs/docs/Syllabus_mat/sheet003-38b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-sheet-0030-ea-300"
+  },
+  "/docs/docs/Syllabus_mat/sheet004-409": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-sheet-00403-e-c8c"
+  },
+  "/docs/docs/Syllabus_mat/sheet005-509": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-sheet-005631-b3f"
+  },
+  "/docs/docs/Syllabus_mat/tabstrip-72e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-docs-syllabus-mat-tabstrip-528-daa"
+  }
+}

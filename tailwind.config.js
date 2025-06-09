@@ -1,4 +1,7 @@
-/**  @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography';
+import forms from '@tailwindcss/forms';
+
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
@@ -28,11 +31,11 @@ export default {
           '90%': { opacity: '1', transform: 'translateY(0)' },
           '100%': { opacity: '0', transform: 'translateY(-10px)' },
         }
-      },
-      animation: {
-        'fade-in-out': 'fadeInOut 2s ease-in-out'
       }
     },
   },
-  plugins: [],
-};
+  plugins: [
+    typography,
+    forms,
+  ],
+}

@@ -15,7 +15,7 @@ const CopyableCodeBlock: React.FC<CopyableCodeBlockProps> = ({ language, childre
 
   const handleCopy = async () => {
     if (isLoading) return;
-    
+
     setIsLoading(true);
     try {
       await navigator.clipboard.writeText(children);

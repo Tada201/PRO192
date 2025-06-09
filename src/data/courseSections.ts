@@ -75,4 +75,3 @@ export const courseSections: CourseSection[] = [
     icon: Book
   }
 ];
- 

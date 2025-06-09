@@ -4,6 +4,10 @@ export const translations = {
     theme: "Theme",
     light: "Light",
     dark: "Dark",
+    modernDark: "Modern Dark",
+    modernLight: "Modern Light",
+    blueProfessional: "Blue Professional",
+    deepPurple: "Deep Purple",
     textSize: "Text Size",
     small: "Small",
     medium: "Medium",
@@ -32,6 +36,7 @@ export const translations = {
     configureShortcuts: "Configure Shortcuts",
     customCursor: "Custom Cursor",
     enableCustomCursor: "Enable Custom Cursor",
+    enableBackgroundAnimation: "Enable Background Animation",
 
     // New translations for site content
     homeTitle: "Home",
@@ -40,6 +45,7 @@ export const translations = {
     welcomeDescription: "Introduction to the PRO192 course, its objectives, and learning outcomes.",
     introductionTitle: "Introduction",
     introductionCourseTitle: "Course Introduction",
+    introductionCourseDescription: "An introduction to the course structure, objectives, and the foundational concepts of object-oriented programming in Java.",
     introductionDescription: "Overview of object-oriented thinking, complexity, abstraction, classes, and basic principles.",
     foundationsTitle: "Foundations",
     foundationsDescription: "Java basics: JVM, platform, data types, variables, arrays, operators, and logic constructs.",
@@ -63,8 +69,10 @@ export const translations = {
   vi: {
     accessibilitySettings: "Cài đặt truy cập",
     theme: "Giao diện",
-    light: "Sáng",
     dark: "Tối",
+    light: "Sáng",
+    colorScheme: "Bảng màu",
+    enableBackgroundAnimation: "Bật hiệu ứng nền",
     textSize: "Cỡ chữ",
     small: "Nhỏ",
     medium: "Trung bình",
@@ -93,6 +101,10 @@ export const translations = {
     configureShortcuts: "Cấu hình phím tắt",
     customCursor: "Con trỏ tùy chỉnh",
     enableCustomCursor: "Bật con trỏ tùy chỉnh",
+    modernDark: "Tối hiện đại",
+    modernLight: "Sáng hiện đại",
+    blueProfessional: "Blue Professional",
+    deepPurple: "Deep Purple",
 
     // New translations for site content
     homeTitle: "Trang chủ",
@@ -101,6 +113,7 @@ export const translations = {
     welcomeDescription: "Giới thiệu về khóa học PRO192, mục tiêu và kết quả học tập.",
     introductionTitle: "Giới thiệu",
     introductionCourseTitle: "Giới thiệu khóa học",
+    introductionCourseDescription: "Giới thiệu về cấu trúc khóa học, mục tiêu và các khái niệm nền tảng của lập trình hướng đối tượng với Java.",
     introductionDescription: "Tổng quan về tư duy hướng đối tượng, độ phức tạp, trừu tượng, lớp và các nguyên tắc cơ bản.",
     foundationsTitle: "Nền tảng",
     foundationsDescription: "Kiến thức cơ bản về Java: JVM, nền tảng, kiểu dữ liệu, biến, mảng, toán tử và cấu trúc logic.",

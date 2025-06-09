@@ -1,133 +1,157 @@
-import  { X } from 'lucide-react';
-import { useSettings } from '../contexts/SettingsContext';
+import { X } from 'lucide-react';
+import { useSettings, darkThemes, lightThemes } from '../contexts/SettingsContext';
 import { useEffect, useRef, useState } from 'react';
-import { translations } from '../data/translations';
+import { useTranslation } from '../hooks/useTranslation';
+import Switch from './Switch';
 
-interface SettingsMenuProps {
-  onClose: () => void;
-}
-
-const SettingsMenu = ({ onClose }: SettingsMenuProps) => {
-  const { settings, updateSettings } = useSettings();
+const SettingsMenu = ({ onClose }: { onClose: () => void }) => {
+  const { settings, updateSettings, setTheme, setColorScheme } = useSettings();
   const menuRef = useRef<HTMLDivElement>(null);
   const [tempTextSize, setTempTextSize] = useState(settings.textSize);
-  
-  const { textSize, language } = settings;
-  const t = translations[language] || translations['en'];
+  const { t } = useTranslation();
 
-  const applyTextSize = () => {
-    updateSettings({ textSize: tempTextSize });
-  };
-
-  const setLanguage = (lang: 'en' | 'vi') => {
-    updateSettings({ language: lang });
-  };
-  
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         onClose();
       }
     }
-    
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [onClose]);
 
-  // Reset tempTextSize when settings.textSize changes or menu closes
   useEffect(() => {
-    setTempTextSize(textSize);
-  }, [textSize, onClose]);
+    setTempTextSize(settings.textSize);
+  }, [settings.textSize, onClose]);
 
   return (
-    <div 
-      ref={menuRef}
-      className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 origin-top-right z-50"
-    >
-      <div className="py-1 p-3">
-        <div className="flex justify-between items-center mb-3">
-          <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">{t.accessibilitySettings}</h3>
+    <div className="fixed inset-0 z-40 flex items-start justify-end">
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
+        onClick={onClose}
+      ></div>
+      <div ref={menuRef} className="settings-sidebar relative h-full w-80 shadow-xl animate-slide-in overflow-auto">
+        <div className="flex items-center justify-between p-4 border-b dark:border-gray-700">
+          <h2 className="text-lg font-medium text-gray-900 dark:text-white">{t('accessibilitySettings')}</h2>
           <button 
             onClick={onClose}
-            className="p-1 rounded-full text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            className="p-1 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
           >
-            <X className="h-4 w-4" />
+            <X size={18} />
           </button>
         </div>
-        
-        <div className="space-y-4">
+        <div className="p-4 space-y-6">
+          {/* Theme */}
           <div>
-            <label htmlFor="textSizeSlider" className="text-xs font-medium text-gray-700 dark:text-gray-300">{t.textSize}</label>
-            <input
-              id="textSizeSlider"
-              type="range"
-              min={0}
-              max={2}
-              step={1}
-              value={['small', 'medium', 'large'].indexOf(tempTextSize)}
-              onChange={(e) => {
-                const sizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
-                setTempTextSize(sizes[parseInt(e.target.value)]);
-              }}
-              className="w-full mt-1"
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t('theme')}
+            </label>
+            <select
+              value={settings.theme}
+              onChange={e => setTheme(e.target.value as 'light' | 'dark')}
+              className="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-dark-400 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            >
+              <option value="light">{t('light')}</option>
+              <option value="dark">{t('dark')}</option>
+            </select>
+          </div>
+          {/* Color Scheme */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t('colorScheme')}
+            </label>
+            <select
+              value={settings.theme === 'dark' ? settings.darkTheme : settings.lightTheme}
+              onChange={e => setColorScheme(e.target.value)}
+              className="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-dark-400 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            >
+              {(settings.theme === 'dark' ? darkThemes : lightThemes).map(scheme => (
+                <option key={scheme} value={scheme}>
+                  {t(scheme.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/-([a-z])/g, g => ' ' + g[1].toUpperCase())) || t(scheme) || scheme.split(/-|(?=[A-Z])/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Background Animation */}
+          <div className="flex items-center">
+            <Switch
+              id="background-animation"
+              checked={!!settings.backgroundAnimation}
+              onChange={e => updateSettings({ backgroundAnimation: e.target.checked })}
             />
-            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1 px-1 select-none">
-              <span>{t.small}</span>
-              <span>{t.medium}</span>
-              <span>{t.large}</span>
-            </div>
-            {tempTextSize !== textSize && (
-              <button
-                onClick={applyTextSize}
-                className="mt-2 w-full bg-blue-600 text-white py-1 rounded-md text-sm hover:bg-blue-700 transition"
-              >
-                Apply
-              </button>
-            )}
+            <label htmlFor="background-animation" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+              {t('enableBackgroundAnimation')}
+            </label>
           </div>
-
+          {/* Text Size */}
           <div>
-            <label className="text-xs font-medium text-gray-700 dark:text-gray-300">{t.language}</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t('textSize')}
+            </label>
+            <div className="flex flex-col">
+              <input
+                type="range"
+                min="0"
+                max="2"
+                step="1"
+                value={tempTextSize === 'small' ? 0 : tempTextSize === 'medium' ? 1 : 2}
+                onChange={e => {
+                  const value = parseInt(e.target.value);
+                  const size = value === 0 ? 'small' : value === 1 ? 'medium' : 'large';
+                  setTempTextSize(size as 'small' | 'medium' | 'large');
+                }}
+                onMouseUp={() => updateSettings({ textSize: tempTextSize })}
+                className="w-full h-2 bg-gray-300 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+              />
+              <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
+                <span>{t('small')}</span>
+                <span>{t('medium')}</span>
+                <span>{t('large')}</span>
+              </div>
+            </div>
+          </div>
+          {/* Language */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t('language')}
+            </label>
             <select
-              className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-1 px-2 text-sm"
-              value={language}
-              onChange={(e) => setLanguage(e.target.value as 'en' | 'vi')}
+              value={settings.language}
+              onChange={e => updateSettings({ language: e.target.value as 'en' | 'vi' })}
+              className="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-dark-400 shadow-sm focus:border-primary-500 focus:ring-primary-500"
             >
-              <option value="en">{t.english}</option>
-              <option value="vi">{t.vietnamese}</option>
+              <option value="en">English</option>
+              <option value="vi">Vietnamese</option>
             </select>
           </div>
-
+          {/* Font Style */}
           <div>
-            <label htmlFor="fontStyleSelect" className="text-xs font-medium text-gray-700 dark:text-gray-300">{t.fontStyle}</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t('fontStyle')}
+            </label>
             <select
-              id="fontStyleSelect"
-              className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-1 px-2 text-sm"
               value={settings.fontStyle}
-              onChange={(e) => updateSettings({ fontStyle: e.target.value as any })}
+              onChange={e => updateSettings({ fontStyle: e.target.value as 'open_sans' | 'opendyslexic-regular' | 'opendyslexic-bold' | 'pt_serif' })}
+              className="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-dark-400 shadow-sm focus:border-primary-500 focus:ring-primary-500"
             >
-              <option value="open_sans">{t.openSans}</option>
-              <option value="opendyslexic-regular">{t.openDyslexicRegular}</option>
-              <option value="opendyslexic-bold">{t.openDyslexicBold}</option>
-              <option value="pt_serif">{t.ptSerif}</option>
+              <option value="open_sans">Open Sans</option>
+              <option value="opendyslexic-regular">OpenDyslexic Regular</option>
+              <option value="opendyslexic-bold">OpenDyslexic Bold</option>
+              <option value="pt_serif">PT Serif</option>
             </select>
           </div>
-
-          <div>
-            <label className="text-xs font-medium text-gray-700 dark:text-gray-300">{t.customCursor}</label>
-            <div className="mt-1">
-              <label className="inline-flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={settings.customCursorEnabled}
-                  onChange={(e) => updateSettings({ customCursorEnabled: e.target.checked })}
-                />
-                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{t.enableCustomCursor}</span>
-              </label>
-            </div>
+          {/* Custom Cursor */}
+          <div className="flex items-center">
+            <Switch
+              id="custom-cursor"
+              checked={!!settings.customCursorEnabled}
+              onChange={e => updateSettings({ customCursorEnabled: e.target.checked })}
+            />
+            <label htmlFor="custom-cursor" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+              {t('enableCustomCursor')}
+            </label>
           </div>
         </div>
       </div>

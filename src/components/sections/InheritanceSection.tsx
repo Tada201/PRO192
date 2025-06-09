@@ -108,7 +108,7 @@ const InheritanceSection = () => {
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
-    
+
         Vase v1 = new Vase();
         v1.value = 100;
         v1.creator="Test1";
@@ -117,7 +117,7 @@ const InheritanceSection = () => {
         v1.material="wood";
         // this code only uses to check v1's  fields
 
-        
+
         Statue s1=new Statue();
         s1.value=200;
         s1.creator="Test2";
@@ -125,7 +125,7 @@ const InheritanceSection = () => {
         s1.weight=100;
         s1.colour="blue";
         // this code only uses to check s1's  fields
-        
+
         Painting p1=new Painting();
         p1.value=300;
         p1.creator="Test3";
@@ -135,7 +135,7 @@ const InheritanceSection = () => {
         p1.isWatercolour=true;
         p1.isFramed=true;
         // this code only uses to check p1's  fields
-        
+
 
     } 
 } 
@@ -168,17 +168,17 @@ const InheritanceSection = () => {
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
-    
+
         Vase v1 = new Vase();
         v1.value = 100;
         v1.creator="Test1";
         v1.output();
-        
+
         Statue s1=new Statue();
         s1.value=200;
         s1.creator="Test2";
         s1.output();
-        
+
         Painting p1=new Painting();
         p1.value=300;
         p1.creator="Test3";
@@ -273,7 +273,7 @@ public class Vase extends Item{
            System.out.println("and taking ...");
     }
     public static void main(String[] args){
-    
+
         Vase obj=new Vase();
         obj.displayDiscount();
     }  
@@ -296,7 +296,7 @@ and taking ...</pre>
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
-    
+
         Vase v1 = new Vase(100,"Paris",200,"rock");  
         Statue s1= new Statue(200,"VN", 1000,"white");
         Painting p1=new Painting(300,"USA",2000,1500,true,true);
@@ -318,7 +318,7 @@ and taking ...</pre>
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
-    
+
         Vase v1 = new Vase(100,"Paris",200,"rock");  
         Statue s1= new Statue(200,"VN", 1000,"white");
         Painting p1=new Painting(300,"USA",2000,1500,true,true);
@@ -370,7 +370,7 @@ and taking ...</pre>
 {`public class AntiqueShop
 { 
     public static void main(String[] args){
-    
+
         Vase v1 = new Vase(100,"Paris",200,"rock");  
         Statue s1= new Statue(200,"VN", 1000,"white");
         Painting p1=new Painting(300,"USA",2000,1500,true,true);

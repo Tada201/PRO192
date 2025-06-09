@@ -1,0 +1,18 @@
+{
+  "id": "Syllabus_mat/sheet005",
+  "title": "Grading Structure",
+  "description": "Grading Structure for Object-Oriented Programming using Java (PRO192)",
+  "source": "@site/docs/Syllabus_mat/sheet005.mdx",
+  "sourceDirName": "Syllabus_mat",
+  "slug": "/Syllabus_mat/sheet005",
+  "permalink": "/docs/docs/Syllabus_mat/sheet005",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Syllabus_mat/sheet005.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Grading Structure",
+    "description": "Grading Structure for Object-Oriented Programming using Java (PRO192)"
+  }
+}

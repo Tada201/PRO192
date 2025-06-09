@@ -1,0 +1,18 @@
+{
+  "id": "Syllabus_mat/sheet002",
+  "title": "Materials",
+  "description": "Course Materials for Object-Oriented Programming using Java (PRO192)",
+  "source": "@site/docs/Syllabus_mat/sheet002.mdx",
+  "sourceDirName": "Syllabus_mat",
+  "slug": "/Syllabus_mat/sheet002",
+  "permalink": "/docs/docs/Syllabus_mat/sheet002",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Syllabus_mat/sheet002.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Materials",
+    "description": "Course Materials for Object-Oriented Programming using Java (PRO192)"
+  }
+}

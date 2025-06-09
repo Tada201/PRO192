@@ -15,10 +15,10 @@ const ArrayOfObjectsSection = () => {
         <p className="mt-4">In the previous topic, A antique shop that sells antique items, namely vases, statues, and paintings. For now, we want to manage the list of objects such as vases, statues, paintings in an array.  The objects pointed to by the array elements may be of differing dynamic type, but are of the same static type(type of the superclass).</p>
         <p className="mt-4">for example, we create the file named <em>ItemList.java</em>, it contains an array as follows:</p>
         <CopyableCodeBlock language="java">{`public class ItemList{
-	Item [] list;   // an array to store all items
-	int numOfItem;  // to store the number of items that added to the list
-	final int MAX=100;   // is the size of the array
-	public ItemList(){
+  Item [] list;   // an array to store all items
+  int numOfItem;  // to store the number of items that added to the list
+  final int MAX=100;   // is the size of the array
+  public ItemList(){
               list=new Item[MAX];
               numOfItem=0;
     }    
@@ -33,7 +33,7 @@ const ArrayOfObjectsSection = () => {
         </ul>
         <p>we will implement these later. For now, the main method to test some basic functions in the antique shop.</p>
         <CopyableCodeBlock language="java">{`public class antiqueShop{
-	public static void main(String[] args){
+  public static void main(String[] args){
             ItemList obj=new ItemList();
             Scanner sc=new Scanner(System.in);
             int choice=0;
@@ -51,39 +51,39 @@ const ArrayOfObjectsSection = () => {
                 System.out.println("input your choice:");
                 choice=sc.nextInt();
                 switch(choice){
- 				case 1:
- 				         Item tmp=new Vase();
- 				         tmp.input();
- 				         //call the addItem method at here
- 				         break;
- 				case 2:
- 				         Item tmp2=new Statue();
- 				         tmp2.input();
- 				         //call the addItem method at here
- 				         break;   
- 				case 3:
- 				         Item tmp3=new Painting();
- 				         tmp3.input();
- 				         //call the addItem method at here
- 				         break;  
- 				case 4:
- 				         //call the displayAll method at here
- 				         break;
- 				case 5:
- 				         //call the findItems method at here
- 				         break;  
- 				case 6:
- 				         //call the updateItem method at here
- 				         break;
- 				case 7:
- 				         //call the removeItem method at here
- 				         break; 
- 				case 8:
- 				          //call the displayItemByType method at here
- 				         break;
- 				case 9:
- 				        //call the sortItems() method at here
- 				        break;                             	                               
+        case 1:
+                 Item tmp=new Vase();
+                 tmp.input();
+                 //call the addItem method at here
+                 break;
+        case 2:
+                 Item tmp2=new Statue();
+                 tmp2.input();
+                 //call the addItem method at here
+                 break;   
+        case 3:
+                 Item tmp3=new Painting();
+                 tmp3.input();
+                 //call the addItem method at here
+                 break;  
+        case 4:
+                 //call the displayAll method at here
+                 break;
+        case 5:
+                 //call the findItems method at here
+                 break;  
+        case 6:
+                 //call the updateItem method at here
+                 break;
+        case 7:
+                 //call the removeItem method at here
+                 break; 
+        case 8:
+                  //call the displayItemByType method at here
+                 break;
+        case 9:
+                //call the sortItems() method at here
+                break;                             	                               
                 }
             }while(choice<=9);
         }
@@ -93,8 +93,8 @@ const ArrayOfObjectsSection = () => {
         <p>After starting, the obj variable points to address 1000, this block contains the reference variable <em>list</em> that is pointing to address 2000. It is an array of pointers. All elements are initiated to <em>null</em> </p>
         <p className="mt-4">To complete the program, we add a method named <em>addItem</em> to the ItemList class. </p>
         <CopyableCodeBlock language="java">{`public class ItemList{
-	...
-	public boolean addItem(Item item){
+  ...
+  public boolean addItem(Item item){
           if( item==null || numOfItem>=MAX)
               return false;
           list[numOfItem]=item;
@@ -104,7 +104,7 @@ const ArrayOfObjectsSection = () => {
 }`}</CopyableCodeBlock>
         <p>Edit the <em>case 1</em> in the main method</p>
         <CopyableCodeBlock language="java">{`public class antiqueShop{
-	public static void main(String[] args){
+  public static void main(String[] args){
          ....
          switch(choice){
             case 1:
@@ -127,9 +127,9 @@ const ArrayOfObjectsSection = () => {
         <img src="/media/array4.png" alt="array4" className="my-4" />
         <p> We add more some methods to the ItemList class</p>
         <CopyableCodeBlock language="java">{`public class ItemList{
-	...
-	//this method prints out information of all items
-	public void displayAll(){
+  ...
+  //this method prints out information of all items
+  public void displayAll(){
           if(numOfItem==0)
               System.out.println("the list is empty");
           for(int i=0; i< numOfItem; i++){
@@ -203,10 +203,10 @@ const ArrayOfObjectsSection = () => {
             }
 
     }  
-       
+
 }`}</CopyableCodeBlock>
         <CopyableCodeBlock language="java">{`public class antiqueShop{
-	public static void main(String[] args){
+  public static void main(String[] args){
          ....
          switch(choice){
                 case 1:

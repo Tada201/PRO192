@@ -65,7 +65,7 @@ char type='A';`}
 ar= new int[3];
 ar[0]=1; ar[1]=2; ar[2]=3;`}
       </CopyableCodeBlock>
-      <img src="/media/referenceDatatype.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
+      <img src="/media/referenceDataType.png" alt="Reference Data Types" className="mb-4 rounded shadow" />
       <img src="/media/array.png" alt="Array" className="mb-4 rounded shadow" />
 
       <h3 className="text-xl font-semibold mb-2">Scope</h3>

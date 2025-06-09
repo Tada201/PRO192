@@ -1,0 +1,20 @@
+{
+  "id": "example",
+  "title": "“Example MDX Page”",
+  "description": "You can write standard Markdown:",
+  "source": "@site/docs/example.mdx",
+  "sourceDirName": ".",
+  "slug": "/example",
+  "permalink": "/docs/docs/example",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/example.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "example",
+    "title": "“Example MDX Page”",
+    "sidebar_label": "“MDX Demo”"
+  },
+  "sidebar": "docs"
+}

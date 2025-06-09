@@ -7,7 +7,7 @@ const EncapsulationSection = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Class and Object</h2>
         <p className="mb-2"><b>Class</b></p>
-        <p>In the previous topic, we saw the term “class” but did not give enough consideration to its meaning. Now we can establish a useful definition:</p>
+        <p>In the previous topic, we saw the term "class" but did not give enough consideration to its meaning. Now we can establish a useful definition:</p>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-2 dark:bg-blue-900 dark:border-blue-300 dark:text-white">A <b>class</b> is an organisational unit of an Object Oriented design and program.</div>
         <div className="mb-2">
           <a href="https://www.w3schools.com/java/java_oop.asp" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">see class definitions on the w3schools page</a><br/>
@@ -49,7 +49,7 @@ const EncapsulationSection = () => {
     private int EnginePower;
     private boolean Convertible;
     private boolean parkingBrake;
-    
+
     //methods
     public Car(){
         Colour="";
@@ -64,11 +64,11 @@ const EncapsulationSection = () => {
         this.Convertible = Convertible;
         this.parkingBrake = parkingBrake;
     }
-    
+
     public void pressStartButton(){
         System.out.println("You can press the star button");
     }
-    
+
     public void pressAcceleratorButton(){
         System.out.println("You can press the accelerator button");
         System.out.println("Colour:"+ Colour);
@@ -125,7 +125,7 @@ const EncapsulationSection = () => {
         <p>The keyword <b>this</b> returns the address of the current object. That is, this holds the address of the region of memory that contains all of the data stored in the instance variables of current object.</p>
         <p><b>Scope of this:</b> This is created and used just when the member method is called. After the member method terminates <b>this</b> will be discarded.</p>
         <a href="https://www.javatpoint.com/this-keyword" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">more</a>
-        <img src="/media/Encapsulation12.png" alt="Encapsulation12" className="my-4" />
+        <img src="/media/encapsulation12.png" alt="Encapsulation12" className="my-4" />
         <p>Upon entering the constructor with parameters, the pointer <b>this</b> is created by Java and it is storing the address of the object (4000). <b>c3 and this</b> are pointing to the current object. Using <b>this</b> in here to distinguish local variable and instance variable/field. After assigning values of input parameters to instance variables of c3, <b>this</b> will be discarded.</p>
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-2 dark:bg-yellow-600 dark:border-yellow-300 dark:text-white"><b>TIPS</b>: If parameters (formal arguments) of a member method and instance variables/fields are same. So, we are using this keyword to distinguish local variable and instance variable.</div>
       </section>
@@ -150,7 +150,7 @@ const EncapsulationSection = () => {
     private int EnginePower;
     private boolean Convertible;
     private boolean parkingBrake;
-    
+
     //methods
     public Car(){
         Colour="";
@@ -165,11 +165,11 @@ const EncapsulationSection = () => {
         this.Convertible = Convertible;
         this.parkingBrake = parkingBrake;
     }
-    
+
     public void pressStartButton(){
         System.out.println("You can press the star button");
     }
-    
+
     public void pressAcceleratorButton(){
         System.out.println("You can press the accelerator button");
         System.out.println("Colour:"+ Colour);
@@ -251,10 +251,10 @@ Colour of c3:black</pre>
           Car c=new Car();
           c.pressStartButton();
           c.pressAcceleratorButton();
-          
+
           Car c2=new Car();
           c2.pressAcceleratorButton();
-          
+
           Car c3=new Car("red", 100, true, true);
           c3.pressAcceleratorButton();
           c3.setColour("black");
@@ -293,7 +293,7 @@ public class Car {
         this.Convertible = Convertible;
         this.parkingBrake = parkingBrake;
     }
-    
+
     void pressStartButton(){
         System.out.println("You can press the star button");
     }
@@ -308,10 +308,10 @@ public class Tester {
           Car c=new Car();
           c.pressStartButton();        // error
           c.pressAcceleratorButton();
-          
+
           Car c2=new Car();
           c2.pressAcceleratorButton();
-          
+
           Car c3=new Car("red", 100, true, true);
           c3.pressAcceleratorButton();
           c3.setColour("black");
