@@ -1,5 +1,8 @@
 node_modules
 .vscode
 .env
+<<<<<<< HEAD
 dist
 .docsaurus
+=======
+>>>>>>> b4dddb67fd3d742e1537607e7242b0f81016158e
