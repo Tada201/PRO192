@@ -43,6 +43,18 @@ const SettingsMenu = ({ onClose }: { onClose: () => void }) => {
           </button>
         </div>
         <div className="p-4 space-y-6">
+          {/* Designer Mode */}
+          <div className="flex items-center">
+            <Switch
+              id="designer-mode"
+              checked={!!settings.designerMode}
+              onChange={e => updateSettings({ designerMode: e.target.checked })}
+            />
+            <label htmlFor="designer-mode" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+              {t('enableDesignerMode')}
+            </label>
+          </div>
+          
           {/* Theme */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">

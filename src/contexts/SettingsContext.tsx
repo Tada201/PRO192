@@ -17,6 +17,7 @@ interface Settings {
   customCursorEnabled?: boolean;
   audioEnabled?: boolean;
   backgroundAnimation: boolean;
+  designerMode?: boolean;
 }
 
 
@@ -46,7 +47,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       colorBlindnessMode: raw.colorBlindnessMode as 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia',
       customCursorEnabled: raw.customCursorEnabled,
       audioEnabled: raw.audioEnabled,
-      backgroundAnimation: raw.backgroundAnimation
+      backgroundAnimation: raw.backgroundAnimation,
+      designerMode: raw.designerMode
     };
   }
 
@@ -64,7 +66,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
         colorBlindnessMode: 'none',
         customCursorEnabled: true,
         audioEnabled: true,
-        backgroundAnimation: true
+        backgroundAnimation: true,
+        designerMode: false
       });
     }
     return castSettings({
@@ -78,7 +81,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       colorBlindnessMode: 'none',
       customCursorEnabled: true,
       audioEnabled: true,
-      backgroundAnimation: true
+      backgroundAnimation: true,
+      designerMode: false
     });
   });
 
@@ -89,6 +93,13 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
+    }
+
+    // Apply designer mode
+    if (settings.designerMode) {
+      document.documentElement.classList.add('designer-mode');
+    } else {
+      document.documentElement.classList.remove('designer-mode');
     }
 
     // Apply text size
@@ -237,7 +248,9 @@ export function GlobalMouseAudio() {
   const { settings } = useSettings();
   useEffect(() => {
     const handleMouseDown = () => {
-      if (settings.audioEnabled) {
+      if (settings.audioEnabled && !audioPlayingRef.current) {
+        audioPlayingRef.current = true;
+        if (devtool) console.log('[CustomCursor] Playing click audio');
         const audio = document.createElement('audio');
         audio.preload = 'auto';
         if (audio.canPlayType('audio/webm')) {
@@ -245,12 +258,32 @@ export function GlobalMouseAudio() {
         } else {
           audio.src = '/audio/granted.wav';
         }
-        audio.play().catch(() => {});
+        audio.onended = () => {
+          if (devtool) console.log('[CustomCursor] Audio ended');
+          audioPlayingRef.current = false;
+        };
+        audio.onpause = () => {
+          if (devtool) console.log('[CustomCursor] Audio paused');
+          audioPlayingRef.current = false;
+        };
+        audio.onerror = () => {
+          if (devtool) console.log('[CustomCursor] Audio error');
+          audioPlayingRef.current = false;
+        };
+        audio.play().catch(() => {
+          if (devtool) console.log('[CustomCursor] Audio play error');
+          audioPlayingRef.current = false;
+        });
       }
     };
+    const handleMouseUp = () => {
+      setIsClicking(false);
+    };
     document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
     return () => {
       document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
   }, [settings.audioEnabled]);
   return null;
