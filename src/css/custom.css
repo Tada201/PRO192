@@ -1,0 +1,142 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced search styling */
+.navbar__search-input {
+  background-color: var(--ifm-navbar-search-input-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-navbar-search-input-color);
+  font-size: 0.9rem;
+  padding: 0.375rem 0.75rem;
+  width: 200px;
+  transition: all 0.2s ease;
+}
+
+.navbar__search-input:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+  outline: none;
+  width: 250px;
+}
+
+/* Search results styling */
+.search-result-match {
+  background-color: var(--ifm-color-warning-lighter);
+  color: var(--ifm-color-emphasis-800);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+[data-theme='dark'] .search-result-match {
+  background-color: var(--ifm-color-warning-darker);
+  color: var(--ifm-color-emphasis-100);
+}
+
+/* Search modal styling */
+.DocSearch-Modal {
+  border-radius: var(--ifm-global-radius);
+}
+
+.DocSearch-SearchBar {
+  border-radius: var(--ifm-global-radius);
+}
+
+/* Custom search placeholder */
+.navbar__search-input::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* Search results container */
+.search-result-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-color);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+/* Individual search result item */
+.search-result-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+/* Search result title */
+.search-result-title {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* Search result snippet */
+.search-result-snippet {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+/* No results message */
+.search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+/* Search loading state */
+.search-loading {
+  padding: 1rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Mobile search adjustments */
+@media (max-width: 768px) {
+  .navbar__search-input {
+    width: 150px;
+  }
+  
+  .navbar__search-input:focus {
+    width: 180px;
+  }
+}

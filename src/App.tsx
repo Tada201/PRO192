@@ -12,6 +12,7 @@ import CanvasBackground from './components/CanvasBackground';
 import { SearchProvider } from './contexts/SearchContext';
 import SearchModal from './components/SearchModal';
 import SettingsMenu from './components/SettingsMenu';
+import DesignerOverlay from './components/DesignerOverlay';
 import SyllabusPage from './pages/syllabus-pro192-spring2021';
 
 // Component to handle scroll restoration
@@ -125,6 +126,7 @@ function AppContent()  {
         </div>
         {isSettingsMenuOpen && <SettingsMenu onClose={() => setIsSettingsMenuOpen(false)} />}
         <SearchModal />
+        <DesignerOverlay />
       </div>
     </SearchProvider>
   );

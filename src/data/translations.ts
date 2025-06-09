@@ -37,6 +37,7 @@ export const translations = {
     customCursor: "Custom Cursor",
     enableCustomCursor: "Enable Custom Cursor",
     enableBackgroundAnimation: "Enable Background Animation",
+    enableDesignerMode: "Enable Designer Mode",
 
     // New translations for site content
     homeTitle: "Home",
@@ -73,6 +74,7 @@ export const translations = {
     light: "Sáng",
     colorScheme: "Bảng màu",
     enableBackgroundAnimation: "Bật hiệu ứng nền",
+    enableDesignerMode: "Bật chế độ thiết kế",
     textSize: "Cỡ chữ",
     small: "Nhỏ",
     medium: "Trung bình",

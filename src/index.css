@@ -176,6 +176,79 @@
 
 /* --- End Sidebar Modern ChatGPT Style --- */
 
+/* Designer Mode Styles */
+.designer-mode .designer-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.designer-mode .designer-toolbar {
+  backdrop-filter: blur(10px);
+}
+
+.designer-mode .designer-guide {
+  backdrop-filter: blur(10px);
+}
+
+/* Designer Mode Grid Overlay */
+.designer-grid-overlay {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Designer Mode Element Highlighting */
+.designer-mode * {
+  transition: outline 0.2s ease, background-color 0.2s ease;
+}
+
+.designer-mode *:hover {
+  outline: 1px solid rgba(59, 130, 246, 0.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* Designer Mode Typography Indicators */
+.designer-mode h1::before,
+.designer-mode h2::before,
+.designer-mode h3::before,
+.designer-mode h4::before,
+.designer-mode h5::before,
+.designer-mode h6::before {
+  content: attr(tagName);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 10px;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: normal;
+  z-index: 1000;
+}
+
+/* Designer Mode Spacing Indicators */
+.designer-mode .p-1::after,
+.designer-mode .p-2::after,
+.designer-mode .p-3::after,
+.designer-mode .p-4::after,
+.designer-mode .p-6::after,
+.designer-mode .p-8::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px dashed rgba(255, 0, 255, 0.3);
+  pointer-events: none;
+  z-index: 999;
+}
+
 /* Color blindness mode styles */
 
 .color-blindness-protanopia {

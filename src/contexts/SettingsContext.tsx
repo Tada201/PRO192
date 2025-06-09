@@ -1,4 +1,4 @@
-import  { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import  { createContext, useState, useContext, ReactNode, useEffect, useRef } from 'react';
 
 // Global mouse click audio feedback (works regardless of custom cursor)
 
@@ -17,6 +17,7 @@ interface Settings {
   customCursorEnabled?: boolean;
   audioEnabled?: boolean;
   backgroundAnimation: boolean;
+  designerMode?: boolean;
 }
 
 
@@ -46,7 +47,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       colorBlindnessMode: raw.colorBlindnessMode as 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia',
       customCursorEnabled: raw.customCursorEnabled,
       audioEnabled: raw.audioEnabled,
-      backgroundAnimation: raw.backgroundAnimation
+      backgroundAnimation: raw.backgroundAnimation,
+      designerMode: raw.designerMode
     };
   }
 
@@ -64,7 +66,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
         colorBlindnessMode: 'none',
         customCursorEnabled: true,
         audioEnabled: true,
-        backgroundAnimation: true
+        backgroundAnimation: true,
+        designerMode: false
       });
     }
     return castSettings({
@@ -78,7 +81,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       colorBlindnessMode: 'none',
       customCursorEnabled: true,
       audioEnabled: true,
-      backgroundAnimation: true
+      backgroundAnimation: true,
+      designerMode: false
     });
   });
 
@@ -89,6 +93,13 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
+    }
+
+    // Apply designer mode
+    if (settings.designerMode) {
+      document.documentElement.classList.add('designer-mode');
+    } else {
+      document.documentElement.classList.remove('designer-mode');
     }
 
     // Apply text size
@@ -238,13 +249,14 @@ export function GlobalMouseAudio() {
   useEffect(() => {
     const handleMouseDown = () => {
       if (settings.audioEnabled) {
-        const audio = document.createElement('audio');
+        const audio = new Audio();
         audio.preload = 'auto';
         if (audio.canPlayType('audio/webm')) {
           audio.src = '/audio/granted.webm';
         } else {
           audio.src = '/audio/granted.wav';
         }
+        audio.currentTime = 0;
         audio.play().catch(() => {});
       }
     };
