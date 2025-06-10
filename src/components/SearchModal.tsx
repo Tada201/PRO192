@@ -65,7 +65,7 @@ const SearchModal = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search tutorials, examples..."
+              placeholder="Search is currently not working... Please ignore this function"
               className="flex-1 bg-transparent border-none focus:ring-0 text-gray-900 dark:text-white placeholder-gray-400"
             />
             <button 
@@ -77,8 +77,9 @@ const SearchModal = () => {
             </button>
           </div>
         </form>
-        
-        {recentSearches.length > 0 && (
+         {/* Original value for enabled recent search is: "recentSearches.length > 0"
+         change this line below the comment to enable recent search function */}
+        {recentSearches.length == 0 && (
           <div className="px-4 py-3">
             <h3 className="flex items-center text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
               <Clock size={14} className="mr-1" />
